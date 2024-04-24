@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 24, 2024 alle 16:59
+-- Creato il: Apr 24, 2024 alle 17:46
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -53,7 +53,7 @@ CREATE TABLE `categorie` (
 CREATE TABLE `contenuti` (
   `id_contenuto` int(11) NOT NULL,
   `titolo` varchar(60) NOT NULL,
-  `descrizione` text NOT NULL,
+  `descrizione` longtext NOT NULL,
   `fk_id_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
