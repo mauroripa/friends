@@ -14,7 +14,7 @@ public class Galleria {
     @Column
     private String galleria;
 
-    @ManyToOne(cascade = CascadeType.REFRESH) // DA CHIEDERE
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "fk_id_contenuto", referencedColumnName = "id_contenuto")
     private Contenuto contenuto;
 
