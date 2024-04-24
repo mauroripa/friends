@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 24, 2024 alle 16:57
+-- Creato il: Apr 24, 2024 alle 16:59
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -43,19 +43,6 @@ CREATE TABLE `categorie` (
   `id_categoria` int(11) NOT NULL,
   `nome_categoria` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dump dei dati per la tabella `categorie`
---
-
-INSERT INTO `categorie` (`id_categoria`, `nome_categoria`) VALUES
-(1, 'La storia di Friends'),
-(2, 'Personaggi'),
-(3, 'Location'),
-(4, 'Scene iconiche'),
-(5, 'News'),
-(6, 'Gadget'),
-(7, 'Backstage');
 
 -- --------------------------------------------------------
 
@@ -126,7 +113,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT per la tabella `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `contenuti`
