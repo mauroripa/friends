@@ -1,26 +1,44 @@
 package com.example.friends.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "admin")
 public class Admin {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column
+    @Column(nullable = false, length = 40)
+    @NotNull
     private String username;
 
-    @Column
+    @Column(nullable = false, length = 40)
+    @NotNull
     private String password;
 
-    public int getId() {
+    // Costruttori, getter e setter
+
+    public Admin() {
+    }
+
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    // Getter e setter
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
