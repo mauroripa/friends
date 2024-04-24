@@ -2,6 +2,9 @@ package com.example.friends.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "contenuti")
 public class Contenuto {
@@ -21,9 +24,11 @@ public class Contenuto {
     @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
 
-    @ManyToOne(cascade = CascadeType.REFRESH) // DA CHIEDERE
-    @JoinColumn(name = "fk_id_galleria", referencedColumnName = "id_galleria")
-    private Galleria galleria;
+    @OneToMany (mappedBy = "contenuti",
+            cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true)
+    private List<Galleria> immagini = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -57,11 +62,11 @@ public class Contenuto {
         this.categoria = categoria;
     }
 
-    public Galleria getGalleria() {
-        return galleria;
+    public List<Galleria> getImmagini() {
+        return immagini;
     }
 
-    public void setGalleria(Galleria galleria) {
-        this.galleria = galleria;
+    public void setImmagini(List<Galleria> immagini) {
+        this.immagini = immagini;
     }
 }
