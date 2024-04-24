@@ -1,0 +1,3 @@
+Mi piace molto la page per la gestione dei contenuti carina l'idea del drag-drop per i file, 
+ho solo una domanda dato che i contenuti possono essere aggiunti rimossi o modificati 
+farete  3  html oppure implementerete la gestione su questa unica page?
