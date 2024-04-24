@@ -1,7 +1,6 @@
 package com.example.friends.model;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +16,10 @@ public class Categoria {
     @Column(name = "nome_categoria")
     private String nomeCategoria;
 
-    @OneToMany (mappedBy = "categorie",
-                cascade = CascadeType.REMOVE,
-                fetch = FetchType.EAGER,
-                orphanRemoval = true)
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Contenuto> contenuti = new ArrayList<>();
+
+    // Getters e Setters
 
     public int getId() {
         return id;
@@ -47,3 +45,4 @@ public class Categoria {
         this.contenuti = contenuti;
     }
 }
+
