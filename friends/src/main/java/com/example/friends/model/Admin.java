@@ -13,32 +13,19 @@ import jakarta.validation.constraints.NotNull;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Column(nullable = false, length = 40)
-    @NotNull
+    @Column()
     private String username;
 
-    @Column(nullable = false, length = 40)
-    @NotNull
+    @Column()
     private String password;
 
-    // Costruttori, getter e setter
-
-    public Admin() {
-    }
-
-    public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    // Getter e setter
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
