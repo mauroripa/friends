@@ -3,9 +3,10 @@ package com.example.friends.service;
 import com.example.friends.dao.ContenutoDao;
 import com.example.friends.model.Contenuto;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public class ContenutoServiceImpl implements ContenutoService {
 
     @Autowired

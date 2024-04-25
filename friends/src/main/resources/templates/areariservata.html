@@ -5,6 +5,35 @@
     <title>Area Riservata</title>
 </head>
 <body>
+    <div class="contenuti">
+        <table>
+            <tr th:each="contenuto : ${contenuti}">
+                <td th:text="${contenuto.titolo}"></td>
+                <td th:text="${contenuto.descrizione}"></td>
+                <td th:text="${contenuto.categoria.nomeCategoria}"></td>
+                <td th:each="immagine : ${contenuto.immagini}">
+                    <img src="immagine.galleria" />
+                </td>
+            </tr>
+        </table>
+    </div>
 
+
+    <div class="categorie">
+        <table>
+            <tr th:each="categoria : ${categorie}">
+                <td th:text="${categoria.nomeCategoria}"></td>
+                <td>
+                    <a th:href="@{/areariservata(categoriaId=${categoria.id})}">Modifica</a>
+                    <a th:href="@{/areariservata/elimina(categoriaId=${categoria.id})}">Elimina</a>
+                </td>
+            </tr>
+        </table>
+
+        <form action="/areariservata/categoria" method="post">
+            <input type="text" name="nomeCategoria" th:value="${categoria.nomeCategoria}" required>
+            <input type="submit" value="Registra">
+        </form>
+    </div>
 </body>
 </html>

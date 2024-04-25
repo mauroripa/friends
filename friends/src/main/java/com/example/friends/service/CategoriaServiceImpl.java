@@ -3,9 +3,11 @@ package com.example.friends.service;
 import com.example.friends.dao.CategoriaDao;
 import com.example.friends.model.Categoria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CategoriaServiceImpl implements CategoriaService {
 
     @Autowired
@@ -19,5 +21,10 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Override
     public Categoria getCategoriaById(int id) {
         return categoriaDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public void addCategori(Categoria categoria) {
+        categoriaDao.save(categoria);
     }
 }

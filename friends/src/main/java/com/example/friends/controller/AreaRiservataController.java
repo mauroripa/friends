@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,6 +25,9 @@ public class AreaRiservataController {
 
     @Autowired
     private CategoriaService categoriaService;
+
+    private Categoria categoria;
+    private Contenuto contenuto;
 
     private boolean isInteger(String s) {
         try {
@@ -46,14 +50,14 @@ public class AreaRiservataController {
         List<Contenuto> contenuti = contenutoService.listaContenuti();
         List<Categoria> categorie = categoriaService.listaCategorie();
 
-        Categoria categoria = (
-                !categoriaId.isEmpty() && isInteger(categoriaId)
+        categoria = (
+                categoriaId != null && isInteger(categoriaId)
                         ? categoriaService.getCategoriaById(Integer.parseInt(categoriaId))
                         : new Categoria()
         );
 
-        Contenuto contenuto = (
-                !contenutoId.isEmpty() && isInteger(contenutoId)
+        contenuto = (
+                contenutoId != null && isInteger(contenutoId)
                         ? contenutoService.getContenutoById(Integer.parseInt(contenutoId))
                         : new Contenuto()
         );
@@ -65,5 +69,16 @@ public class AreaRiservataController {
         model.addAttribute("categoria", categoria);
 
         return "areariservata";
+    }
+
+    @PostMapping("/categoria")
+    public String formCategoria(
+            @RequestParam("nomeCategoria") String nomeCategoria
+    ) {
+
+        categoria.setNomeCategoria(nomeCategoria);
+        categoriaService.addCategori(categoria);
+
+        return "redirect:/areariservata";
     }
 }
