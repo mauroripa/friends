@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+#textarea{
+  resize: none;
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: flex;
+  padding: 12px 12px;
+  cursor: pointer;
+  justify-content: center;
+  
+}
+
+
+
+body {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+header {
+  margin-top: 1rem;
+}
+
+.droparea {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.green-border {
+  border-color: green;
+}
