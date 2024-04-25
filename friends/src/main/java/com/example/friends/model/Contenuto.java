@@ -1,7 +1,6 @@
 package com.example.friends.model;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +9,8 @@ import java.util.List;
 public class Contenuto {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    @Column(name ="id_contenuto")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_contenuto")
     private int id;
 
     @Column
@@ -20,15 +19,14 @@ public class Contenuto {
     @Column
     private String descrizione;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne
     @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
 
-    @OneToMany (mappedBy = "contenuti",
-            cascade = CascadeType.REMOVE,
-            fetch = FetchType.EAGER,
-            orphanRemoval = true)
+    @OneToMany(mappedBy = "contenuto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Galleria> immagini = new ArrayList<>();
+
+    // Getters e Setters
 
     public int getId() {
         return id;
