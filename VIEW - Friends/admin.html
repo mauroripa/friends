@@ -6,6 +6,8 @@
     <title>Admin Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="admin.css" rel="stylesheet"/>
+    <script src="admin.js"></script>
 </head>
 <body>
     
@@ -105,7 +107,7 @@
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
 					<div class="text-center my-5">
-						<img src="" alt="logo" width="100">
+						<img src="https://1000logos.net/wp-content/uploads/2021/05/Friends-logo.png" alt="logo" width="100">
 					</div>
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
@@ -123,55 +125,41 @@
 									<div class="mb-2 w-100">
 										<label class="text-muted" for="descrizione">Descrizione</label>
 									</div>
-									<input id="descrizione" type="textbox" class="form-control" name="password" required>
+									<div class="input-group">
+                    <span class="input-group-text">Descrivi <br>il contenuto</span>
+                    <textarea class="form-control" id="textarea" cols="40" rows="5" aria-label="With textarea"></textarea>
+                  </div>
 								</div>
                                 <label class="text-muted" for="categoria">Categoria</label><br />
-                                <select class="w-50 mb-5">
-                                    <option>Gadget</option>
-                                    <option>Location</option>
-                                    <option>Personaggi</option>
-                                    <option>Scene Iconiche</option>
-                                    <option>News sui Personaggi</option>
-                                    <option>La Storia di Friends</option>
-                                    <option>Backstage</option>
+                                <select class="form-select mt-2 mb-5" aria-label="Categoria">
+                                  <option selected>Scegli la categoria</option>
+                                    <option value="gadget">Gadget</option>
+                                    <option value="location">Location</option>
+                                    <option value="personaggi">Personaggi</option>
+                                    <option value="scene">Scene Iconiche</option>
+                                    <option value="news">News sui Personaggi</option>
+                                    <option value="storia">La Storia di Friends</option>
+                                    <option value="backstage">Backstage</option>
                                 </select>
-                                <script>
-                                  function allowDrop(ev) {
-                                    ev.preventDefault();
-                                  }
-                                  
-                                  function drag(ev) {
-                                    ev.dataTransfer.setData("text", ev.target.id);
-                                  }
-                                  
-                                  function drop(ev) {
-                                    ev.preventDefault();
-                                    var data = ev.dataTransfer.getData("text");
-                                    ev.target.appendChild(document.getElementById(data));
-                                  }
-                                  </script>
-                                  </head>
-                                  <body>
-                                  
-                                  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">Trascina e lascia il file qui</div>
-                                  
-                                  <img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
-                                  <div id="drop_zone" ondrop="dropHandler(event);">
-                                    <p>Drag one or more files to this <i>drop zone</i>.</p>
-                                       <label for="file">Choose file to upload</label>
-    <input type="file" id="file" name="file" multiple />
-                                  </div>
-                                  
+                                <label for="fileupload" class="custom-file-upload btn btn-primary mb-5">Scegli una foto</label>
+                              <input type="file" id="fileupload"  name="foto" >
 								<div class="d-flex align-items-center">
+                  <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
+                    <i class="far fa-images"></i>
+                    <p>Oppure trascinala qui</p>
+                    <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
+                </section>
+                </div>
+                <div class="d-flex align-items-center">
 									<button type="submit" class="btn btn-primary w-50 ms-auto mx-auto">
 										Invia
+                  </div>
 									</button>
 
-								</div>
 							</form>
 						</div>
 						<div class="card-footer py-3 border-0">
-							
+</form>
 						</div>
 					</div>
 				</div>

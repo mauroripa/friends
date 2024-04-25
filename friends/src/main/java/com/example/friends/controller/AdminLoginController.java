@@ -24,7 +24,7 @@ public class AdminLoginController {
     public String loginAdmin(String username, String password, Model model, HttpSession session) {
         boolean isLoggedIn = adminService.loggaAdmin(username, password, session);
         if (isLoggedIn) {
-            return "redirect:/admin/dashboard";
+            return "redirect:/areariservata";
         } else {
             model.addAttribute("error", "Credenziali non valide. Riprova.");
             return "loginAdmin";
