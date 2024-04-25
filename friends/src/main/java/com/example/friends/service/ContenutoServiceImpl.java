@@ -22,4 +22,9 @@ public class ContenutoServiceImpl implements ContenutoService {
     public Contenuto getContenutoById(int id) {
         return contenutoDao.findById(id).orElse(null);
     }
+
+    @Override
+    public void addContenuto(Contenuto contenuto) {
+        contenutoDao.save(contenuto);
+    }
 }

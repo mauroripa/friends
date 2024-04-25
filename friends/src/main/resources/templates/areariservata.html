@@ -16,8 +16,18 @@
                 </td>
             </tr>
         </table>
+        <form action="/areariservata/contenuto" method="post" enctype="multipart/form-data">
+            <input type="text" name="titolo" th:value="${contenuto.titolo}" required>
+            <textarea name="descrizione" th:text="${contenuto.descrizione}"></textarea>
+            <select name="categoria">
+                <option th:each="categoria : ${categorie}" th:value="${categoria.id}" th:text="${categoria.nomeCategoria}"></option>
+            </select>
+            <input type="file" name="foto" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+            <input type="submit" value="Registra">
+        </form>
     </div>
 
+    <hr>
 
     <div class="categorie">
         <table>
