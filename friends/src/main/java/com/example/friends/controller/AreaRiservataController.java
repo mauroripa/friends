@@ -169,4 +169,21 @@ public class AreaRiservataController {
 
         return "redirect:/areariservata";
     }
+    @PostMapping("/aggiungi-admin")
+    public String aggiungiAdmin(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            Model model
+    ) {
+        boolean adminAggiunto = adminService.aggiungiAdmin(username, password);
+        if (adminAggiunto) {
+
+            model.addAttribute("successMessage", "Admin aggiunto con successo!");
+        } else {
+
+            model.addAttribute("errorMessage", "Errore durante l'aggiunta dell'admin. L'username potrebbe essere già in uso.");
+        }
+        return "redirect:/areariservata";
+    }
+
 }

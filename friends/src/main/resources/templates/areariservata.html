@@ -57,5 +57,15 @@
         <div>Lista admin:</div>
         <div th:each="admin : ${admins}" th:text="${admin.username}"></div>
     </div>
+
+    <h2>Aggiungi un nuovo admin</h2>
+    <form th:action="@{/areariservata/aggiungi-admin}" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Aggiungi admin</button>
+    </form>
+
+
+
 </body>
 </html>

@@ -12,4 +12,5 @@ public interface AdminService {
 
   List<Admin> getAdmins();
 
+  boolean aggiungiAdmin(String username, String password);
 }
