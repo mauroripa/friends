@@ -51,3 +51,6 @@ const handleDrop = (e) => {
     document.querySelector(".droparea").innerHTML += "Ok! File caricato.";
   } //Da capire se implementare il limite di file di caricamento e se creare un'animazione di popup/blocco del caricamento
 }
+
+const inserisci= document.querySelector
+document.addEventListener("onclick", inserisci);
