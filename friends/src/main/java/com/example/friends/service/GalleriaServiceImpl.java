@@ -12,6 +12,16 @@ public class GalleriaServiceImpl implements GalleriaService{
     private GalleriaDao galleriaDao;
 
     @Override
+    public List<Galleria> getFotoByContenutoId(int idContenuto) {
+        Galleria foto = galleriaDao.findByIdContenuto(idContenuto);
+        if (foto != null) {
+            return List.of(foto); // Converti l'oggetto Galleria in una lista e restituiscilo
+        } else {
+            return List.of(); // Se non viene trovato nessun oggetto, restituisci una lista vuota
+        }
+    }
+
+    @Override
     public List<Galleria> listaFoto() {
         return (List<Galleria>) galleriaDao.findAll();
     }

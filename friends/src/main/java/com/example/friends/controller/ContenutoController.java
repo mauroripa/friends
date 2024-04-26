@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequestMapping ("/contenuti")
 public class ContenutoController {
@@ -23,16 +25,22 @@ public class ContenutoController {
    @Autowired
    private GalleriaService galleriaService;
 
-   @GetMapping
-    public String getContenuto(@RequestParam("categoriaId") int idCategoria,
-                               @RequestParam("contenutoId") int idContenuto,
-                               Model model) {
-       Categoria categoria = categoriaService.getCategoriaById(idCategoria);
-       model.addAttribute("categoria", categoria);
+   @Autowired
+   private ContenutoService contenutoService;
 
-       Galleria galleria = galleriaService.getFotoById(idContenuto);
-       model.addAttribute("galleria", galleria);
-       return "contenuto";
+   @GetMapping
+   public String getContenuto(@RequestParam("categoriaId") int idCategoria,
+                              @RequestParam("contenutoId") int idContenuto,
+                              Model model) {
+      Categoria categoria = categoriaService.getCategoriaById(idCategoria);
+      model.addAttribute("categoria", categoria);
+
+      Contenuto contenuto = contenutoService.getContenutoById(idContenuto);
+      List<Galleria> galleria = galleriaService.getFotoByContenutoId(idContenuto); // Supponendo che tu abbia un metodo simile per ottenere tutte le immagini associate a un contenuto
+      model.addAttribute("contenuto", contenuto);
+      model.addAttribute("galleria", galleria);
+      return "contenuto";
    }
+
 
 }
