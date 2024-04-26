@@ -23,7 +23,7 @@ public class ContenutoController {
 
    @GetMapping
    public String getContenuto(
-           @RequestParam(name = "categoriaId", required = false) int idCategoria,
+           @RequestParam("categoriaId") int idCategoria,
            Model model
    ) {
 
