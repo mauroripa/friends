@@ -31,23 +31,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean aggiungiAdmin(String username, String password) {
-
-        Admin adminEsistente = adminDao.findByUsername(username);
-        if (adminEsistente != null) {
-
-            return false;
-        }
-
-
-        Admin nuovoAdmin = new Admin();
-        nuovoAdmin.setUsername(username);
-        nuovoAdmin.setPassword(password);
-
-
-        adminDao.save(nuovoAdmin);
-
-        return true;
+    public void aggiungiAdmin(Admin admin) {
+        adminDao.save(admin);
     }
 
     @Override

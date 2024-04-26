@@ -99,7 +99,10 @@ public class AreaRiservataController {
             @RequestParam("password") String password
     ) {
 
-        adminService.aggiungiAdmin(username, password);
+        admin.setUsername(username);
+        admin.setPassword(password);
+
+        adminService.aggiungiAdmin(admin);
 
         return "redirect:/areariservata";
     }

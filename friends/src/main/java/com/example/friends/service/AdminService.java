@@ -12,7 +12,7 @@ public interface AdminService {
 
   List<Admin> getAdmins();
 
-  boolean aggiungiAdmin(String username, String password);
+  void aggiungiAdmin(Admin admin);
 
   void rimuoviAdmin(String username);
 
