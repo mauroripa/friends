@@ -1,14 +1,6 @@
 @charset "UTF-8";
 
-body {
- /*   background-image:  url('https://irs.www.warnerbros.com/hero-banner-v2-tablet-png/tv/media/browser/friends_complete_series_4320x1080.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    object-fit: cover;*/
-    background-color: #02b0ec;
 
-}
 .sfondo{
   position: fixed; 
   top: 0;
@@ -17,16 +9,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
-.dropdown-hidden {
-  display: none;
-}
-.dropdown-hidden {
-  display: none;
-}
+
 
 .dropdown-content {
   position: absolute;
-  background-color: #fff;
+  background-color: #ff0000;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -37,4 +24,10 @@ body {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+}
+.navbar-toggler {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png);
+}
+.navbar{
+  background-color: black;
 }
