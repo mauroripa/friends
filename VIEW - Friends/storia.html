@@ -18,13 +18,32 @@
     -->
 <style>
   body {
-    background-color: antiquewhite;
+    background-image: url('images/central_perk.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #343a40;
+    }
+    .friends-navbar {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #343a40;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #343a40;
     }
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 0 15px;
+    }
+    .card {
+      padding: 10px;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .sito img {
         display: block;
@@ -40,10 +59,41 @@
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: transparent;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Friends</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Storia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Personaggi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Location</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Scene Iconiche</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gadget</a>
+        </li>
+          </ul>
+        </div>
+    </div>
+</nav>
+
     <div class="container mt-6">
         <div class="card">
-          <img src="images/central_perk.jpg" class="card-img-top" alt="central_perk">
-          <div class="card-body">
+          <img src="images/foto_personaggi.jpg" class="card-img-top" alt="central_perk">
+          <div class="card-body" >
             <h1 class="card-title mb-4">La Storia di Friends</h1>
             <p class="lead">Friends è una popolare sitcom televisiva statunitense che ha debuttato nel 1994 e ha avuto un grande successo in tutto il mondo. La serie segue le vite di sei amici che vivono a New York: Rachel, Ross, Monica, Chandler, Joey e Phoebe. La trama ruota attorno alle loro relazioni, alle loro carriere e alle loro avventure quotidiane.</p>
             <hr class="my-4">
@@ -51,6 +101,7 @@
           </div>
         </div>
       </div>
+
 <footer>
     <div class="foot">
     <p>&copy; 2024 Friends Group</p>
