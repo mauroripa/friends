@@ -16,9 +16,9 @@ public interface GalleriaDao extends CrudRepository<Galleria, Integer> {
                     nativeQuery = true
             )
     List<Galleria> trovaPerId(@Param("n") int idContenuto);*/
-
+/*
     Galleria findByIdContenuto(int idContenuto);
 
     @Query(value = "SELECT * FROM galleria WHERE fk_id_contenuto = :idContenuto", nativeQuery = true)
-    List<Galleria> trovaPerId(@Param("idContenuto") int idContenuto);
+    List<Galleria> trovaPerId(@Param("idContenuto") int idContenuto);*/
 }

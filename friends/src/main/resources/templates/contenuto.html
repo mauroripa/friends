@@ -16,9 +16,10 @@
             <tr th:each="contenuto : ${categoria.contenuti}">
                 <td th:text="${contenuto.titolo}"></td>
                 <td th:text="${contenuto.descrizione}"></td>
+                <img th:each="immagine : ${contenuto.immagini}" th:src="@{${immagine.galleria}}" width="300" />
             </tr>
-            <tr th:each="immagini : ${contenuto.galleria}">
-                <td th:text="${immagini.foto}"></td>
+            <tr th:each="immagini : ${categoria.contenuti.}">
+                <td th:text="${immagini.galleria}"></td>
             </tr>
         </table>
     </div>
