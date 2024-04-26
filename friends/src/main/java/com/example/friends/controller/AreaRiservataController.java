@@ -100,7 +100,7 @@ public class AreaRiservataController {
 
                 Galleria galleriaImg = new Galleria();
                 galleriaImg.setGalleria(imageGalleria);
-
+                galleriaImg.setContenuto(contenuto);
                 listGalleria.add(galleriaImg);
             }
 

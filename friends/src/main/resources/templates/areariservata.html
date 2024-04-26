@@ -12,7 +12,7 @@
                 <td th:text="${contenuto.descrizione}"></td>
                 <td th:text="${contenuto.categoria.nomeCategoria}"></td>
                 <td th:each="immagine : ${contenuto.immagini}">
-                    <img src="immagine.galleria" />
+                    <img th:src="@{${immagine.galleria}}" />
                 </td>
             </tr>
         </table>
