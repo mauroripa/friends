@@ -20,7 +20,7 @@ public class ContenutoServiceImpl implements ContenutoService {
 
     @Override
     public Contenuto getContenutoById(int id) {
-        return contenutoDao.findById(id).orElse(null);
+        return null;
     }
 
     @Override
