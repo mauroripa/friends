@@ -136,7 +136,7 @@ public class AreaRiservataController {
 
         if (logged != null) {
 
-            if (isInteger(id)) {
+            if (adminService.getAdmins().size() > 1 && isInteger(id)) {
                 adminService.rimuoviAdmin(Integer.parseInt(id));
             }
 
@@ -265,6 +265,7 @@ public class AreaRiservataController {
             @RequestParam("contenutoId") String contenutoId,
             HttpSession session
     ) {
+
         Admin logged = (Admin) session.getAttribute("admin");
 
         if (logged != null) {
