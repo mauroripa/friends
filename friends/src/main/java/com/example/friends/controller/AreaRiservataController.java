@@ -95,6 +95,16 @@ public class AreaRiservataController {
         return "redirect:/areariservata";
     }
 
+    @GetMapping("/categoria/elimina")
+    public String eliminaCategoria(
+            @RequestParam("id") int id
+    ) {
+
+        categoriaService.removeCategoria(id);
+
+        return "redirect:/areariservata";
+    }
+
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
 
         try {
@@ -140,6 +150,16 @@ public class AreaRiservataController {
         }
 
         contenutoService.addContenuto(contenuto);
+
+        return "redirect:/areariservata";
+    }
+
+    @GetMapping("/contenuto/elimina")
+    public String eliminaContenuto(
+            @RequestParam("id") int id
+    ) {
+
+        contenutoService.removeContenuto(id);
 
         return "redirect:/areariservata";
     }

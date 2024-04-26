@@ -27,4 +27,9 @@ public class ContenutoServiceImpl implements ContenutoService {
     public void addContenuto(Contenuto contenuto) {
         contenutoDao.save(contenuto);
     }
+
+    @Override
+    public void removeContenuto(int id) {
+        contenutoDao.deleteById(id);
+    }
 }
