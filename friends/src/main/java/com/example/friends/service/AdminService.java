@@ -14,7 +14,7 @@ public interface AdminService {
 
   void aggiungiAdmin(Admin admin);
 
-  void rimuoviAdmin(String username);
+  void rimuoviAdmin(int id);
 
   Admin getAdmin(int id);
 }

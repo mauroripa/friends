@@ -35,8 +35,8 @@ public class AreaRiservataController {
     @Autowired
     private AdminService adminService;
 
-    private Categoria categoria;
     private Admin admin;
+    private Categoria categoria;
     private Contenuto contenuto;
 
     private boolean isInteger(String s) {
@@ -103,6 +103,18 @@ public class AreaRiservataController {
         admin.setPassword(password);
 
         adminService.aggiungiAdmin(admin);
+
+        return "redirect:/areariservata";
+    }
+
+    @GetMapping("/admin/elimina")
+    public String eliminaAdmin(
+            @RequestParam("id") String id
+    ) {
+
+        if (isInteger(id)) {
+            adminService.rimuoviAdmin(Integer.parseInt(id));
+        }
 
         return "redirect:/areariservata";
     }

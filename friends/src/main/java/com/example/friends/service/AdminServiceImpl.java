@@ -36,13 +36,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void rimuoviAdmin(String username) {
-        Admin admin = adminDao.findByUsername(username);
-        if (admin != null) {
-            adminDao.delete(admin);
-        }
-
-
+    public void rimuoviAdmin(int id) {
+        adminDao.deleteById(id);
     }
 
     @Override

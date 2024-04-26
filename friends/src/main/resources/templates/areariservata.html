@@ -57,7 +57,6 @@
 
     <div>
         <div>Lista admin:</div>
-        <div th:each="admin : ${admins}" th:text="${admin.username}"></div>
         <table>
             <tr th:each="admin : ${admins}">
                 <td th:text="${admin.username}"></td>
