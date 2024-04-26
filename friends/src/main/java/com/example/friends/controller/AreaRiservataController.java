@@ -58,87 +58,124 @@ public class AreaRiservataController {
             @RequestParam(name = "adminId", required = false) String adminId
     ) {
 
-        List<Admin> admins = adminService.getAdmins();
-        List<Contenuto> contenuti = contenutoService.listaContenuti();
-        List<Categoria> categorie = categoriaService.listaCategorie();
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        categoria = (
-                categoriaId != null && isInteger(categoriaId)
-                        ? categoriaService.getCategoriaById(Integer.parseInt(categoriaId))
-                        : new Categoria()
-        );
+        if (logged != null) {
 
-        contenuto = (
-                contenutoId != null && isInteger(contenutoId)
-                        ? contenutoService.getContenutoById(Integer.parseInt(contenutoId))
-                        : new Contenuto()
-        );
+            List<Admin> admins = adminService.getAdmins();
+            List<Contenuto> contenuti = contenutoService.listaContenuti();
+            List<Categoria> categorie = categoriaService.listaCategorie();
 
-        admin = (
-                adminId != null && isInteger(adminId)
-                        ? adminService.getAdmin(Integer.parseInt(adminId))
-                        : new Admin()
-        );
+            categoria = (
+                    categoriaId != null && isInteger(categoriaId)
+                            ? categoriaService.getCategoriaById(Integer.parseInt(categoriaId))
+                            : new Categoria()
+            );
 
-        model.addAttribute("contenuti", contenuti);
-        model.addAttribute("contenuto", contenuto);
+            contenuto = (
+                    contenutoId != null && isInteger(contenutoId)
+                            ? contenutoService.getContenutoById(Integer.parseInt(contenutoId))
+                            : new Contenuto()
+            );
 
-        model.addAttribute("categorie", categorie);
-        model.addAttribute("categoria", categoria);
+            admin = (
+                    adminId != null && isInteger(adminId)
+                            ? adminService.getAdmin(Integer.parseInt(adminId))
+                            : new Admin()
+            );
 
-        model.addAttribute("admins", admins);
-        model.addAttribute("admin", admin);
+            model.addAttribute("contenuti", contenuti);
+            model.addAttribute("contenuto", contenuto);
 
-        return "areariservata";
+            model.addAttribute("categorie", categorie);
+            model.addAttribute("categoria", categoria);
+
+            model.addAttribute("admins", admins);
+            model.addAttribute("admin", admin);
+
+            return "areariservata";
+        }
+
+        return "redirect:/admin/login";
     }
 
 
     @PostMapping("/admin")
     public String formAdmin(
             @RequestParam("username") String username,
-            @RequestParam("password") String password
+            @RequestParam("password") String password,
+            HttpSession session
     ) {
 
-        admin.setUsername(username);
-        admin.setPassword(password);
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        adminService.aggiungiAdmin(admin);
+        if (logged != null) {
 
-        return "redirect:/areariservata";
+            admin.setUsername(username);
+            admin.setPassword(password);
+
+            adminService.aggiungiAdmin(admin);
+
+            return "redirect:/areariservata";
+        }
+
+        return "redirect:/admin/login";
     }
 
     @GetMapping("/admin/elimina")
     public String eliminaAdmin(
-            @RequestParam("id") String id
+            @RequestParam("id") String id,
+            HttpSession session
     ) {
 
-        if (isInteger(id)) {
-            adminService.rimuoviAdmin(Integer.parseInt(id));
+        Admin logged = (Admin) session.getAttribute("admin");
+
+        if (logged != null) {
+
+            if (isInteger(id)) {
+                adminService.rimuoviAdmin(Integer.parseInt(id));
+            }
+
+            return "redirect:/areariservata";
         }
 
-        return "redirect:/areariservata";
+        return "redirect:/admin/login";
     }
-
 
     @PostMapping("/categoria")
     public String formCategoria(
-            @RequestParam("nomeCategoria") String nomeCategoria
+            @RequestParam("nomeCategoria") String nomeCategoria,
+            HttpSession session
     ) {
 
-        categoria.setNomeCategoria(nomeCategoria);
-        categoriaService.addCategoria(categoria);
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        return "redirect:/areariservata";
+        if (logged != null) {
+            categoria.setNomeCategoria(nomeCategoria);
+            categoriaService.addCategoria(categoria);
+
+            return "redirect:/areariservata";
+        }
+
+        return "redirect:/admin/login";
     }
 
     @GetMapping("/categoria/elimina")
     public String eliminaCategoria(
-            @RequestParam("id") int id
+            @RequestParam("id") int id,
+            HttpSession session
     ) {
 
-        categoriaService.removeCategoria(id);
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        return "redirect:/areariservata";
+        if (logged != null) {
+
+            categoriaService.removeCategoria(id);
+
+            return "redirect:/areariservata";
+        }
+
+        return "redirect:/admin/login";
     }
 
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
@@ -171,38 +208,65 @@ public class AreaRiservataController {
             @RequestParam("titolo") String titolo,
             @RequestParam("descrizione") String descrizione,
             @RequestParam("categoria") String idCategoria,
-            @RequestParam("foto") MultipartFile[] galleria
+            @RequestParam("foto") MultipartFile[] galleria,
+            HttpSession session
     ) {
 
-        contenuto.setTitolo(titolo);
-        contenuto.setDescrizione(descrizione);
-        contenuto.setCategoria(
-                categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
-        );
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        List<Galleria> images = getListGalleria(galleria);
-        List<Galleria> originalGalleria = contenuto.getImmagini();
-        if (images != null && !images.isEmpty()) {
+        if (logged != null) {
+            contenuto.setTitolo(titolo);
+            contenuto.setDescrizione(descrizione);
+            contenuto.setCategoria(
+                    categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
+            );
 
-            if (!originalGalleria.isEmpty()) {
-                images.addAll(originalGalleria);
+            List<Galleria> images = getListGalleria(galleria);
+            List<Galleria> originalGalleria = contenuto.getImmagini();
+            if (images != null && !images.isEmpty()) {
+
+                if (!originalGalleria.isEmpty()) {
+                    images.addAll(originalGalleria);
+                }
+
+                contenuto.setImmagini(images);
             }
 
-            contenuto.setImmagini(images);
+            contenutoService.addContenuto(contenuto);
+
+            return "redirect:/areariservata";
         }
 
-        contenutoService.addContenuto(contenuto);
-
-        return "redirect:/areariservata";
+        return "redirect:/admin/login";
     }
 
     @GetMapping("/contenuto/elimina")
     public String eliminaContenuto(
-            @RequestParam("id") int id
+            @RequestParam("id") int id,
+            HttpSession session
     ) {
+        Admin logged = (Admin) session.getAttribute("admin");
 
-        contenutoService.removeContenuto(id);
+        if (logged != null) {
+            contenutoService.removeContenuto(id);
+            return "redirect:/areariservata";
+        }
 
-        return "redirect:/areariservata";
+        return "redirect:/admin/login";
+    }
+
+    @GetMapping("/immagine/elimina")
+    public String eliminaImmagine(
+            @RequestParam("id") int id,
+            HttpSession session
+    ) {
+        Admin logged = (Admin) session.getAttribute("admin");
+
+        if (logged != null) {
+            contenutoService.removeContenuto(id);
+            return "redirect:/areariservata";
+        }
+
+        return "redirect:/admin/login";
     }
 }
