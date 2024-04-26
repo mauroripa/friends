@@ -54,8 +54,14 @@
     </div>
 
     <div>
-        <div>Lista admin:</div>
-        <div th:each="admin : ${admins}" th:text="${admin.username}"></div>
+        <h2>Lista degli admin</h2>
+        <ul>
+            <li th:each="admin : ${admins}">
+                <span th:text="${admin.username}"></span>
+                <a th:href="@{/areariservata/rimuovi-admin(username=${admin.username})}" onclick="return confirm('Sei sicuro di voler rimuovere questo admin?')">Rimuovi</a>
+            </li>
+        </ul>
+
     </div>
 
     <h2>Aggiungi un nuovo admin</h2>

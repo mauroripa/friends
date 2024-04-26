@@ -185,5 +185,14 @@ public class AreaRiservataController {
         }
         return "redirect:/areariservata";
     }
+    @GetMapping("/rimuovi-admin")
+    public String rimuoviAdmin(
+            @RequestParam("username") String username,
+            Model model
+    ) {
+        adminService.rimuoviAdmin(username);
+        model.addAttribute("successMessage", "Admin rimosso con successo!");
+        return "redirect:/areariservata";
+    }
 
 }

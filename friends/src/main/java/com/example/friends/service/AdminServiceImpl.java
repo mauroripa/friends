@@ -28,6 +28,7 @@ public class AdminServiceImpl implements AdminService {
     public List<Admin> getAdmins() {
         return (List<Admin>) adminDao.findAll();
     }
+
     @Override
     public boolean aggiungiAdmin(String username, String password) {
 
@@ -48,5 +49,14 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
+    @Override
+    public void rimuoviAdmin(String username) {
+        Admin admin = adminDao.findByUsername(username);
+        if (admin != null) {
+            adminDao.delete(admin);
+        }
+
+
+    }
 }
 
