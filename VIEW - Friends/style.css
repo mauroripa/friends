@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.logo{
+  justify-content: start;
+  max-width: 10%;
+  max-height: 10%;
+}
+
 
 .sfondo{
   position: fixed; 
@@ -30,4 +36,15 @@
 }
 .navbar{
   background-color: black;
+}
+
+.list-group-item{
+  border: 0px;
+  
+}
+.list-group{
+  width: auto;
+}
+a{
+  text-decoration: none;
 }
