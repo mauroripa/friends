@@ -36,6 +36,7 @@ public class AreaRiservataController {
     private AdminService adminService;
 
     private Categoria categoria;
+    private Admin admin;
     private Contenuto contenuto;
 
     private boolean isInteger(String s) {
@@ -53,9 +54,11 @@ public class AreaRiservataController {
             Model model,
             HttpSession session,
             @RequestParam(name = "categoriaId", required = false) String categoriaId,
-            @RequestParam(name = "contenutoId", required = false) String contenutoId
+            @RequestParam(name = "contenutoId", required = false) String contenutoId,
+            @RequestParam(name = "adminId", required = false) String adminId
     ) {
 
+        List<Admin> admins = adminService.getAdmins();
         List<Contenuto> contenuti = contenutoService.listaContenuti();
         List<Categoria> categorie = categoriaService.listaCategorie();
 
@@ -71,7 +74,11 @@ public class AreaRiservataController {
                         : new Contenuto()
         );
 
-        List<Admin> admins = adminService.getAdmins();
+        admin = (
+                adminId != null && isInteger(adminId)
+                        ? adminService.getAdmin(Integer.parseInt(adminId))
+                        : new Admin()
+        );
 
         model.addAttribute("contenuti", contenuti);
         model.addAttribute("contenuto", contenuto);
@@ -80,9 +87,23 @@ public class AreaRiservataController {
         model.addAttribute("categoria", categoria);
 
         model.addAttribute("admins", admins);
+        model.addAttribute("admin", admin);
 
         return "areariservata";
     }
+
+
+    @PostMapping("/admin")
+    public String formAdmin(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password
+    ) {
+
+        adminService.aggiungiAdmin(username, password);
+
+        return "redirect:/areariservata";
+    }
+
 
     @PostMapping("/categoria")
     public String formCategoria(
@@ -169,30 +190,4 @@ public class AreaRiservataController {
 
         return "redirect:/areariservata";
     }
-    @PostMapping("/aggiungi-admin")
-    public String aggiungiAdmin(
-            @RequestParam("username") String username,
-            @RequestParam("password") String password,
-            Model model
-    ) {
-        boolean adminAggiunto = adminService.aggiungiAdmin(username, password);
-        if (adminAggiunto) {
-
-            model.addAttribute("successMessage", "Admin aggiunto con successo!");
-        } else {
-
-            model.addAttribute("errorMessage", "Errore durante l'aggiunta dell'admin. L'username potrebbe essere già in uso.");
-        }
-        return "redirect:/areariservata";
-    }
-    @GetMapping("/rimuovi-admin")
-    public String rimuoviAdmin(
-            @RequestParam("username") String username,
-            Model model
-    ) {
-        adminService.rimuoviAdmin(username);
-        model.addAttribute("successMessage", "Admin rimosso con successo!");
-        return "redirect:/areariservata";
-    }
-
 }
