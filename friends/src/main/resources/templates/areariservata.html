@@ -5,6 +5,11 @@
     <title>Area Riservata</title>
 </head>
 <body>
+<script th:if="${messaggio != null}" type="text/javascript">
+    window.onload = function() {
+        alert("Dimensione massima superata per il caricamento del file.");
+    };
+</script>
     <div class="contenuti">
         <table>
             <tr th:each="contenuto : ${contenuti}">

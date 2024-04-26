@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -57,6 +58,7 @@ public class AreaRiservataController {
     public String getPage(
             Model model,
             HttpSession session,
+            @RequestParam(name = "messaggio", required = false) String messaggio,
             @RequestParam(name = "categoriaId", required = false) String categoriaId,
             @RequestParam(name = "contenutoId", required = false) String contenutoId,
             @RequestParam(name = "adminId", required = false) String adminId
@@ -96,6 +98,7 @@ public class AreaRiservataController {
 
             model.addAttribute("admins", admins);
             model.addAttribute("admin", admin);
+            model.addAttribute("messaggio", messaggio);
 
             return "areariservata";
         }
@@ -216,30 +219,31 @@ public class AreaRiservataController {
             HttpSession session
     ) {
 
-        Admin logged = (Admin) session.getAttribute("admin");
 
-        if (logged != null) {
-            contenuto.setTitolo(titolo);
-            contenuto.setDescrizione(descrizione);
-            contenuto.setCategoria(
-                    categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
-            );
+            Admin logged = (Admin) session.getAttribute("admin");
 
-            List<Galleria> images = getListGalleria(galleria);
-            List<Galleria> originalGalleria = contenuto.getImmagini();
-            if (images != null && !images.isEmpty()) {
+            if (logged != null) {
+                contenuto.setTitolo(titolo);
+                contenuto.setDescrizione(descrizione);
+                contenuto.setCategoria(
+                        categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
+                );
 
-                if (!originalGalleria.isEmpty()) {
-                    images.addAll(originalGalleria);
+                List<Galleria> images = getListGalleria(galleria);
+                List<Galleria> originalGalleria = contenuto.getImmagini();
+                if (images != null && !images.isEmpty()) {
+
+                    if (!originalGalleria.isEmpty()) {
+                        images.addAll(originalGalleria);
+                    }
+
+                    contenuto.setImmagini(images);
                 }
 
-                contenuto.setImmagini(images);
+                contenutoService.addContenuto(contenuto);
+
+                return "redirect:/areariservata";
             }
-
-            contenutoService.addContenuto(contenuto);
-
-            return "redirect:/areariservata";
-        }
 
         return "redirect:/admin/login";
     }
