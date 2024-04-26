@@ -8,4 +8,5 @@ public interface CategoriaService {
     List<Categoria> listaCategorie();
     Categoria getCategoriaById(int id);
     void addCategoria(Categoria categoria);
+    void removeCategoria(int id);
 }

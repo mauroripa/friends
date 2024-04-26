@@ -27,4 +27,9 @@ public class CategoriaServiceImpl implements CategoriaService {
     public void addCategoria(Categoria categoria) {
         categoriaDao.save(categoria);
     }
+
+    @Override
+    public void removeCategoria(int id) {
+
+    }
 }

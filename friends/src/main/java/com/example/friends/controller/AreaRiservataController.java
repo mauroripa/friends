@@ -95,6 +95,19 @@ public class AreaRiservataController {
         return "redirect:/areariservata";
     }
 
+    @PostMapping("/categoria/elimina")
+    public String eliminaCategoria(
+            @RequestParam("id") String id
+    ) {
+
+        /*
+        categoria.setNomeCategoria(nomeCategoria);
+        categoriaService.addCategoria(categoria);
+        categoriaService.
+*/
+        return "redirect:/areariservata";
+    }
+
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
 
         try {
