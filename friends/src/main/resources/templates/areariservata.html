@@ -26,6 +26,9 @@
             <select name="categoria">
                 <option th:each="categoria : ${categorie}" th:value="${categoria.id}" th:text="${categoria.nomeCategoria}"></option>
             </select>
+            <div th:if="${ contenuto.immagini.size() > 0 }">
+                <img th:each="immagine : ${contenuto.immagini}" th:src="@{${immagine.galleria}}" width="300" />
+            </div>
             <input type="file" name="foto" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
             <input type="submit" value="Registra">
         </form>
