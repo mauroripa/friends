@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -30,33 +31,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean aggiungiAdmin(String username, String password) {
-
-        Admin adminEsistente = adminDao.findByUsername(username);
-        if (adminEsistente != null) {
-
-            return false;
-        }
-
-
-        Admin nuovoAdmin = new Admin();
-        nuovoAdmin.setUsername(username);
-        nuovoAdmin.setPassword(password);
-
-
-        adminDao.save(nuovoAdmin);
-
-        return true;
+    public void aggiungiAdmin(Admin admin) {
+        adminDao.save(admin);
     }
 
     @Override
-    public void rimuoviAdmin(String username) {
-        Admin admin = adminDao.findByUsername(username);
-        if (admin != null) {
-            adminDao.delete(admin);
-        }
-
-
+    public void rimuoviAdmin(int id) {
+        adminDao.deleteById(id);
     }
 
     @Override

@@ -53,25 +53,28 @@
         </form>
     </div>
 
-    <div>
-        <h2>Lista degli admin</h2>
-        <ul>
-            <li th:each="admin : ${admins}">
-                <span th:text="${admin.username}"></span>
-                <a th:href="@{/areariservata/rimuovi-admin(username=${admin.username})}" onclick="return confirm('Sei sicuro di voler rimuovere questo admin?')">Rimuovi</a>
-            </li>
-        </ul>
+    <hr>
 
+    <div>
+        <div>Lista admin:</div>
+        <table>
+            <tr th:each="admin : ${admins}">
+                <td th:text="${admin.username}"></td>
+                <td th:text="${admin.password.replaceAll('[\w]', '*')}"></td>
+                <td>
+                    <a th:href="@{/areariservata(adminId=${admin.id})}">Modifica</a>
+                    <a th:href="@{/areariservata/admin/elimina(id=${admin.id})}">Elimina</a>
+                </td>
+            </tr>
+        </table>
+
+        <form action="/areariservata/admin" method="post">
+            <input type="text" name="username" th:value="${admin.username}" required>
+            <input type="password" name="password" th:value="${admin.password}" required>
+            <input type="submit" value="Registra">
+        </form>
     </div>
 
-    <h2>Aggiungi un nuovo admin</h2>
-    <form th:action="@{/areariservata/aggiungi-admin}" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Aggiungi admin</button>
-    </form>
-
-
-
+    <a th:href="@{admin/logout}">Logout</a>
 </body>
 </html>
