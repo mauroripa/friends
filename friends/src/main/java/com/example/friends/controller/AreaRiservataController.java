@@ -7,6 +7,7 @@ import com.example.friends.model.Galleria;
 import com.example.friends.service.AdminService;
 import com.example.friends.service.CategoriaService;
 import com.example.friends.service.ContenutoService;
+import com.example.friends.service.GalleriaService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,9 @@ public class AreaRiservataController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private GalleriaService galleriaService;
 
     private Admin admin;
     private Categoria categoria;
@@ -258,13 +262,14 @@ public class AreaRiservataController {
     @GetMapping("/immagine/elimina")
     public String eliminaImmagine(
             @RequestParam("id") int id,
+            @RequestParam("contenutoId") String contenutoId,
             HttpSession session
     ) {
         Admin logged = (Admin) session.getAttribute("admin");
 
         if (logged != null) {
-            contenutoService.removeContenuto(id);
-            return "redirect:/areariservata";
+            galleriaService.removeImg(id);
+            return "redirect:/areariservata?contenutoId=" + contenutoId;
         }
 
         return "redirect:/admin/login";
