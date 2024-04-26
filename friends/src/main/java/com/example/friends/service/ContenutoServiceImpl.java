@@ -20,7 +20,7 @@ public class ContenutoServiceImpl implements ContenutoService {
 
     @Override
     public Contenuto getContenutoById(int id) {
-        return null;
+        return contenutoDao.findById(id).orElse(null);
     }
 
     @Override
@@ -32,4 +32,5 @@ public class ContenutoServiceImpl implements ContenutoService {
     public void removeContenuto(int id) {
         contenutoDao.deleteById(id);
     }
+
 }
