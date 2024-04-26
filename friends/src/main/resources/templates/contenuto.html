@@ -10,8 +10,12 @@
         <a th:href="@{/admin/login}">Login</a>
     </div>
     <div class="contenuti">
+        <h4 th:text="${categoria.nomeCategoria}"></h4>
         <table>
-            <th th:text="${categoria.nomeCategoria}"></th>
+            <tr th:each="contenuto : ${categoria.contenuti}"> <td th:text="${contenuto.titolo}"></td></tr>
+
+
+
         </table>
     </div>
 </body>

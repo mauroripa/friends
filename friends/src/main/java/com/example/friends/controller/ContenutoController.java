@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ContenutoController {
 
    @Autowired
-    private ContenutoService contenutoService;
+    private CategoriaService categoriaService;
 
    @GetMapping
-    public String getContenuto(@RequestParam("idCategoria") int idCategoria, Model model) {
-       Contenuto contenuto = contenutoService.getContenutoById(idCategoria);
-       model.addAttribute("contenuto", contenuto);
+    public String getContenuto(@RequestParam("categoriaId") int idCategoria, Model model) {
+       Categoria categoria = categoriaService.getCategoriaById(idCategoria);
+       model.addAttribute("categoria", categoria);
        return "contenuto";
    }
 }
