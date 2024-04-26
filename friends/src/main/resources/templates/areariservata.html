@@ -45,5 +45,10 @@
             <input type="submit" value="Registra">
         </form>
     </div>
+
+    <div>
+        <div>Lista admin:</div>
+        <div th:each="admin : ${admins}" th:text="${admin.username}"></div>
+    </div>
 </body>
 </html>

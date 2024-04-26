@@ -10,6 +10,6 @@ public interface AdminService {
 
   boolean loggaAdmin(String username, String password, HttpSession session);
 
-
+  List<Admin> getAdmins();
 
 }

@@ -1,8 +1,10 @@
 package com.example.friends.controller;
 
+import com.example.friends.model.Admin;
 import com.example.friends.model.Categoria;
 import com.example.friends.model.Contenuto;
 import com.example.friends.model.Galleria;
+import com.example.friends.service.AdminService;
 import com.example.friends.service.CategoriaService;
 import com.example.friends.service.ContenutoService;
 import jakarta.servlet.http.HttpSession;
@@ -29,6 +31,9 @@ public class AreaRiservataController {
 
     @Autowired
     private CategoriaService categoriaService;
+
+    @Autowired
+    private AdminService adminService;
 
     private Categoria categoria;
     private Contenuto contenuto;
@@ -66,11 +71,15 @@ public class AreaRiservataController {
                         : new Contenuto()
         );
 
+        List<Admin> admins = adminService.getAdmins();
+
         model.addAttribute("contenuti", contenuti);
         model.addAttribute("contenuto", contenuto);
 
         model.addAttribute("categorie", categorie);
         model.addAttribute("categoria", categoria);
+
+        model.addAttribute("admins", admins);
 
         return "areariservata";
     }
