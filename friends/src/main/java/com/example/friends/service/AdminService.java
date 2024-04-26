@@ -15,4 +15,6 @@ public interface AdminService {
   boolean aggiungiAdmin(String username, String password);
 
   void rimuoviAdmin(String username);
+
+  Admin getAdmin(int id);
 }

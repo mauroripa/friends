@@ -58,5 +58,10 @@ public class AdminServiceImpl implements AdminService {
 
 
     }
+
+    @Override
+    public Admin getAdmin(int id) {
+        return adminDao.findById(id).orElse(null);
+    }
 }
 
