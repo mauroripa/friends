@@ -145,8 +145,14 @@ public class AreaRiservataController {
         );
 
         List<Galleria> images = getListGalleria(galleria);
-        if( images != null && !images.isEmpty()) {
-            contenuto.setImmagini(getListGalleria(galleria));
+        List<Galleria> originalGalleria = contenuto.getImmagini();
+        if (images != null && !images.isEmpty()) {
+
+            if (!originalGalleria.isEmpty()) {
+                images.addAll(originalGalleria);
+            }
+
+            contenuto.setImmagini(images);
         }
 
         contenutoService.addContenuto(contenuto);

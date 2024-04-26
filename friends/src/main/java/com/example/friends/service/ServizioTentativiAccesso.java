@@ -1,33 +1,35 @@
 package com.example.friends.service;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+
 
 @Service
 public class ServizioTentativiAccesso {
 
+    private final int MAX_TENTATIVI = 4;
 
-    private  final int MAX_TENTATIVI = 5;
-    private Map<String, Integer> tentativi = new ConcurrentHashMap<>();
-
-    public void accessoRiuscito(String username) {
-        tentativi.remove(username);
+    public synchronized void accessoRiuscito(HttpSession session) {
+        session.removeAttribute("tentativiAccesso");
     }
 
-    public void accessoFallito(String username) {
-        int conteggioTentativi = tentativi.getOrDefault(username, 0);
-        tentativi.put(username, conteggioTentativi + 1);
-        if (conteggioTentativi + 1 > MAX_TENTATIVI) {
-            bloccaUtente(username);
+    public synchronized void accessoFallito(HttpSession session) {
+        Integer tentativi = (Integer) session.getAttribute("tentativiAccesso");
+        if (tentativi == null) {
+            tentativi = 0;
+        }
+        tentativi++;
+        session.setAttribute("tentativiAccesso", tentativi);
+        if (tentativi >= MAX_TENTATIVI) {
+            bloccaUtente(session);
         }
     }
 
-    public boolean isBloccato(String username) {
-        return tentativi.containsKey(username);
+    public synchronized boolean isBloccato(HttpSession session) {
+        return session.getAttribute("utenteBloccato") != null;
     }
 
-    private void bloccaUtente(String username) {
-
+    private void bloccaUtente(HttpSession session) {
+        session.setAttribute("utenteBloccato", true);
     }
 }
