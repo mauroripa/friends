@@ -30,6 +30,6 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     public void removeCategoria(int id) {
-
+        categoriaDao.deleteById(id);
     }
 }

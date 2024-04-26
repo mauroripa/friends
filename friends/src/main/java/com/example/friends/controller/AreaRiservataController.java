@@ -95,16 +95,13 @@ public class AreaRiservataController {
         return "redirect:/areariservata";
     }
 
-    @PostMapping("/categoria/elimina")
+    @GetMapping("/categoria/elimina")
     public String eliminaCategoria(
-            @RequestParam("id") String id
+            @RequestParam("id") int id
     ) {
 
-        /*
-        categoria.setNomeCategoria(nomeCategoria);
-        categoriaService.addCategoria(categoria);
-        categoriaService.
-*/
+        categoriaService.removeCategoria(id);
+
         return "redirect:/areariservata";
     }
 

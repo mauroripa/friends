@@ -35,7 +35,7 @@
                 <td th:text="${categoria.nomeCategoria}"></td>
                 <td>
                     <a th:href="@{/areariservata(categoriaId=${categoria.id})}">Modifica</a>
-                    <a th:href="@{/areariservata/elimina(categoriaId=${categoria.id})}">Elimina</a>
+                    <a th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">Elimina</a>
                 </td>
             </tr>
         </table>
