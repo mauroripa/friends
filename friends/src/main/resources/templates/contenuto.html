@@ -11,15 +11,12 @@
         <a th:href="@{/categoria}">Categorie</a>
     </div>
     <div class="contenuti">
-        <h4 th:href="@{/contenuti(contenutoId=${contenuto.id})}" th:text="${categoria.nomeCategoria}"></h4>
+        <h4 th:text="${categoria.nomeCategoria}"></h4>
         <table>
             <tr th:each="contenuto : ${categoria.contenuti}">
                 <td th:text="${contenuto.titolo}"></td>
                 <td th:text="${contenuto.descrizione}"></td>
                 <img th:each="immagine : ${contenuto.immagini}" th:src="@{${immagine.galleria}}" width="300" />
-            </tr>
-            <tr th:each="immagini : ${categoria.contenuti.}">
-                <td th:text="${immagini.galleria}"></td>
             </tr>
         </table>
     </div>

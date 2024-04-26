@@ -22,18 +22,12 @@ public class ContenutoController {
    private ContenutoService contenutoService;
 
    @GetMapping
-   public String getContenuto(
-           @RequestParam("categoriaId") int idCategoria,
-           Model model
-   ) {
+   public String getContenuto(@RequestParam("categoriaId") int idCategoria,
+                              Model model) {
 
       Categoria categoria = categoriaService.getCategoriaById(idCategoria);
       model.addAttribute("categoria", categoria);
 
-      // Contenuto contenuto = contenutoService.getContenutoById(idContenuto);
-      // List<Galleria> galleria = galleriaService.getFotoByContenutoId(idContenuto); // Supponendo che tu abbia un metodo simile per ottenere tutte le immagini associate a un contenuto
-      // model.addAttribute("contenuto", categoria.);
-      // model.addAttribute("galleria", contenuto.getImmagini());
       return "contenuto";
    }
 
