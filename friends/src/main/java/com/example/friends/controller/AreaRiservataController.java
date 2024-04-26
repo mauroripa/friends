@@ -153,4 +153,14 @@ public class AreaRiservataController {
 
         return "redirect:/areariservata";
     }
+
+    @GetMapping("/contenuto/elimina")
+    public String eliminaContenuto(
+            @RequestParam("id") int id
+    ) {
+
+        contenutoService.removeContenuto(id);
+
+        return "redirect:/areariservata";
+    }
 }

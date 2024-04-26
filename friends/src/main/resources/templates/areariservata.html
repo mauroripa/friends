@@ -12,7 +12,11 @@
                 <td th:text="${contenuto.descrizione}"></td>
                 <td th:text="${contenuto.categoria.nomeCategoria}"></td>
                 <td th:each="immagine : ${contenuto.immagini}">
-                    <img th:src="@{${immagine.galleria}}" />
+                    <img th:src="@{${immagine.galleria}}" width="300" />
+                </td>
+                <td>
+                    <a th:href="@{/areariservata(contenutoId=${contenuto.id})}">Modifica</a>
+                    <a th:href="@{/areariservata/contenuto/elimina(id=${contenuto.id})}">Elimina</a>
                 </td>
             </tr>
         </table>
