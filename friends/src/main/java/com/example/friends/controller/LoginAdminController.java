@@ -1,7 +1,7 @@
 package com.example.friends.controller;
 
 import com.example.friends.service.AdminService;
-import com.example.friends.service.ServizioTentativiAccesso;
+import com.example.friends.service.ServizioTentativiAccessoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class LoginAdminController {
     private AdminService adminService;
 
     @Autowired
-    private ServizioTentativiAccesso servizioTentativiAccesso;
+    private ServizioTentativiAccessoImpl servizioTentativiAccesso;
 
     @GetMapping("/admin/login")
     public String showLoginForm() {

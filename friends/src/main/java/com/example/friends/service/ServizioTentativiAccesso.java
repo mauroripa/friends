@@ -1,35 +1,13 @@
 package com.example.friends.service;
 
 import jakarta.servlet.http.HttpSession;
-import org.springframework.stereotype.Service;
 
+public interface ServizioTentativiAccesso {
 
-@Service
-public class ServizioTentativiAccesso {
+    void accessoRiuscito(HttpSession session);
 
-    private final int MAX_TENTATIVI = 4;
+    void accessoFallito(HttpSession session);
 
-    public synchronized void accessoRiuscito(HttpSession session) {
-        session.removeAttribute("tentativiAccesso");
-    }
+    boolean isBloccato(HttpSession session);
 
-    public synchronized void accessoFallito(HttpSession session) {
-        Integer tentativi = (Integer) session.getAttribute("tentativiAccesso");
-        if (tentativi == null) {
-            tentativi = 0;
-        }
-        tentativi++;
-        session.setAttribute("tentativiAccesso", tentativi);
-        if (tentativi >= MAX_TENTATIVI) {
-            bloccaUtente(session);
-        }
-    }
-
-    public synchronized boolean isBloccato(HttpSession session) {
-        return session.getAttribute("utenteBloccato") != null;
-    }
-
-    private void bloccaUtente(HttpSession session) {
-        session.setAttribute("utenteBloccato", true);
-    }
 }
