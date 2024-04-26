@@ -95,6 +95,16 @@ public class AreaRiservataController {
         return "redirect:/areariservata";
     }
 
+    @GetMapping("/categoria/elimina")
+    public String eliminaCategoria(
+            @RequestParam("id") int id
+    ) {
+
+        categoriaService.removeCategoria(id);
+
+        return "redirect:/areariservata";
+    }
+
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
 
         try {
@@ -135,12 +145,45 @@ public class AreaRiservataController {
         );
 
         List<Galleria> images = getListGalleria(galleria);
-        if( images != null && !images.isEmpty()) {
-            contenuto.setImmagini(getListGalleria(galleria));
+        List<Galleria> originalGalleria = contenuto.getImmagini();
+        if (images != null && !images.isEmpty()) {
+
+            if (!originalGalleria.isEmpty()) {
+                images.addAll(originalGalleria);
+            }
+
+            contenuto.setImmagini(images);
         }
 
         contenutoService.addContenuto(contenuto);
 
         return "redirect:/areariservata";
     }
+
+    @GetMapping("/contenuto/elimina")
+    public String eliminaContenuto(
+            @RequestParam("id") int id
+    ) {
+
+        contenutoService.removeContenuto(id);
+
+        return "redirect:/areariservata";
+    }
+    @PostMapping("/aggiungi-admin")
+    public String aggiungiAdmin(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            Model model
+    ) {
+        boolean adminAggiunto = adminService.aggiungiAdmin(username, password);
+        if (adminAggiunto) {
+
+            model.addAttribute("successMessage", "Admin aggiunto con successo!");
+        } else {
+
+            model.addAttribute("errorMessage", "Errore durante l'aggiunta dell'admin. L'username potrebbe essere già in uso.");
+        }
+        return "redirect:/areariservata";
+    }
+
 }

@@ -20,11 +20,16 @@ public class ContenutoServiceImpl implements ContenutoService {
 
     @Override
     public Contenuto getContenutoById(int id) {
-        return contenutoDao.findById(id).orElse(null);
+        return null;
     }
 
     @Override
     public void addContenuto(Contenuto contenuto) {
         contenutoDao.save(contenuto);
+    }
+
+    @Override
+    public void removeContenuto(int id) {
+        contenutoDao.deleteById(id);
     }
 }
