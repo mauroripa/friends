@@ -12,7 +12,7 @@
                 <td th:text="${contenuto.descrizione}"></td>
                 <td th:text="${contenuto.categoria.nomeCategoria}"></td>
                 <td th:each="immagine : ${contenuto.immagini}">
-                    <img src="immagine.galleria" />
+                    <img th:src="@{${immagine.galleria}}" />
                 </td>
             </tr>
         </table>
@@ -44,6 +44,11 @@
             <input type="text" name="nomeCategoria" th:value="${categoria.nomeCategoria}" required>
             <input type="submit" value="Registra">
         </form>
+    </div>
+
+    <div>
+        <div>Lista admin:</div>
+        <div th:each="admin : ${admins}" th:text="${admin.username}"></div>
     </div>
 </body>
 </html>
