@@ -1,193 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="admin.css" rel="stylesheet"/>
-    <script src="admin.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="admin.css" rel="stylesheet" />
 </head>
+
 <body>
-    
-   <div class="container-fluid">
+
+  <div class="container-fluid">
     <!-- Navbar -->
     <!-- shadow-lg p-3 mb-5 bg-body-tertiary rounded -->
     <nav class="navbar navbar-expand-lg navbar-dark p-3 rounded shadow-lg fixed-top">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-          <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">Brand</a>
-      
-          <!-- Toggle button -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-      
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <!-- Navbar dropdown -->
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Menu
-                </a>
-                <!-- Dropdown menu -->
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        
-                  <li>
-                    <a class="dropdown-item" href="#">La storia di Friends</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Location della serie</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Personaggi della serie</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">News sulla serie</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Scene iconiche</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Gadget di Friends</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Backstage di Friends</a>
-                  </li>
-                  
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                  >Disabled</a
-                >
-              </li>
-            </ul>
-            <div id="theme__switcher">
-              <img id="theme__image" src="darkmode.jpg" alt="" />
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Brand</a>
+
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <!-- Navbar dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                aria-expanded="false">
+                Menu
+              </a>
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                <li>
+                  <a class="dropdown-item" href="#">La storia di Friends</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Location della serie</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Personaggi della serie</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">News sulla serie</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Scene iconiche</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Gadget di Friends</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Backstage di Friends</a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <div id="theme__switcher">
+            <img id="theme__image" src="darkmode.jpg" alt="" />
           </div>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            <!-- Left links -->
-          </div>
-          <!-- Collapsible wrapper -->
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <!-- Left links -->
         </div>
-        <!-- Container wrapper -->
-      </nav>
-      <!-- Navbar -->
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
 
-      <!--LOGIN FORM--><div class="d-flex justify-content-center ">
-      <button class="btn btn-success w-50 d-flex" >Inserisci Contenuto</button>
-      <button class="btn btn-primary w-50 d-flex">Gestisci contenuti</button>
+    <!--LOGIN FORM-->
+    <!--LOGIN FORM-->
+    <!--  <div id="options" class="container-fluid h-100 justify-content-center" style="margin-top: 18%; display: none;">
+      <div class="card p-4 shadow-lg">
+        <h1 class="mb-4">
+
+          Scegli se pubblicare un nuovo Contenuto <br />
+          o Gestire quelli già presenti sul sito</h1>
+        <button id="insert" class="btn btn-success w-20 p-2">Inserisci Contenuto</button>
+        <button id="handle" class="btn btn-primary w-20 p-2 mt-2">Gestisci contenuti</button>
+
+      </div>
     </div>
-      <div class="container">
+    <div>
+
+    </div>
+    -->
+    <div class="container" id="gestioneContent">
       <section class="h-100 mt-5">
-		<div class="container h-100">
-			<div class="row justify-content-sm-center h-100">
-				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-					<div class="text-center my-5">
-						<img src="" alt="logo" >
-					</div>
-					<div class="card shadow-lg">
-						<div class="card-body p-5">
-							<h1 class="fs-4 card-title fw-bold mb-4">Inserisci un nuovo contenuto</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
-								<div class="mb-3">
-									<label class="mb-2 text-muted" for="nome">Titolo</label>
-									<input id="name" type="text" class="form-control" name="nome" value="" required autofocus>
-									<div class="invalid-feedback">
-										Email is invalid
-									</div>
-								</div>
+        <div class="container h-100">
+          <div class="row justify-content-sm-center h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+              <div class="card shadow-lg my-5">
+                <div class="card-body p-5">
+                  <h1 class="fs-4 card-title fw-bold mb-4">Modifica Categorie</h1>
+                  <div class="mb-3">
+                    <label class="text-muted" for="categoria">Categoria</label><br />
+                    <h5>Gadget</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
 
-								<div class="mb-3">
-									<div class="mb-2 w-100">
-										<label class="text-muted" for="descrizione">Descrizione</label>
-									</div>
-									<div class="input-group">
-                    <span class="input-group-text">Descrivi <br>il contenuto</span>
-                    <textarea class="form-control" id="textarea" cols="40" rows="5" aria-label="With textarea"></textarea>
+                    <h5>Location</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+                    <h5>Personaggi</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+                    <h5>Scene Iconiche</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+                    <h5>News sui Personaggi</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+                    <h5>La Storia di Friends</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+                    <h5>Backstage</h5>
+                    <div class="btn btn-primary">Modifica</div>
+                    <div class="btn btn-danger">Elimina</div>
+
+
                   </div>
-								</div>
-                                <label class="text-muted" for="categoria">Categoria</label><br />
-                                <select class="form-select mt-2 mb-5" aria-label="Categoria">
-                                  <option selected>Scegli la categoria</option>
-                                    <option value="gadget">Gadget</option>
-                                    <option value="location">Location</option>
-                                    <option value="personaggi">Personaggi</option>
-                                    <option value="scene">Scene Iconiche</option>
-                                    <option value="news">News sui Personaggi</option>
-                                    <option value="storia">La Storia di Friends</option>
-                                    <option value="backstage">Backstage</option>
-                                </select>
-                                <label for="fileupload" class="custom-file-upload btn btn-primary mb-5">Scegli una foto</label>
-                              <input type="file" id="fileupload"  name="foto" >
-								<div class="d-flex align-items-center">
-                  <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
-                    
-                    <p>Oppure trascinala qui</p>
-                    <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
-                </section>
                 </div>
-                <div class="d-flex align-items-center">
-									<button type="submit" class="btn btn-primary w-50 ms-auto mx-auto">
-										Invia
-                  </div>
-									</button>
+              </div>
+            </div>
+            
+            
 
-							</form>
-						</div>
-						<div class="card-footer py-3 border-0">
-</form>
-</div>
 
-</div>
-</div>
-</div>
-</div>
-</section>
 
-</div>
-<!--fine form inserimento-->
-<!--Fine LOGIN FORM-->
-<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+    <!--INSERT FORM-->
   
-<div class="card bg-body-tertiary">
+    
+      
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+             
+              <div class="card shadow-lg my-5">
+                <div class="card-body p-5">
+                  <h1 class="fs-4 card-title fw-bold mb-4">Inserisci un nuovo contenuto</h1>
+                  <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                    <div class="mb-3">
+                      <label class="mb-2 text-muted" for="nome">Titolo</label>
+                      <input id="name" type="text" class="form-control" name="nome" value="" required autofocus>
+                   
+                    </div>
+
+                    <div class="mb-3">
+                      <div class="mb-2 w-100">
+                        <label class="text-muted" for="descrizione">Descrizione</label>
+                      </div>
+                      <div class="input-group">
+                        <span class="input-group-text">Descrivi <br>il contenuto</span>
+                        <textarea class="form-control" id="textarea" cols="40" rows="5"
+                          aria-label="With textarea"></textarea>
+                      </div>
+                    </div>
+                    <label class="text-muted" for="categoria">Categoria</label><br />
+                    <select class="form-select mt-2 mb-5" aria-label="Categoria">
+                      <option selected>Scegli la categoria</option>
+                      <option value="gadget">Gadget</option>
+                      <option value="location">Location</option>
+                      <option value="personaggi">Personaggi</option>
+                      <option value="scene">Scene Iconiche</option>
+                      <option value="news">News sui Personaggi</option>
+                      <option value="storia">La Storia di Friends</option>
+                      <option value="backstage">Backstage</option>
+                    </select>
+                    <label for="fileupload" class="custom-file-upload btn btn-primary mb-5">Scegli una foto</label>
+                    <input type="file" id="fileupload" name="foto">
+                    <div class="d-flex align-items-center">
+                      <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
+
+                        <p>Oppure trascinala qui</p>
+                        <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
+                      </section>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <button type="submit" class="btn btn-primary w-50 ms-auto mx-auto">
+                        Invia
+                    </div>
+                    </button>
+
+                  </form>
+                </div>
+                <div class="card-footer py-3 border-0">
+                  </form>
+                </div>
+
+              </div>
+            </div>
+            
+            <!--fine row-->
+            
+
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                <div class="card shadow-lg my-5">
+                  <div class="card-body p-5">
+                    <h1 class="fs-4 card-title fw-bold mb-4">Modifica Admin</h1>
+                    <div class="mb-3">
+                      <label class="text-muted" for="categoria">Lista Admin</label><br />
+                      <label class="text-muted" for="categoria">Username</label><br />
+                      <h1>Mario</h1>
+                      <label class="text-muted" for="categoria">Password</label><br />
+                      <h1>abc</h1>
+
+                    </div>
+                  </div>
+                </div>
+           
+            </div>
+       
+  
+    <!--fine form inserimento-->
+    <!--Fine LOGIN FORM-->
+  </div>
+  </div>
+  
+  </section>
+  </div>
+      
 
 </div>
-
-</div>
-
-
+<script src="admin.js"></script>
 </body>
+
 </html>

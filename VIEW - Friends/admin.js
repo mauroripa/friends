@@ -32,9 +32,15 @@ drop: se lasciamo il file nella droparea
 
 }
 //Arrow function - funzioni freccia: sono delle funzioni anonime scritte con una sintassi veloce
-
-
-
+/*
+document.getElementById("insert").addEventListener("click", inserisci);
+const insertForm = document.getElementById("insertForm");
+const options = document.getElementById("options");
+function inserisci(){
+    insertForm.style.display = "block";
+    options.style.display = "none";
+}
+*/
 document.addEventListener("DOMContentLoaded", initApp); //quando l'evento DOMContentLoaded si attiva parte la funzione initApp
 // evento e dato da evento drop
 const handleDrop = (e) => {
@@ -52,5 +58,5 @@ const handleDrop = (e) => {
   } //Da capire se implementare il limite di file di caricamento e se creare un'animazione di popup/blocco del caricamento
 }
 
-const inserisci= document.querySelector
-document.addEventListener("onclick", inserisci);
+// const inserisci= document.querySelector
+// document.addEventListener("onclick", inserisci);

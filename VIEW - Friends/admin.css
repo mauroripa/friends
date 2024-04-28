@@ -53,6 +53,10 @@ header {
   width: 40px;
   height: 40px;
 }
+section{
+  display:block;
+}
+/*
 .container{
   display: none;
-}
+}*/
