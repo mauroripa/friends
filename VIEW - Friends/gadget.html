@@ -1,111 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadget | We Still Friends</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!--Colori friends logo
-    ROSSO #ee2825
-    GIALLO #ffb828
-    AZZURRO #02b0ec
-    BIANCO #FFFFFF
-    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<link href="login.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="card p-4 mb-5 shadow-lg"><h1 class="pl-4">Gadget</h1></div>
-    
-        <div class="row d-flex justify-content-center">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
+            <!--da capire se mettere opacity 50-->
+            <!-- Container wrapper -->
         
-        <div class="col-3">
-          <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-    
-    
-       
-    
-       <div class="col-3">
-          <div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-    
-    
-       
-       <div class="col-3">
-          <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+            <div class="container-fluid">
+              <!-- Navbar brand -->
+              <a class="navbar-brand" href="index.html"><img style="width: 100px;" src="logo friend png.png"></a>
         
-        <div class="col-3">
-          <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- Toggle button -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                
+              <!-- ICONA HAMBURGER -->
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <!-- Collapsible wrapper -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+                 
+                  <!--dropdown -->
+                 
+    
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home Page</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="location.html">Location</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Scene Iconiche</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Gedget</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Personaggi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Aggiungere</a>
+                  </li>
+        
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit"><img style="width: 25px;" class="lente" src="lentepng.png"/></button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+  
+	
+  <div class="container mt-5">
+          <div class="row h-100 ">
+            <div class="col-12 d-flex justify-content-center text-center mb-5">
+              <div class="card shadow-lg w-50 h-20 p-5 mt-5">
+                <div class="card-body">
+                  <h1 class="card-title">Gadget della serie</h1>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-    
-    
-       
-    
-       <div class="col-3">
-          <div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="row d-flex justify-content-center">
+          
+      
+            <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+              <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                  content.</p>
+                  <a href="#" class="btn btn-primary">Dettaglio</a>
+                  
+                </div>
             </div>
-          </div>
-        </div>
-    
-    
-       
-       <div class="col-3">
-          <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+      
+      
+      
+      
+      
+      
+      
+            <div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
+              <img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                  content.</p>
+                <a href="#" class="btn btn-primary">Dettaglio</a>
+                
+              </div>
             </div>
-          </div>
+      
+      
+      
+      
+      
+            <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+              <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                  content.</p>
+                  <a href="#" class="btn btn-primary">Dettaglio</a>
+                  
+                </div>
+            </div>
+      
+      
+          </div>        
         </div>
+          <div class="container">
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		  <div class="col-md-4 d-flex align-items-center">
+			<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+			</a>
+			<span class="mb-3 mb-md-0 text-muted">&copy; 2022 Friends Group, Inc</span>
+		  </div>
+	  
+		  <ul class="nav list-group list-group-horizontal col-md-4 justify-content-end list-unstyled d-flex">
+			<li class="ms-3 list-group-item">
+			  <a class="text-muted" href="#">
+				<span>
+				<img class="contatti" src="https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid" style="width: 23px; height: auto; margin-right: 6px; margin-top: 2.5px;"></span>
+				<img class="contatti" src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg" style="width: 30px; height: auto; margin-right: 3px; margin-top: 2px;">
+				<img class="contatti" src="https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg" style="width: 40px; height: auto; margin-top: 1px;">
+			  </a>
+			</li>
+		  </ul>
+		</footer>
+	  </div>
     
-        </div>
-        <!--fine ROW-->
-      </div>
 </body>
+</html>
