@@ -20,15 +20,52 @@
       background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
     }
 
-    .navbar-nav .nav-link {
-      color: #fff;
-      transition: color 0.3s ease;
+    .dropdown-content {
+      position: absolute;
+      background-color: #ff0000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: #343a40;
+    .dropdown-content a {
+      color: #000;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .navbar-toggler {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png);
+    }
+
+    .navbar {
+      background-color: black;
+    }
+
+    .list-group-item {
+      border: 0px;
+
+    }
+
+    .list-group {
+      width: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .contatti {
+      width: 20%;
+      float: right;
     }
 
     .container {
@@ -41,7 +78,7 @@
       padding: 5px;
       border: none;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-top: 5%;
+      margin-top: 15%;
       background-color: rgba(255, 255, 255, 0.6);
       ;
     }
@@ -77,34 +114,58 @@
     <source src="video/Friends - Sigla.mp4" type="video/mp4">
   </video>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: transparent;">
+  <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
+    <!--da capire se mettere opacity 50-->
+    <!-- Container wrapper -->
+
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Friends</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="index.html"><img style="width: 100px;" src="logo friend png.png"></a>
+
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <!-- ICONA HAMBURGER -->
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+          <!--dropdown -->
+
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Storia</a>
+            <a class="nav-link" href="#">Home Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Personaggi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Location</a>
+            <a class="nav-link" href="location.html">Location</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Scene Iconiche</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Gadget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Personaggi</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gadget</a>
+            <a class="nav-link" href="#">Backstage</a>
           </li>
         </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"><img style="width: 25px;" class="lente"
+              src="lentepng.png" /></button>
+        </form>
       </div>
     </div>
   </nav>
@@ -123,10 +184,27 @@
       </div>
     </div>
   </div>
-
-  <footer>
-    <div class="foot">
-      <p>&copy; 2024 Friends Group</p>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+      </a>
+      <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Friends Group, Inc</span>
     </div>
+
+    <ul class="nav list-group list-group-horizontal col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3 list-group-item">
+        <a class="text-muted" href="#">
+          <span>
+            <img class="contatti" src="https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid"
+              style="width: 23px; height: auto; margin-right: 6px; margin-top: 5px;"></span>
+          <img class="contatti"
+            src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg"
+            style="width: 30px; height: auto; margin-right: 5px; margin-top: 2px;">
+          <img class="contatti"
+            src="https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg"
+            style="width: 40px; height: auto; margin-top: -3px;">
+        </a>
+      </li>
+    </ul>
   </footer>
 </body>
