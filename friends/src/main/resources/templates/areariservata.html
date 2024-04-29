@@ -51,23 +51,34 @@
             <div class="container h-100">
                 <div class="d-grid content-manager h-100">
                     <div class="d-flex col-content-manager mx-2">
-                        <div class="card w-100 shadow-lg my-5">
-                            <div class="card-body p-5" id="cardBody">
-                                <h1 class="fs-4 card-title fw-bold">Lista Categorie</h1>
-                                <div class="mb-3">
-                                    <div th:each="categoria : ${categorie}" class="single-categoria">
-                                        <h5 th:text="${categoria.nomeCategoria}"></h5>
-                                        <a class="btn btn-primary" th:href="@{/areariservata(categoriaId=${categoria.id})}">Modifica</a>
-                                        <a class="btn btn-danger" th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">Elimina</a>
-                                    </div>
+                        <div class="p-3 border rounded-2 bg-white w-100 shadow-lg my-5 category-container" id="cardBody">
+                            <h1 class="fs-4 fw-bold d-flex justify-content-between">
+                                <span>Lista Categorie</span>
+                                <button th:class="${categoria.nomeCategoria != null ? 'routed' : ''} + ' btn btn-primary d-inline-flex p-1 new-category'">
+                                    <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="close">
+                                        <path d="M4 12H20M12 4V20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
 
-                                    <form action="/areariservata/categoria" method="post" class="needs-validation" novalidate="" autocomplete="off">
-                                        <label class="text-muted mt-3" for="nomeCategoria">Categoria</label>
-                                        <input type="text" id="nomeCategoria" name="nomeCategoria" class="form-control mt-2"  th:value="${categoria.nomeCategoria}" placeholder="Nome Categoria" required>
-                                        <button type="submit" class="btn btn-success mt-3">Aggiungi Categoria</button>
-                                    </form>
+                                    <svg th:if="${categoria.nomeCategoria != null}" width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none" class="pencil d-none">
+                                        <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67" class="cls-1" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
+                                        <path d="m195.656 33.271-52.882 52.882" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
+                                    </svg>
+                                </button>
+                            </h1>
+
+                            <div th:class="${categoria.nomeCategoria != null ? 'd-none' : ''} + ' list-category'">
+                                <div th:each="categoria : ${categorie}" class="single-categoria">
+                                    <h5 th:text="${categoria.nomeCategoria}"></h5>
+                                    <a class="btn btn-primary" th:href="@{/areariservata(categoriaId=${categoria.id})}">Modifica</a>
+                                    <a class="btn btn-danger" th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">Elimina</a>
                                 </div>
                             </div>
+
+                            <form action="/areariservata/categoria" method="post" th:class="${categoria.nomeCategoria != null ? '' : 'd-none'} + ' needs-validation'" novalidate="" autocomplete="off">
+                                <label class="text-muted mt-3" for="nomeCategoria">Categoria</label>
+                                <input type="text" id="nomeCategoria" name="nomeCategoria" class="form-control mt-2"  th:value="${categoria.nomeCategoria}" placeholder="Nome Categoria" required>
+                                <button th:text="${categoria.nomeCategoria != null ? 'Aggiorna Categoria' : 'Aggiungi Categoria'}" type="submit" class="btn btn-success mt-3"></button>
+                            </form>
                         </div>
                     </div>
                     <div class="d-flex col-content-manager mx-2">
@@ -267,7 +278,7 @@
     <a th:href="@{admin/logout}">Logout</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script th:href="@{/backend/js/admin.js}"></script>
+    <script th:src="@{/backend/js/admin.js}"></script>
 
 </body>
 </html>
