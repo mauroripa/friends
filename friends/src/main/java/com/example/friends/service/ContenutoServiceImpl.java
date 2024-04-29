@@ -14,6 +14,11 @@ public class ContenutoServiceImpl implements ContenutoService {
 
 
     @Override
+    public List<Contenuto> getContenutiByCategoria(String categoria) {
+        return contenutoDao.findByCategoriaNomeCategoria(categoria);
+    }
+
+    @Override
     public List<Contenuto> listaContenuti() {
         return (List<Contenuto>) contenutoDao.findAll();
     }

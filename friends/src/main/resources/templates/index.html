@@ -27,7 +27,7 @@
 
     <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="index.html"><img style="width: 100px;" src="logo friend png.png"></a>
+        <a class="navbar-brand" th:href="@{/}"><img style="width: 100px;" src="immagini/logo friend png.png"></a>
 
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -41,16 +41,13 @@
         <div  class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
             <!-- Left links -->
             <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
-
-
                 <!--dropdown -->
-
-
                 <li th:each="categoria : ${categorie}" class="nav-item">
                     <a class="nav-link" th:href="@{/contenuti(categoriaId=${categoria.id})}" th:text="${categoria.nomeCategoria}"></a>
                 </li>
-
-
+                <li>
+                    <a th:href="@{/admin/login}">Login</a>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
