@@ -3,13 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <title>Area Riservata</title>
+    <script th:if="${messaggio != null}" type="text/javascript">
+        window.onload = function() {
+            alert("Dimensione massima superata per il caricamento del file.");
+        };
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link th:href="@{/backend/css/admin.css}" rel="stylesheet"/>
 </head>
 <body>
-<script th:if="${messaggio != null}" type="text/javascript">
-    window.onload = function() {
-        alert("Dimensione massima superata per il caricamento del file.");
-    };
-</script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img style="width: 100px;" src="logo friend png.png">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Scene Iconiche</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gedget</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Personaggi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Aggiungere</a></li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        <img style="width: 25px;" class="lente" src="lentepng.png"/>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="gestioneContent">
+        <section class="h-100 mt-5">
+            <div class="container h-100">
+                <div class="d-grid content-manager h-100">
+                    <div class="d-flex col-content-manager mx-2">
+                        <div class="card w-100 shadow-lg my-5">
+                            <div class="card-body p-5" id="cardBody">
+                                <h1 class="fs-4 card-title fw-bold">Lista Categorie</h1>
+                                <div class="mb-3">
+                                    <div th:each="categoria : ${categorie}" class="single-categoria">
+                                        <h5 th:text="${categoria.nomeCategoria}"></h5>
+                                        <a class="btn btn-primary" th:href="@{/areariservata(categoriaId=${categoria.id})}">Modifica</a>
+                                        <a class="btn btn-danger" th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">Elimina</a>
+                                    </div>
+
+                                    <form action="/areariservata/categoria" method="post" class="needs-validation" novalidate="" autocomplete="off">
+                                        <label class="text-muted mt-3" for="nomeCategoria">Categoria</label>
+                                        <input type="text" id="nomeCategoria" name="nomeCategoria" class="form-control mt-2"  th:value="${categoria.nomeCategoria}" placeholder="Nome Categoria" required>
+                                        <button type="submit" class="btn btn-success mt-3">Aggiungi Categoria</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex col-content-manager mx-2">
+                        <div class="card w-100 shadow-lg my-5">
+                            <div class="card-body p-5" id="cardBodyInsert">
+                                <h1 class="fs-4 card-title fw-bold mt-5">Inserisci un nuovo contenuto</h1>
+                                <form action="/areariservata/contenuto" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" autocomplete="off">
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="nome">Titolo</label>
+                                        <input id="nome" type="text" class="form-control" name="titolo" th:value="${contenuto.titolo}" required autofocus>
+                                    </div>
+
+                                    <div class="mb-3 w-100">
+                                        <label class="text-muted" for="descrizione">Descrizione</label>
+                                        <textarea name="descrizione" class="form-control w-100" id="descrizione" rows="5" aria-label="With textarea" th:text="${contenuto.descrizione}"></textarea>
+                                    </div>
+                                    <label class="text-muted" for="categoria">Categoria</label>
+                                    <select id="categoria" name="categoria" class="form-select mt-2 mb-5" aria-label="Categoria">
+                                        <option selected disabled hidden="hidden">Scegli la categoria</option>
+                                        <option th:each="categoria : ${categorie}" th:value="${categoria.id}" th:text="${categoria.nomeCategoria}"></option>
+                                    </select>
+
+                                    <div class="position-relative">
+
+                                        <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
+                                            <input type="file" name="foto" class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+                                            <p>Oppure trascinala qui</p>
+                                            <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
+                                        </section>
+
+                                        <section>
+                                            <span th:if="${ contenuto.immagini.size() > 0 }" th:each="immagine : ${contenuto.immagini}">
+                                                <img th:src="@{${immagine.galleria}}" width="300" />
+                                                <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
+                                            </span>
+                                        </section>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success w-50 d-block mx-auto">Invia</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="d-flex col-content-manager mx-2">
+                        <div class="card w-100 shadow-lg my-5">
+                            <div class="card-body p-5" id="cardBodyAdmin">
+                                <h1 class="fs-4 card-title fw-bold" id="titleAdmin">Lista Admin</h1>
+                                <div class="mb-3">
+
+                                    <div th:each="admin : ${admins}" class="row justify-content-evenly align-items-center">
+                                        <div class="col">
+                                            <h3 th:text="${admin.username}" class="mb-0"></h3>
+                                            <span th:text="${admin.password.replaceAll('[\w]', '*')}"></span>
+                                        </div>
+                                        <div class="col text-end">
+                                            <a th:href="@{/areariservata(adminId=${admin.id})}" class="btn btn-primary d-inline-flex p-1">
+                                                <svg width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none">
+                                                    <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67" class="cls-1" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
+                                                    <path d="m195.656 33.271-52.882 52.882" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
+                                                </svg>
+                                            </a>
+                                            <a th:href="@{/areariservata/admin/elimina(id=${admin.id})}" class="btn btn-danger d-inline-flex p-1">
+                                                <svg fill="#fff" width="20" viewBox="0 0 456.686 456.686" xml:space="preserve">
+                                                    <path d="M363.541,120.847H93.16c-8.005,0-15.623,3.367-21.04,9.263c-5.389,5.896-8.052,13.798-7.363,21.761l24.767,278.836 c1.303,14.71,13.619,25.98,28.39,25.98h220.874c14.772,0,27.073-11.271,28.391-25.98L391.93,151.87 c0.705-7.963-1.975-15.864-7.363-21.761C379.165,124.214,371.547,120.847,363.541,120.847z M155.896,382.248 c-0.48,0.029-0.929,0.045-1.378,0.045c-9.308,0-17.18-7.169-17.884-16.597l-9.651-127.207 c-0.749-9.876,6.644-18.496,16.537-19.244c9.921-0.778,18.512,6.643,19.26,16.536l9.638,127.206 C173.181,372.879,165.773,381.499,155.896,382.248z M246.003,372.535c0,9.922-8.038,17.944-17.944,17.944 c-9.922,0-17.959-8.022-17.959-17.944V205.012c0-9.922,8.036-17.944,17.959-17.944c9.906,0,17.944,8.022,17.944,17.944V372.535z M320.052,365.696c-0.705,9.428-8.576,16.597-17.884,16.597c-0.449,0-0.898-0.016-1.378-0.045 c-9.877-0.749-17.285-9.369-16.521-19.261l9.638-127.206c0.749-9.894,9.398-17.346,19.262-16.536 c9.892,0.748,17.284,9.368,16.536,19.244L320.052,365.696z"/>
+                                                    <path d="M370.589,22.344h-52.887C314.889,9.578,303.544,0,289.912,0h-123.15c-13.619,0-24.964,9.578-27.791,22.344H86.097 c-16.941,0-30.649,13.723-30.649,30.648c0,16.927,13.708,30.649,30.649,30.649h284.493c16.941,0,30.649-13.723,30.649-30.649 C401.239,36.066,387.531,22.344,370.589,22.344z"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <form action="/areariservata/admin" method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                                        <label class="text-muted" for="username">Nome</label><br />
+                                        <input type="text" id="username" class="form-control" th:value="${admin.username}" placeholder="username">
+                                        <label class="text-muted" for="password">Password</label><br />
+                                        <input type="password" id="password" class="form-control" th:value="${admin.password}" placeholder="Password"><br />
+                                        <button type="submit" class="btn btn-success">Registra</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
     <div class="contenuti">
         <table>
             <tr th:each="contenuto : ${contenuti}">
@@ -17,7 +170,7 @@
                 <td th:text="${contenuto.descrizione}"></td>
                 <td th:text="${contenuto.categoria.nomeCategoria}"></td>
                 <td th:each="immagine : ${contenuto.immagini}">
-                    <img th:src="@{${immagine.galleria}}" width="300" />
+                    <img th:src="@{${immagine.galleria}}" width="300"/>
                 </td>
                 <td>
                     <a th:href="@{/areariservata(contenutoId=${contenuto.id})}">Modifica</a>
@@ -29,14 +182,15 @@
             <input type="text" name="titolo" th:value="${contenuto.titolo}" required>
             <textarea name="descrizione" th:text="${contenuto.descrizione}"></textarea>
             <select name="categoria">
-                <option th:each="categoria : ${categorie}" th:value="${categoria.id}" th:text="${categoria.nomeCategoria}"></option>
+                <option th:each="categoria : ${categorie}" th:value="${categoria.id}"
+                        th:text="${categoria.nomeCategoria}"></option>
             </select>
             <span th:if="${ contenuto.immagini.size() > 0 }" th:each="immagine : ${contenuto.immagini}">
 
-                <img th:src="@{${immagine.galleria}}" width="300" />
+                    <img th:src="@{${immagine.galleria}}" width="300"/>
 
-                <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
-            </span>
+                    <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
+                </span>
             <input type="file" name="foto" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
             <input type="submit" value="Registra">
         </form>
@@ -84,5 +238,9 @@
     </div>
 
     <a th:href="@{admin/logout}">Logout</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 </body>
 </html>
