@@ -55,7 +55,7 @@ body {
   }
   
   .card:hover {
-    transform: scale(1.1) translateY(-10px);
+    transform: scale(1.5) translateY(-10px);
     opacity: 1;
   }
   
@@ -98,18 +98,18 @@ body {
   
   .card video {
     border-radius: 10px;
-
     align-items: center;
     text-align: center;
     border-radius: 10px;
   }
 
 #location {
- text-align: justify;
- align-items: center;
+  text-align: justify;
+  align-items: center;
   width: 50%;
   height: auto;
   opacity: 80%;
+ 
 }
 
 #testo{
