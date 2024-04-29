@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
 
-
 @Controller
 public class LoginAdminController {
 
@@ -20,7 +19,10 @@ public class LoginAdminController {
     private ServizioTentativiAccessoImpl servizioTentativiAccesso;
 
     @GetMapping("/admin/login")
-    public String showLoginForm() {
+    public String showLoginForm(Model model, HttpSession session) {
+        if (servizioTentativiAccesso.isBloccato(session)) {
+            model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
+        }
         return "loginAdmin";
     }
 
@@ -41,10 +43,11 @@ public class LoginAdminController {
             return "loginAdmin";
         }
     }
+
     @GetMapping("/admin/logout")
     public String logoutAdmin(HttpSession session) {
         session.removeAttribute("username");
+        servizioTentativiAccesso.accessoRiuscito(session); // Rimuove lo stato di blocco
         return "redirect:/";
     }
-
 }
