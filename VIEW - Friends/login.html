@@ -10,96 +10,59 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<!-- Navbar -->
-		<!-- shadow-lg p-3 mb-5 bg-body-tertiary rounded -->
-		<nav class="navbar navbar-expand-lg navbar-dark p-3 rounded shadow-lg fixed-top">
-			<!-- Container wrapper -->
-			<div class="container-fluid">
-			  <!-- Navbar brand -->
-			  <a class="navbar-brand" href="#">Brand</a>
-		  
-			  <!-- Toggle button -->
-			  <button
-				class="navbar-toggler"
-				type="button"
-				data-mdb-toggle="collapse"
-				data-mdb-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			  >
-				<i class="fas fa-bars"></i>
-			  </button>
-		  
-			  <!-- Collapsible wrapper -->
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<!-- Left links -->
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				  </li>
-				  <!-- Navbar dropdown -->
-				  <li class="nav-item dropdown">
-					<a
-					  class="nav-link dropdown-toggle"
-					  href="#"
-					  id="navbarDropdown"
-					  role="button"
-					  data-mdb-toggle="dropdown"
-					  aria-expanded="false"
-					>
-					  Menu
-					</a>
-					<!-- Dropdown menu -->
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			
-					  <li>
-						<a class="dropdown-item" href="#">La storia di Friends</a>
-					  </li>
-					  <li><hr class="dropdown-divider" /></li>
-					  <li>
-						<a class="dropdown-item" href="#">Location della serie</a>
-					  </li>
-					  <li><hr class="dropdown-divider" /></li>
-					  <li>
-						<a class="dropdown-item" href="#">Personaggi della serie</a>
-					  </li>
-					  <li><hr class="dropdown-divider" /></li>
-					  <li>
-						<a class="dropdown-item" href="#">News sulla serie</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="#">Scene iconiche</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="#">Gadget di Friends</a>
-					  </li>
-					  <li>
-						<a class="dropdown-item" href="#">Backstage di Friends</a>
-					  </li>
-					  
-					</ul>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-					  >Disabled</a
-					>
-				  </li>
-				</ul>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				  </form>
-				<!-- Left links -->
-			  </div>
-			  <!-- Collapsible wrapper -->
-			</div>
-			<!-- Container wrapper -->
-		  </nav>
-		  <!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
+            <!--da capire se mettere opacity 50-->
+            <!-- Container wrapper -->
+        
+            <div class="container-fluid">
+              <!-- Navbar brand -->
+              <a class="navbar-brand" href="index.html"><img style="width: 100px;" src="logo friend png.png"></a>
+        
+              <!-- Toggle button -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                
+              <!-- ICONA HAMBURGER -->
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <!-- Collapsible wrapper -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+                 
+                  <!--dropdown -->
+                 
+    
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home Page</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="location.html">Location</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Scene Iconiche</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Gedget</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Personaggi</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Aggiungere</a>
+                  </li>
+        
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit"><img style="width: 25px;" class="lente" src="lentepng.png"/></button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
     <section class="h-100 mt-5">
 		<div class="container h-100">
 			<div class="row justify-content-sm-center h-100">
@@ -156,6 +119,26 @@
 			</div>
 		</div>
 	</section>
+	<div class="container">
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		  <div class="col-md-4 d-flex align-items-center">
+			<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+			</a>
+			<span class="mb-3 mb-md-0 text-muted">&copy; 2022 Friends Group, Inc</span>
+		  </div>
+	  
+		  <ul class="nav list-group list-group-horizontal col-md-4 justify-content-end list-unstyled d-flex">
+			<li class="ms-3 list-group-item">
+			  <a class="text-muted" href="#">
+				<span>
+				<img class="contatti" src="https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid" style="width: 23px; height: auto; margin-right: 6px; margin-top: 2.5px;"></span>
+				<img class="contatti" src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg" style="width: 30px; height: auto; margin-right: 3px; margin-top: 2px;">
+				<img class="contatti" src="https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg" style="width: 40px; height: auto; margin-top: 1px;">
+			  </a>
+			</li>
+		  </ul>
+		</footer>
+	  </div>
     
 </body>
 </html>

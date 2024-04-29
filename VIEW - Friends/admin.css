@@ -13,7 +13,9 @@
 input[type="file"] {
   display: none;
 }
-
+.navbar{
+  background-color: black;
+}
 .custom-file-upload {
   border: 1px solid #ccc;
   display: flex;
@@ -26,7 +28,6 @@ input[type="file"] {
 
 
 body {
-  background-color: #fff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -56,7 +57,22 @@ header {
 section{
   display:block;
 }
-/*
-.container{
-  display: none;
-}*/
+.content-manager{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col-content-manager .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media screen and (max-width: 1024px) {
+  .content-manager{
+    grid-template-columns: 1fr 1fr;
+  } 
+}
+@media screen and (max-width: 768px) {
+  .content-manager{
+    grid-template-columns: 1fr;
+  }
+}

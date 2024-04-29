@@ -16,92 +16,58 @@
 <body>
 
   <div class="container-fluid">
-    <!-- Navbar -->
-    <!-- shadow-lg p-3 mb-5 bg-body-tertiary rounded -->
-    <nav class="navbar navbar-expand-lg navbar-dark p-3 rounded shadow-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
+      <!--da capire se mettere opacity 50-->
       <!-- Container wrapper -->
+  
       <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Brand</a>
-
+        <a class="navbar-brand" href="index.html"><img style="width: 100px;" src="logo friend png.png"></a>
+  
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          
+        <!-- ICONA HAMBURGER -->
+          <span class="navbar-toggler-icon"></span>
         </button>
-
+  
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <!-- Navbar dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
-                aria-expanded="false">
-                Menu
-              </a>
-              <!-- Dropdown menu -->
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  
+           
+            <!--dropdown -->
+           
 
-                <li>
-                  <a class="dropdown-item" href="#">La storia di Friends</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Location della serie</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Personaggi della serie</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">News sulla serie</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Scene iconiche</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Gadget di Friends</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Backstage di Friends</a>
-                </li>
-
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a class="nav-link" href="location.html">Location</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Scene Iconiche</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gedget</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Personaggi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Aggiungere</a>
+            </li>
+  
           </ul>
-          <div id="theme__switcher">
-            <img id="theme__image" src="darkmode.jpg" alt="" />
-          </div>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit"><img style="width: 25px;" class="lente" src="lentepng.png"/></button>
           </form>
-          <!-- Left links -->
         </div>
-        <!-- Collapsible wrapper -->
       </div>
-      <!-- Container wrapper -->
     </nav>
-    <!-- Navbar -->
-
     <!--LOGIN FORM-->
     <!--LOGIN FORM-->
     <!--  <div id="options" class="container-fluid h-100 justify-content-center" style="margin-top: 18%; display: none;">
@@ -122,9 +88,9 @@
     <div class="container" id="gestioneContent">
       <section class="h-100 mt-5">
         <div class="container h-100">
-          <div class="row justify-content-sm-center h-100">
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-7 col-sm-9">
-              <div class="card shadow-lg my-5">
+          <div class="d-grid content-manager  h-100">
+            <div class="d-flex col-content-manager mx-2">
+              <div class="card w-100 shadow-lg my-5">
                 <div class="card-body p-5">
                   <h1 class="fs-4 card-title fw-bold mb-4">Modifica Categorie</h1>
                   <div class="mb-3">
@@ -132,7 +98,6 @@
                     <h5>Gadget</h5>
                     <div class="btn btn-primary">Modifica</div>
                     <div class="btn btn-danger">Elimina</div>
-
                     <h5>Location</h5>
                     <div class="btn btn-primary">Modifica</div>
                     <div class="btn btn-danger">Elimina</div>
@@ -153,27 +118,27 @@
                     <div class="btn btn-danger">Elimina</div>
                     <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 
-                    <label class="text-muted mt-3" for="nomeCategoria">Categoria</label><br />
-                    <input class="form-control mt-2" type="text" placeholder="Nome Categoria">
-                    <div class="btn btn-success mt-3">Aggiungi Categoria</div>
+                      <label class="text-muted mt-3" for="nomeCategoria">Categoria</label><br />
+                      <input class="form-control mt-2" type="text" placeholder="Nome Categoria">
+                      <div class="btn btn-success mt-3">Aggiungi Categoria</div>
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-            
-    <!--INSERT FORM-->
 
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-7 col-sm-9">
-             
-              <div class="card shadow-lg my-5">
+            <!--INSERT FORM-->
+
+            <div class="d-flex col-content-manager mx-2">
+
+              <div class="card w-100 shadow-lg my-5">
                 <div class="card-body p-5">
                   <h1 class="fs-4 card-title fw-bold mb-4">Inserisci un nuovo contenuto</h1>
                   <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
                     <div class="mb-3">
                       <label class="mb-2 text-muted" for="nome">Titolo</label>
                       <input id="name" type="text" class="form-control" name="nome" value="" required autofocus>
-                   
+
                     </div>
 
                     <div class="mb-3">
@@ -220,21 +185,21 @@
 
               </div>
             </div>
-            
-            <!--fine row-->
-            
 
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-7 col-sm-9">
-                <div class="card shadow-lg my-5">
-                  <div class="card-body p-5">
-                    <h1 class="fs-4 card-title fw-bold mb-4">Modifica Admin</h1>
-                    <div class="mb-3">
-                      <label class="text-muted" for="categoria">Lista Admin</label><br />
-                      <label class="text-muted" for="categoria">Username</label><br />
-                      <h1>Mario</h1>
-                      <label class="text-muted" for="categoria">Password</label><br />
-                      <h1>abc</h1>
-                      <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+            <!--fine row-->
+
+
+            <div class="d-flex col-content-manager mx-2">
+              <div class="card w-100 shadow-lg my-5">
+                <div class="card-body p-5">
+                  <h1 class="fs-4 card-title fw-bold mb-4">Modifica Admin</h1>
+                  <div class="mb-3">
+                    <label class="text-muted" for="categoria">Lista Admin</label><br />
+                    <label class="text-muted" for="categoria">Username</label><br />
+                    <h1>Mario</h1>
+                    <label class="text-muted" for="categoria">Password</label><br />
+                    <h1>abc</h1>
+                    <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 
                       <label class="text-muted" for="username">Nome</label><br />
                       <input class="form-control" type="text" placeholder="username">
@@ -243,91 +208,115 @@
                       <button class="btn btn-primary mt-3">Modifica</button>
                       <button class="btn btn-danger mt-3">Elimina</button>
                       <button class="btn btn-success mt-3">Registra</button>
-                      </form>
-                    </div>
+                    </form>
                   </div>
                 </div>
-           
+              </div>
+
             </div>
-       
-  
-    <!--fine form inserimento-->
-    <!--Fine LOGIN FORM-->
-  </div>
-  </div>
-  
-  </section>
-  </div>
-      
-  <div class="row h-100 ">
-    <div class="col-12 d-flex justify-content-center text-center mb-5">
-    <div class="card shadow-lg w-50 h-20 p-5">
-      <div class="card-body">
-        <h1 class="card-title">Gestisci i contenuti pubblici</h1>
+
+
+            <!--fine form inserimento-->
+            <!--Fine LOGIN FORM-->
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <div class="row h-100 ">
+      <div class="col-12 d-flex justify-content-center text-center mb-5">
+        <div class="card shadow-lg w-50 h-20 p-5">
+          <div class="card-body">
+            <h1 class="card-title">Gestisci i contenuti pubblici</h1>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="row d-flex justify-content-center">
+
+
+      <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+        <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
+        <img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+        <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
     </div>
+    <!--fine ROW-->
+    <!--FINE ROW GESTIONE CONTENUTI-->
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Friends Group, Inc</span>
+        </div>
+
+        <ul class="nav list-group list-group-horizontal col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3 list-group-item">
+            <a class="text-muted" href="#">
+              <span>
+                <img class="contatti" src="https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid"
+                  style="width: 23px; height: auto; margin-right: 6px; margin-top: 0px;"></span>
+              <img class="contatti"
+                src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg"
+                style="width: 30px; height: auto; margin-right: 2px; margin-top: 2px;">
+              <img class="contatti"
+                src="https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg"
+                style="width: 40px; height: auto; margin-top: 0px;">
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
   </div>
-  <div class="row d-flex justify-content-center">
-    
-    
-    <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-      <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  
-
-
- 
-
- 
-    <div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
-      <img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
- 
-
-
- 
- 
-    <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-      <img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
- 
-
-  </div>
-  <!--fine ROW-->
-<!--FINE ROW GESTIONE CONTENUTI-->
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<script src="admin.js"></script>
+  <script src="admin.js"></script>
 </body>
 
 </html>
