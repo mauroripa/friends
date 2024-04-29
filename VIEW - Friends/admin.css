@@ -66,6 +66,9 @@ section{
   flex-direction: column;
   justify-content: space-around;
 }
+#titleAdmin{
+  margin-top: -90px;
+}
 @media screen and (max-width: 1024px) {
   .content-manager{
     grid-template-columns: 1fr 1fr;
