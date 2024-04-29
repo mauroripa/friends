@@ -69,6 +69,27 @@ section{
 #titleAdmin{
   margin-top: -90px;
 }
+/*#cardBody{
+  background-image: url(https://i.pinimg.com/564x/27/3f/58/273f58a9d910c8ed3aa96691d1b9a11c.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+#cardBodyInsert{
+  background-image: url(https://i.pinimg.com/564x/f6/f4/80/f6f480fec7b72ea2966f788b21a889be.jpg
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#cardBodyAdmin{
+  background-image: url(  https://i.pinimg.com/564x/08/01/5f/08015fff2f4ee263ddbd8859f502f514.jpg
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}*/
 @media screen and (max-width: 1024px) {
   .content-manager{
     grid-template-columns: 1fr 1fr;
