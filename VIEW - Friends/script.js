@@ -23,6 +23,10 @@ card.forEach(item => {
         video.style.opacity = 1;
       }, 100);
 
+      setTimeout(() => {
+        item.classList.add('show')
+      }, 500);
+
       // Aggiungi sfondo scuro
       document.body.classList.remove('bg-body-tertiary');
       document.getElementById('testo').classList.add('bg-body-tertiary');
@@ -33,13 +37,20 @@ card.forEach(item => {
     }
   });
 
+
+  const close = item.querySelector('.close-card')
+  close.addEventListener('click', () => {
+    item.classList.remove('show')
+  })
+
+
   item.addEventListener('mouseleave', () => {
     const image = item.querySelector('img');
     const video = item.querySelector('video');
     const testo = item.querySelector('.titolocard');
     const paragrafo = item.querySelector('.paragrafo');
 
-    if (video) {
+    if (video && !item.classList.contains('show')) {
       video.style.display = 'none';
       testo.style.display = 'none';
       paragrafo.style.display = 'none';
