@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping ("/{path}")
 public class ContenutoController {
@@ -23,7 +25,8 @@ public class ContenutoController {
    @GetMapping //("/{path}")
    public String getContenuto(Model model,
                               @PathVariable String path) {
-
+      List<Categoria> categorie = categoriaService.listaCategorie();
+      model.addAttribute("categorie", categorie);
       Categoria categoria = categoriaService.getCategoriaByName(path);
       if(categoria != null) {
          model.addAttribute("categoria", categoria);

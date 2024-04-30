@@ -70,24 +70,24 @@
         <aside class="col-lg-6">
           <div class="border rounded-4 mb-3 d-flex justify-content-center">
             <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/81xZLq7UXUL.__AC_SX300_SY300_QL70_ML2_.jpg">
-              <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="https://m.media-amazon.com/images/I/81xZLq7UXUL.__AC_SX300_SY300_QL70_ML2_.jpg" />
+              <img style="max-width: 100%; max-height: 100vh; margin: auto;" id="bigFoto" onmouseover="" class="rounded-4 fit" src="https://m.media-amazon.com/images/I/81xZLq7UXUL.__AC_SX300_SY300_QL70_ML2_.jpg" />
             </a>
           </div>
           <div class="d-flex justify-content-center mb-3">
             <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/81cutIwgWuS._AC_SY450_.jpg" class="item-thumb">
-              <img width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/81cutIwgWuS._AC_SY450_.jpg" />
+              <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60" class="rounded-2"  src="https://m.media-amazon.com/images/I/81cutIwgWuS._AC_SY450_.jpg" />
             </a>
             <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/71Qy+5oS1dS._AC_SL1500_.jpg" class="item-thumb">
-              <img width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/71Qy+5oS1dS._AC_SL1500_.jpg" />
+              <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/71Qy+5oS1dS._AC_SL1500_.jpg" />
             </a>
             <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/916e0NNv+WS._AC_SY450_.jpg" class="item-thumb">
-              <img width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/916e0NNv+WS._AC_SY450_.jpg" />
+              <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/916e0NNv+WS._AC_SY450_.jpg" />
             </a>
             <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/81SWQkEU3VS._AC_SY450_.jpg" class="item-thumb">
-              <img width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/81SWQkEU3VS._AC_SY450_.jpg" />
+              <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/81SWQkEU3VS._AC_SY450_.jpg" />
             </a>
             <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="https://m.media-amazon.com/images/I/71bfL8B4azL._AC_SY450_.jpg" class="item-thumb">
-              <img width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/71bfL8B4azL._AC_SY450_.jpg" />
+              <img onmouseover="setImg(this)" onmouseout="setOldImg()"  width="60" height="60" class="rounded-2" src="https://m.media-amazon.com/images/I/71bfL8B4azL._AC_SY450_.jpg" />
             </a>
           </div>
           <!-- thumbs-wrap.// -->
@@ -151,6 +151,6 @@
 		  </ul>
 		</footer>
 	  </div>
-    
+    <script src="dettaglioGadget.js"></script>
 </body>
 </html>
