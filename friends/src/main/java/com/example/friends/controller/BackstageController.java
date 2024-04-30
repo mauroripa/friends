@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/gadget")
-public class GadgetController {
+@RequestMapping("/backstage")
+public class BackstageController {
 
     @Autowired
     private ContenutoService contenutoService;
 
     @GetMapping
-    public String getGadgetPage(Model model) {
-        List<Contenuto> contenutiGadget = contenutoService.getContenutiByCategoria("Gadget");
-        model.addAttribute("contenutiGadget", contenutiGadget);
-        return "gadget";
+    public String getBackstagePage(Model model) {
+        List<Contenuto> contenutiBackstage = contenutoService.getContenutiByCategoria("Backstage");
+        model.addAttribute("contenutiBackstage", contenutiBackstage);
+        return "backstage";
     }
 }
