@@ -115,7 +115,7 @@ body {
   }
   
   .card:hover {
-    transform: scale(2.5) translateY(-10px);
+    transform: scale(1.1) translateY(-10px);
     opacity: 1;
   }
   

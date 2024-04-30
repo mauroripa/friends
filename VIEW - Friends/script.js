@@ -1,17 +1,16 @@
 const card = document.querySelectorAll('.card');
 
 card.forEach(item => {
-  item.addEventListener('mouseenter', () => {
+  item.addEventListener('click', () => {
     const image = item.querySelector('img');
     const video = item.querySelector('video');
     const testo = item.querySelector('.titolocard');
     const paragrafo = item.querySelector('.paragrafo');
-  
+    
     
 
     if (video) {
       // Nascondere l'immagine
-      
       image.style.display = 'none';
       paragrafo.style.display = 'block';
       testo.style.display = 'block';
