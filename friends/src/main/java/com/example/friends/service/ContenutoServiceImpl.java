@@ -12,10 +12,10 @@ public class ContenutoServiceImpl implements ContenutoService {
     @Autowired
     private ContenutoDao contenutoDao;
 
-
     @Override
-    public List<Contenuto> getContenutiByCategoria(String categoria) {
-        return contenutoDao.findByCategoriaNomeCategoria(categoria);
+    public List<Contenuto> getContenutiByCategoriaId(int categoriaId) {
+        // Chiamata al repository per ottenere i contenuti in base all'ID della categoria
+        return contenutoDao.findByCategoriaId(categoriaId);
     }
 
     @Override

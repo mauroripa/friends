@@ -9,4 +9,5 @@ public interface CategoriaService {
     Categoria getCategoriaById(int id);
     void addCategoria(Categoria categoria);
     void removeCategoria(int id);
+    Categoria getCategoriaByName(String nomeCategoria);
 }

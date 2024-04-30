@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -18,9 +19,11 @@ public class LocationController {
     private ContenutoService contenutoService;
 
     @GetMapping
-    public String getLocationPage(Model model) {
-        List<Contenuto> contenutiLocation = contenutoService.getContenutiByCategoria("Location");
-        model.addAttribute("contenutiLocation", contenutiLocation);
+    public String getLocationPage(Model model, @RequestParam(name="categoriaId", required = false) int categoriaId) {
+        if (categoriaId != -1) {
+            List<Contenuto> contenutiLocation = contenutoService.getContenutiByCategoriaId(categoriaId);
+            model.addAttribute("contenutiLocation", contenutiLocation);
+        }
         return "location";
     }
 }

@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface ContenutoDao extends CrudRepository<Contenuto, Integer> {
 
-    List<Contenuto> findByCategoriaNomeCategoria(@Param("categoria") String categoria);
+    List<Contenuto> findByCategoriaId(int categoriaId);
 }

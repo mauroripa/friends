@@ -32,4 +32,9 @@ public class CategoriaServiceImpl implements CategoriaService {
     public void removeCategoria(int id) {
         categoriaDao.deleteById(id);
     }
+
+    @Override
+    public Categoria getCategoriaByName(String nomeCategoria) {
+        return categoriaDao.findCategoriaByNomeCategoria(nomeCategoria);
+    }
 }
