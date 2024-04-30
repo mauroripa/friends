@@ -1,7 +1,28 @@
 @charset "UTF-8";
 
 
-body {cursor: url("images/mousepuntatore.png") , auto}
+.bg-body-tertiary 
+#testo.bg-body-tertiary {
+  background-color: rgba(0, 0, 0, 0.5); /* Un'opacità del 50% */
+}
+
+
+
+
+
+.titolocard {
+  font-family: "Syne Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.paragrafo {
+  color: #555;
+  line-height: 1.5;
+  font-size: 12px;
+  margin: auto;
+}
 
   
   
@@ -85,7 +106,7 @@ body {
 
     
     padding: 10px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.7s, opacity 0.3s;
     width: 200px;
     height: 200px;
     margin: auto;
@@ -94,7 +115,7 @@ body {
   }
   
   .card:hover {
-    transform: scale(1.5) translateY(-10px);
+    transform: scale(2.5) translateY(-10px);
     opacity: 1;
   }
   
@@ -137,6 +158,7 @@ body {
   width: 50%;
   height: auto;
   opacity: 80%;
+  z-index: -3;
  
 }
 
@@ -147,7 +169,7 @@ body {
   max-width: 600px;
   border-radius: 10px;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,6 +178,7 @@ body {
 #location p {
   text-align: center;
   line-height: 1.5;
+  z-index: -3;
 }
 
 
