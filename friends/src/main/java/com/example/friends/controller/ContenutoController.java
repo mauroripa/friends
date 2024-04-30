@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping ("/contenuti")
+@RequestMapping ("/{path}")
 public class ContenutoController {
 
    @Autowired
@@ -22,12 +22,15 @@ public class ContenutoController {
    @Autowired
    private ContenutoService contenutoService;
 
-   @GetMapping ("/{path}")
+   @GetMapping //("/{path}")
    public String getContenuto(Model model,
                               @PathVariable String path) {
 
       Categoria categoria = categoriaService.getCategoriaByName(path);
-      model.addAttribute("categoria", categoria);
-      return path;
+      if(categoria != null) {
+         model.addAttribute("categoria", categoria);
+         return path.toLowerCase();
+      }
+      return "index";
    }
 }

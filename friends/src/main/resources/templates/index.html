@@ -45,7 +45,8 @@
                 <li th:each="categoria : ${categorie}" class="nav-item">
                     <!--<a class="nav-link" th:href="@{'/location(categoriaId=' + categoria.id + ')'}" th:text="${categoria.nomeCategoria}"></a>-->
                     <!--<a class="nav-link" th:href="@{/contenuti(categoriaId=${categoria.id})}" th:text="${categoria.nomeCategoria}"></a>-->
-                    <a class="nav-link" th:href="@{/contenuti/${categoria.nomeCategoria}" th:text="${categoria.nomeCategoria}"></a>
+                    <!--<a class="nav-link" th:href="@{'/contenuti/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>-->
+                    <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
                 </li>
                 <li>
                     <a th:href="@{/admin/login}">Login</a>
@@ -58,14 +59,6 @@
         </div>
     </div>
 </nav>
-
-<!--<div>
-    <a th:href="@{/categoria}">Categorie</a>
-    <a th:href="@{/admin/login}">Login Admin</a>
-    <tr th:each="categoria : ${categorie}">
-        <a th:href="@{/contenuti(categoriaId=${categoria.id})}" th:text="${categoria.nomeCategoria}"></a>
-    </tr>
-</div>-->
 <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 " data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -75,9 +68,7 @@
 
     <div class="w-100 h-10 bg-dark p-4">
     </div>
-
-
-
+    
 </div>
 </div>
 </div>
