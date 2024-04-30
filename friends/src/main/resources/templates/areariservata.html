@@ -118,7 +118,7 @@
                                         <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
                                             <input type="file" name="foto" class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
                                             <p>Oppure trascinala qui</p>
-                                            <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
+                                            <p><small>Fino a 20 immagini, limite peso 10MB.</small></p>
                                         </section>
 
                                         <section>
@@ -163,9 +163,9 @@
 
                                     <form action="/areariservata/admin" method="POST" class="needs-validation" novalidate="" autocomplete="off">
                                         <label class="text-muted" for="username">Nome</label><br />
-                                        <input type="text" id="username" class="form-control" th:value="${admin.username}" placeholder="username">
+                                        <input type="text" id="username"  name="username" class="form-control" th:value="${admin.username}" placeholder="username">
                                         <label class="text-muted" for="password">Password</label><br />
-                                        <input type="password" id="password" class="form-control" th:value="${admin.password}" placeholder="Password"><br />
+                                        <input type="password" name="password" id="password" class="form-control" th:value="${admin.password}" placeholder="Password"><br />
                                         <button type="submit" class="btn btn-success">Registra</button>
                                     </form>
                                 </div>
