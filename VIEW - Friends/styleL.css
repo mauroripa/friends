@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
 
+body {cursor: url("images/mousepuntatore.png") , auto}
+
   
   
   .dropdown-content {
+    
     position: absolute;
     background-color: #ff0000;
     min-width: 150px;
@@ -21,17 +24,42 @@
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png);
   }
   .navbar{
+    
     background-color: black;
     min-height: 80px;
     box-shadow: 1px 0px 12px 10px rgba(0,0,0,0.60);
-    
-
-
+  
   }
 
   .navbar-brand {
     line-height: 5px; 
   }
+
+  #uno:hover {
+    color: #ee2825;
+  }
+
+  #due:hover {
+    color: #ffb828;
+  }
+
+  #tre:hover {
+    color: #02b0ec;
+  }
+
+  #quattro:hover {
+    color: #ee2825;
+  }
+
+  #cinque:hover {
+    color: #ffb828;
+  }
+
+  #sei:hover {
+    color: #02b0ec;
+  }
+
+
 
  
 
@@ -55,7 +83,7 @@ body {
     border-radius: 10px;
     box-shadow: 1px 0px 12px 10px rgba(0,0,0,0.10);
 
-    cursor:pointer ;
+    
     padding: 10px;
     transition: transform 0.3s, opacity 0.3s;
     width: 200px;
