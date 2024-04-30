@@ -4,4 +4,5 @@ import com.example.friends.model.Categoria;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CategoriaDao extends CrudRepository<Categoria, Integer> {
+    Categoria findCategoriaByNomeCategoria(String nomeCategoria);
 }

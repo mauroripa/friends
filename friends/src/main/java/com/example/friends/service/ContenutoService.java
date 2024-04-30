@@ -8,8 +8,7 @@ import java.util.List;
 
 public interface ContenutoService {
 
-    // Metodo per ottenere i contenuti in base alla categoria
-    public List<Contenuto> getContenutiByCategoria(String categoria);
+    List<Contenuto> getContenutiByCategoriaId(int categoriaId);
 
     List<Contenuto> listaContenuti();
     Contenuto getContenutoById(int id);

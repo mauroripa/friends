@@ -22,4 +22,5 @@ public class IndexController {
         model.addAttribute("categorie", categorie);
         return "index";
     }
+
 }
