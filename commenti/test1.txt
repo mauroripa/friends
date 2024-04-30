@@ -1,3 +1,6 @@
 con le ultime modifiche non funziona più la funzione aggiungi admin (2024-04-30T00:26:25.188+02:00  WARN 10000 --- [friends] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'username' for method parameter type String is not present]
 )
 Luciano.
+
+buongiorno bro, evidentemente manca il parametro username nel Controller che gestisce la richiesta di aggiungi admin, oppure non ci arriva a prendere il parametro per altri motivi. 
+Mauro
