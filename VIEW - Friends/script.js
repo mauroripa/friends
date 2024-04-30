@@ -13,6 +13,7 @@ card.addEventListener('mouseover', () => {
   image.style.display = 'none';
 
   video.style.display = 'block';
+  
   video.style.opacity = 0;
 
   video.play();
@@ -31,6 +32,19 @@ card.addEventListener('mouseout', () => {
   image.style.display = 'block'; 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
