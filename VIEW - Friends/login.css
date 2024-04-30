@@ -6,3 +6,6 @@
 body{
     background-image: url();
 }
+.card-body{ 
+    background-color: #a28ae0;
+}
