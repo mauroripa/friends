@@ -1,4 +1,30 @@
+.bg-body-tertiary
+#testo.bg-body-tertiary {
+  background-color: rgba(0, 0, 0, 0.5); /* Un'opacità del 50% */
+}
+
+
+
+
+
+.titolocard {
+  font-family: "Syne Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.paragrafo {
+  color: #555;
+  line-height: 1.5;
+  font-size: 12px;
+  margin: auto;
+}
+
+
+
   .dropdown-content {
+
     position: absolute;
     background-color: #ff0000;
     min-width: 150px;
@@ -16,17 +42,42 @@
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png);
   }
   .navbar{
+
     background-color: black;
     min-height: 80px;
     box-shadow: 1px 0px 12px 10px rgba(0,0,0,0.60);
-
-
 
   }
 
   .navbar-brand {
     line-height: 5px;
   }
+
+  #uno:hover {
+    color: #ee2825;
+  }
+
+  #due:hover {
+    color: #ffb828;
+  }
+
+  #tre:hover {
+    color: #02b0ec;
+  }
+
+  #quattro:hover {
+    color: #ee2825;
+  }
+
+  #cinque:hover {
+    color: #ffb828;
+  }
+
+  #sei:hover {
+    color: #02b0ec;
+  }
+
+
 
 
 
@@ -50,9 +101,9 @@ body {
     border-radius: 10px;
     box-shadow: 1px 0px 12px 10px rgba(0,0,0,0.10);
 
-    cursor:pointer ;
+
     padding: 10px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.7s, opacity 0.3s;
     width: 200px;
     height: 200px;
     margin: auto;
@@ -60,8 +111,8 @@ body {
     margin-bottom: 40px;
   }
 
-  .card:hover {
-    transform: scale(1.5) translateY(-10px);
+  .card:hover, .card.active {
+    transform: scale(1.1) translateY(-10px);
     opacity: 1;
   }
 
@@ -75,6 +126,24 @@ body {
     object-fit: cover;
     width: 100%;
   }
+
+  .card .close-card {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .card.show {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 10;
+    width: 90%;
+    height: 70%;
+}
 
 
 
@@ -96,6 +165,9 @@ body {
     align-items: center;
     text-align: center;
     border-radius: 10px;
+    height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
 #location {
@@ -104,6 +176,7 @@ body {
   width: 50%;
   height: auto;
   opacity: 80%;
+  z-index: -3;
 
 }
 
@@ -114,7 +187,7 @@ body {
   max-width: 600px;
   border-radius: 10px;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +196,7 @@ body {
 #location p {
   text-align: center;
   line-height: 1.5;
+  z-index: -3;
 }
 
 
