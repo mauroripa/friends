@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="backend/css/style.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="">
     <!--Colori friends logo
       ROSSO #ee2825
@@ -43,9 +43,6 @@
             <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
                 <!--dropdown -->
                 <li th:each="categoria : ${categorie}" class="nav-item">
-                    <!--<a class="nav-link" th:href="@{'/location(categoriaId=' + categoria.id + ')'}" th:text="${categoria.nomeCategoria}"></a>-->
-                    <!--<a class="nav-link" th:href="@{/contenuti(categoriaId=${categoria.id})}" th:text="${categoria.nomeCategoria}"></a>-->
-                    <!--<a class="nav-link" th:href="@{'/contenuti/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>-->
                     <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
                 </li>
                 <li>
@@ -143,8 +140,7 @@
         </footer>
     </div>
 
-</body>
+</div></body>
 
-</html>
-</body>
+
 </html>
