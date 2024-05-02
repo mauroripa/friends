@@ -59,17 +59,16 @@
             <div class="row d-flex justify-content-center">
 
 
-                <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-                    <img class="card-img-top mt-3" src="sfondo.jpg" alt="Card image cap">
+                <div th:each="contenuto : ${contenuti}" class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+                    <img class="card-img-top mt-3" th:src="@{${contenuto.immagini.get(0).galleria}}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title mt-3">Card title</h5>
-                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's
-                            content.</p>
-                        <a th:href="@{${categoria.nomeCategoria} + /dettaglio(id=1)}" class="glow-on-hover mt-3">Dettaglio</a>
+                        <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
+                        <p th:text="${contenuto.descrizione}" class="card-text mt-3"></p>
+                        <a th:href="@{${categoria.nomeCategoria} + '/dettaglio'(id=${contenuto.id})}" class="glow-on-hover mt-3">Dettaglio</a>
                     </div>
                 </div>
 
-                <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+                <!--<div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
                     <img class="card-img-top mt-3" src="sfondo2.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title mt-3">Card title</h5>
@@ -93,7 +92,7 @@
                         <button href="#" class="glow-on-hover mt-3">Dettaglio</button>
 
                     </div>
-                </div>
+                </div> -->
 
 
             </div>

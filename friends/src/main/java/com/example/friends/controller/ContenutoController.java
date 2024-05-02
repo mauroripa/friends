@@ -53,10 +53,15 @@ public class ContenutoController {
       List<Categoria> categorie = categoriaService.listaCategorie();
       model.addAttribute("categorie", categorie);
       model.addAttribute("login", session.getAttribute("admin") != null);
+
       Contenuto contenuto = contenutoService.getContenutoById(Integer.parseInt(id));
-      model.addAttribute("contenuto", contenuto);
-      model.addAttribute("categoria", contenuto.getCategoria());
-      return "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase();
+
+      if(contenuto != null) {
+         model.addAttribute("contenuto", contenuto);
+         model.addAttribute("categoria", contenuto.getCategoria());
+         return "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase();
+      }
+      return "404";
    }
 
 }
