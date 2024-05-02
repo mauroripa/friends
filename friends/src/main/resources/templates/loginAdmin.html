@@ -94,6 +94,7 @@
                                 <button type="submit" class="glow-on-hover">
                                     Login
                                 </button>
+                                <p th:text="${error}" th:if="${error}"></p>
                             </div>
                         </form>
                     </div>
@@ -125,6 +126,6 @@
         </footer>
     </div>
 </div>
-<p th:text="${error}" th:if="${error}"></p>
+
 </body>
 </html>
