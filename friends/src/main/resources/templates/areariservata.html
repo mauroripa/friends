@@ -116,8 +116,12 @@
                                     </div>
                                     <label class="text-muted" for="categoria">Categoria</label>
                                     <select id="categoria" name="categoria" class="form-select mt-2 mb-5" aria-label="Categoria">
-                                        <option selected disabled hidden="hidden">Scegli la categoria</option>
-                                        <option th:each="categoria : ${categorie}" th:value="${categoria.id}" th:text="${categoria.nomeCategoria}"></option>
+                                        <option th:selected="${contenuto.categoria == null}" disabled hidden="hidden">Scegli la categoria</option>
+                                        <option th:each="categoria : ${categorie}"
+                                                th:value="${categoria.id}"
+                                                th:text="${categoria.nomeCategoria}"
+                                                th:selected="${contenuto.categoria != null && contenuto.categoria.nomeCategoria == categoria.nomeCategoria}"
+                                        ></option>
                                     </select>
 
                                     <div class="position-relative">
