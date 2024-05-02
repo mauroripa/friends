@@ -65,13 +65,9 @@
                         <h5 class="card-title mt-3">Card title</h5>
                         <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's
                             content.</p>
-                        <a href="#" class="glow-on-hover mt-3">Dettaglio</a>
+                        <a th:href="@{${categoria.nomeCategoria} + /dettaglio(id=1)}" class="glow-on-hover mt-3">Dettaglio</a>
                     </div>
                 </div>
-
-
-
-
 
                 <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
                     <img class="card-img-top mt-3" src="sfondo2.jpg" alt="Card image cap">
@@ -112,7 +108,7 @@
 
 
 
-            <div class="card" style="display: inline-block;">
+            <div class="cardfooter" style="display: inline-block;">
                 <a class="socialContainer containerOne" href="#" style="float: left;">
                     <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
                         <path

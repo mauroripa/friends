@@ -1,6 +1,7 @@
 package com.example.friends.controller;
 
 import com.example.friends.model.Categoria;
+import com.example.friends.model.Contenuto;
 import com.example.friends.service.CategoriaService;
 import com.example.friends.service.ContenutoService;
 import jakarta.servlet.http.HttpSession;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,8 +22,11 @@ public class ContenutoController {
    @Autowired
     private CategoriaService categoriaService;
 
+   @Autowired
+   private ContenutoService contenutoService;
 
-   @GetMapping //("/{path}")
+
+   @GetMapping
    public String getContenuto(Model model,
                               @PathVariable String path,
                               HttpSession session) {
@@ -39,4 +44,19 @@ public class ContenutoController {
       }
       return "index";
    }
+
+   @GetMapping ("/dettaglio")
+   public String getDettaglio(Model model,
+                              @RequestParam("id") String id,
+                              HttpSession session){
+
+      List<Categoria> categorie = categoriaService.listaCategorie();
+      model.addAttribute("categorie", categorie);
+      model.addAttribute("login", session.getAttribute("admin") != null);
+      Contenuto contenuto = contenutoService.getContenutoById(Integer.parseInt(id));
+      model.addAttribute("contenuto", contenuto);
+      model.addAttribute("categoria", contenuto.getCategoria());
+      return "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase();
+   }
+
 }

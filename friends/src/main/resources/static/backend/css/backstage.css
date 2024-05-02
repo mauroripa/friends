@@ -1,30 +1,9 @@
 @charset "UTF-8";
 
-
 .bg-body-tertiary #testo.bg-body-tertiary {
 	background-color: rgba(0, 0, 0, 0.5);
 	/* Un'opacità del 50% */
 }
-
-
-
-
-
-.titolocard {
-	font-family: "Syne Mono", monospace;
-	font-weight: 300;
-	font-style: normal;
-	font-size:40px;
-}
-
-.paragrafo {
-	color: #555;
-	line-height: 1.5;
-	font-size:20px;
-	margin: auto;
-}
-
-
 
 .dropdown-content {
 
@@ -83,6 +62,11 @@
 }
 
 
+#c2:hover {
+	color: #25bfee;
+}
+
+
 
 
 
@@ -101,158 +85,101 @@ body {
 	padding: 20px;
 }
 
+
 .card {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.25);
-
-
-	padding: 5px;
-	transition: top 0s, right 0s, transform 0.7s, opacity 0.3s;
-	width: 250px;
-	height: 250px;
-	margin: auto;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-
-.card:hover,
-.card.active {
-	transform: scale(1.1) translateY(-10px);
-	opacity: 1;
-}
-
-.card:not(:hover) {
-	opacity: 0.9;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #a7a7a780;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 20px;
 }
 
 .card img {
-	border-radius: 10px;
-	height: 100%;
-	object-fit: cover;
-	width: 100%;
+  width: 400px;
+
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ee2825d9;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
-.card.show {
-	position: fixed;
-	top: 50%;
-	right: 50%;
-	transform: translate(50%, -50%);
-	z-index: 10;
-	width: 90%;
-	height: 70%;
-	opacity: 1;
-}
-
-.card.show img {
-	display: none !important;
-}
-
-.card.show video,
-.card.show .titolocard,
-.card.show .paragrafo {
-	display: block !important;
-}
-
-.card.show .close-card {
-	position: absolute;
-	right: 3px;
-	top: 3px;
-	font-size: 20px;
-	cursor: pointer;
-}
-
-.card:not(.show) .close-card {
-	display: none;
-}
-.card:not(.show) .rounded{
-	display: none;
-}
-
-.card:hover::after {
-	transform: translateY(0);
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ee2825d9;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
-#sfondolocation {
-	position: fixed;
-	object-fit: cover;
-	opacity: 15%;
-	width: 100%;
-}
-
-.card .rounded{
-	border-radius: 15px;
-	align-items: center;
-	text-align: center;
-	height: 80%;
-	overflow: hidden;
-	width: 95%;
-	margin: auto;
-
-}
-.card video {
-	width: 100%;
-
-}
-
-#location {
-	text-align: justify;
-	align-items: center;
-	width: 50%;
-	height: auto;
-	opacity: 80%;
-	z-index: -3;
-
-}
-
-#testo {
-	background-color: #ffb828;
-	margin: 0 auto;
-	padding: 30px;;
-	max-width: 600px;
-	border-radius: 10px;
-	justify-content: center;
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	box-shadow: #000 0px 0px 15px 0px;
-
-}
-
-.merriweather-regular {
-	font-family: "Merriweather", serif;
-	font-weight: 400;
-	font-style: normal;
-  }
-
-  .merriweather-light {
-	font-family: "Merriweather", serif;
-	font-weight: 200;
-	font-style: normal;
-	font-size: 13px;
-  }
-
-  #clicca .merriweather-light {
-	font-family: "Merriweather", serif;
-	font-weight: 400;
-	font-style: normal;
-  }
-
-#location p {
-	text-align: center;
-	line-height: 1.5;
-	z-index: -3;
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ee2825d9;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
 
-@media (max-width: 800px) {
-	.col-md-12 {
-		order: -1;
-	}
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: auto;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: auto;
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.4;
 }
 
 
@@ -266,7 +193,6 @@ body {
     padding: 25px 25px;
     gap: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-
   }
 
   /* for all social containers*/
