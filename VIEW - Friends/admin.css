@@ -78,10 +78,7 @@
     opacity: 1;
   }
 }
-#title{
-  position: absolute;
-  top: 8%;
-}
+
 .carta{
   display: none;
 }
@@ -149,10 +146,12 @@ header {
 section{
   display:block;
 }
-.content-manager{
-}
+
 .col-content-manager{
   transition: all 1s;
+  display: flex;
+  align-items: center;
+
 }
 .hidden {
   display: block;
@@ -160,12 +159,12 @@ section{
   padding: 0;
   height: 0;
   overflow: hidden;
-
+  transition: all 1s;
 }
 .show{
   display: block;
-  height: 300px;
-  overflow: auto;
+  height: 750px;
+  transition: all 1s;
 }
 .col-content-manager .card-body {
   display: flex;
