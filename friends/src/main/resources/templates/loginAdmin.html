@@ -47,8 +47,7 @@
                     <li th:each="categoria : ${categorie}" class="nav-item">
                         <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
                     </li>
-                    <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item" >Area riservata</a></li>
-                    <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item" >Login</a></li>
+
                 </ul>
                 <form class="d-flex" role="search">
                     <input  style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -95,6 +94,7 @@
                                 <button type="submit" class="glow-on-hover">
                                     Login
                                 </button>
+                                <p th:text="${error}" th:if="${error}"></p>
                             </div>
                         </form>
                     </div>
@@ -126,6 +126,6 @@
         </footer>
     </div>
 </div>
-<p th:text="${error}" th:if="${error}"></p>
+
 </body>
 </html>

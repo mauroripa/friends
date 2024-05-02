@@ -1,0 +1,7 @@
+.navbar{
+    background-color: black;
+}
+.item-thumb:hover img {
+    max-width: 100%; /* Imposta la larghezza massima al 100% del contenitore */
+    height: auto; /* Imposta l'altezza automaticamente per mantenere l'aspetto originale */
+}

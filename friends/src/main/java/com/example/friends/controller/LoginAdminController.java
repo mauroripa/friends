@@ -34,7 +34,7 @@ public class LoginAdminController {
 
         List<Categoria> categorie = categoriaService.listaCategorie();
         model.addAttribute("categorie", categorie);
-        model.addAttribute("login", session.getAttribute("admin") != null);
+
 
         if (servizioTentativiAccesso.isBloccato(session)) {
             model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
@@ -44,7 +44,8 @@ public class LoginAdminController {
 
     @PostMapping("/admin/login")
     public String loginAdmin(String username, String password, Model model, HttpSession session) {
-
+        List<Categoria> categorie = categoriaService.listaCategorie();
+        model.addAttribute("categorie", categorie);
         if (servizioTentativiAccesso.isBloccato(session)) {
             model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
             return "loginAdmin";
