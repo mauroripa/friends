@@ -168,7 +168,7 @@
                                     <section>
                                             <span th:if="${ contenuto.immagini.size() > 0 }"
                                                   th:each="immagine : ${contenuto.immagini}">
-                                                <img th:src="@{${immagine.galleria}}" width="300"/>
+                                                <img th:src="@{${'/uploads/' + immagine.galleria}}" width="300"/>
                                                 <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
                                             </span>
                                     </section>
@@ -239,7 +239,7 @@
     <div class="row d-flex justify-content-center">
         <div th:each="contenuto : ${contenuti}" class="card mx-auto shadow-lg bg-body-tertiary p-0"
              style="width: 18rem;">
-            <img th:src="@{${contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top">
+            <img th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top">
             <div class="card-body">
                 <h5 th:text="${contenuto.titolo}" class="card-title"></h5>
                 <p th:text="${contenuto.descrizione}" class="card-text"></p>

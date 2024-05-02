@@ -4,10 +4,7 @@ import com.example.friends.model.Admin;
 import com.example.friends.model.Categoria;
 import com.example.friends.model.Contenuto;
 import com.example.friends.model.Galleria;
-import com.example.friends.service.AdminService;
-import com.example.friends.service.CategoriaService;
-import com.example.friends.service.ContenutoService;
-import com.example.friends.service.GalleriaService;
+import com.example.friends.service.*;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +36,9 @@ public class AreaRiservataController {
 
     @Autowired
     private GalleriaService galleriaService;
+
+    @Autowired
+    private UploadPhotoService uploadPhotoService;
 
     private Admin admin;
     private Categoria categoria;
@@ -187,6 +187,7 @@ public class AreaRiservataController {
         return "redirect:/admin/login";
     }
 
+
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
 
         try {
@@ -199,8 +200,12 @@ public class AreaRiservataController {
                 String formato = file.getContentType();
                 String imageGalleria = "data:" + formato + ";base64," + Base64.getEncoder().encodeToString(file.getBytes());
 
+                String fileName = file.getOriginalFilename();
+                uploadPhotoService.uploadFile(file, fileName);
+
+
                 Galleria galleriaImg = new Galleria();
-                galleriaImg.setGalleria(imageGalleria);
+                galleriaImg.setGalleria(fileName);
                 galleriaImg.setContenuto(contenuto);
                 listGalleria.add(galleriaImg);
             }
