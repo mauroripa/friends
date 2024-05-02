@@ -55,6 +55,10 @@
     border-radius: 10px;
   }
 
+  .pari.container .personaggio {
+    flex-direction: row-reverse
+  }
+
 .personaggio .descrizione {
     display: -webkit-box;
     -webkit-line-clamp: 10;
