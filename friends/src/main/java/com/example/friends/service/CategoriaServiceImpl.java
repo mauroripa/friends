@@ -37,8 +37,5 @@ public class CategoriaServiceImpl implements CategoriaService {
     public Categoria getCategoriaByName(String nomeCategoria) {
         return categoriaDao.findCategorieByNomeCategoria(nomeCategoria);
     }
-    @Override
-    public void aggiornaCategoria(Categoria categoria) {
-        categoriaDao.save(categoria);
-    }
+  
 }

@@ -11,5 +11,5 @@ public interface CategoriaService {
     void removeCategoria(int id);
     Categoria getCategoriaByName(String nomeCategoria);
 
-    void aggiornaCategoria(Categoria categoria);
+
 }
