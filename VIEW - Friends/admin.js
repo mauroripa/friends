@@ -85,3 +85,69 @@ function chiudi(){
     title.style.display = "none";
 
 }
+function apriins(){
+    const categorie = document.querySelector(".cartaIns");
+    const pulsante = document.getElementById("pulsanteIns");
+    const pulsanteX = document.getElementById("pulsanteXIns");
+    const title = document.getElementById("titleIns");
+    console.log("ciao");
+    categorie.classList.remove("hidden");
+    console.log("come");
+    categorie.classList.add("show");
+    console.log("stai");
+    pulsante.style.display="none";
+    console.log("come");
+
+    pulsanteX.style.display = "block";
+    console.log("come");
+
+    title.style.display = "block";
+    console.log("bene")
+}
+function chiudiins(){
+    const categorie = document.querySelector(".cartaIns");
+    const pulsante = document.getElementById("pulsanteIns");
+    const pulsanteX = document.getElementById("pulsanteXIns");
+    const title = document.getElementById("titleIns");
+
+    categorie.classList.remove("show");
+    categorie.classList.add("hidden");
+
+    pulsante.style.display = "block";
+    pulsanteX.style.display = "none";
+    title.style.display = "none";
+
+}
+function apriadm(){
+    const categorie = document.querySelector(".cartaAdm");
+    const pulsante = document.getElementById("pulsanteAdm");
+    const pulsanteX = document.getElementById("pulsanteXAdm");
+    const title = document.getElementById("titleAdmin");
+    console.log("ciao");
+    categorie.classList.remove("hidden");
+    console.log("come");
+    categorie.classList.add("show");
+    console.log("stai");
+    pulsante.style.display="none";
+    console.log("come");
+
+    pulsanteX.style.display = "block";
+    console.log("come");
+
+    title.style.display = "block";
+    console.log("bene")
+}
+function chiudiadm(){
+    const categorie = document.querySelector(".cartaAdm");
+    const pulsante = document.getElementById("pulsanteAdm");
+    const pulsanteX = document.getElementById("pulsanteXAdm");
+    const title = document.getElementById("titleAdmin");
+
+    categorie.classList.remove("show");
+    categorie.classList.add("hidden");
+
+    pulsante.style.display = "block";
+    pulsanteX.style.display = "none";
+    title.style.display = "none";
+
+}
