@@ -19,8 +19,6 @@ public class ContenutoController {
    @Autowired
     private CategoriaService categoriaService;
 
-   @Autowired
-   private ContenutoService contenutoService;
 
    @GetMapping //("/{path}")
    public String getContenuto(Model model,
