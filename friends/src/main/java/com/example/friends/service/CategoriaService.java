@@ -10,4 +10,6 @@ public interface CategoriaService {
     void addCategoria(Categoria categoria);
     void removeCategoria(int id);
     Categoria getCategoriaByName(String nomeCategoria);
+
+    void aggiornaCategoria(Categoria categoria);
 }
