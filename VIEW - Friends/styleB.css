@@ -84,7 +84,9 @@ body {
 	justify-content: center;
 	padding: 20px;
 }
-
+#titolocard {
+  margin: 20px;
+}
 
 .card {
   position: relative;
