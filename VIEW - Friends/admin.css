@@ -6,7 +6,13 @@
 .box__error {
   display: none;
 }
-
+#title{
+  position: absolute;
+  top: 8%;
+}
+.carta{
+  display: none;
+}
 #textarea{
   resize: none;
 }
