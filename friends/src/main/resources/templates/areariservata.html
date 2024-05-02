@@ -14,37 +14,40 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <link th:href="@{/backend/css/admin.css}" rel="stylesheet"/>
-    <script th:src="@{backend/js/areariservata.js}"></script>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-70">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img style="width: 100px;" src="logo friend png.png">
-            </a>
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100" >
+        <!--da capire se mettere opacity 50-->
+        <!-- Container wrapper -->
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                <!-- ICONA HAMBURGER -->
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Scene Iconiche</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Gedget</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Personaggi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Aggiungere</a></li>
+                <!-- Left links -->
+                <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
+                    <!--dropdown -->
+                    <li th:each="categoria : ${categorie}" class="nav-item">
+                        <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
+                    </li>
+                    <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item" >Area riservata</a></li>
+                    <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item" >Login</a></li>
                 </ul>
-
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">
-                        <img style="width: 25px;" class="lente" src="lentepng.png"/>
-                    </button>
+                    <input  style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+                                                                                 src="lentepng.png" /></button>
                 </form>
             </div>
         </div>
@@ -293,8 +296,7 @@
 
     <a th:href="@{admin/logout}">Logout</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script th:src="@{/backend/js/admin.js}"></script>
-
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script th:src="@{/backend/js/areariservata.js}"></script>
 </body>
 </html>
