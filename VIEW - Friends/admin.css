@@ -48,11 +48,6 @@ input[type="file"] {
   justify-content: center;
   
 }
-
-
-
-
-
 header {
   margin-top: 1rem;
 }
@@ -92,29 +87,6 @@ section{
 #titleAdmin{
   margin-top: -70px;
 }
-
-
-/*#cardBody{
-  background-image: url(https://i.pinimg.com/564x/27/3f/58/273f58a9d910c8ed3aa96691d1b9a11c.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  
-}
-#cardBodyInsert{
-  background-image: url(https://i.pinimg.com/564x/f6/f4/80/f6f480fec7b72ea2966f788b21a889be.jpg
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#cardBodyAdmin{
-  background-image: url(  https://i.pinimg.com/564x/08/01/5f/08015fff2f4ee263ddbd8859f502f514.jpg
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}*/
 .glow-on-hover {
   width: 220px;
   height: 50px;
@@ -168,6 +140,125 @@ section{
   top: 0;
   border-radius: 10px;
 }
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgb(245, 54, 54);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.bin-bottom {
+  width: 15px;
+  z-index: 2;
+}
+.bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.garbage {
+  position: absolute;
+  width: 14px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.bin-button:hover .garbage {
+  animation: throw 0.4s linear;
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+.edit-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+  margin-top: 2px;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.edit-button::before {
+  display: none;
+  content: "Edit";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.edit-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
 
 @keyframes glowing {
   0% { background-position: 0 0; }
