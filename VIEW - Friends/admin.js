@@ -67,3 +67,10 @@ function apri(){
     categorie.style.display = "block";
     pulsante.style.display = "none";
 }
+function chiudi(){
+    const categorie = document.querySelector(".carta");
+    const pulsante = document.getElementById("pulsanteCat");
+    
+    categorie.style.display = "none";
+    pulsante.style.display = "block";
+}
