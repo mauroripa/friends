@@ -14,13 +14,13 @@
 	font-family: "Syne Mono", monospace;
 	font-weight: 300;
 	font-style: normal;
-	font-size: 25px;
+	font-size:40px;
 }
 
 .paragrafo {
 	color: #555;
 	line-height: 1.5;
-	font-size: 12px;
+	font-size:20px;
 	margin: auto;
 }
 
@@ -104,13 +104,13 @@ body {
 .card {
 	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.10);
+	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.25);
 
 
-	padding: 10px;
+	padding: 5px;
 	transition: top 0s, right 0s, transform 0.7s, opacity 0.3s;
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 	margin: auto;
 	margin-top: 40px;
 	margin-bottom: 40px;
@@ -157,13 +157,16 @@ body {
 
 .card.show .close-card {
 	position: absolute;
-	right: 10px;
-	top: 10px;
+	right: 3px;
+	top: 3px;
 	font-size: 20px;
 	cursor: pointer;
 }
 
 .card:not(.show) .close-card {
+	display: none;
+}
+.card:not(.show) .rounded{
 	display: none;
 }
 
@@ -179,15 +182,19 @@ body {
 	width: 100%;
 }
 
-
-.card video {
-	border-radius: 10px;
+.card .rounded{
+	border-radius: 15px;
 	align-items: center;
-	text-align: center;
-	border-radius: 10px;
-	height: 90%;
-	border-radius: 10px;
+	text-align: center;	
+	height: 80%;
 	overflow: hidden;
+	width: 95%;
+	margin: auto;
+
+}
+.card video {
+	width: 100%;
+	
 }
 
 #location {
@@ -203,7 +210,7 @@ body {
 #testo {
 	background-color: #ffb828;
 	margin: 0 auto;
-	padding: 25px;
+	padding: 30px;;
 	max-width: 600px;
 	border-radius: 10px;
 	justify-content: center;
@@ -211,7 +218,28 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	box-shadow: #000 0px 0px 15px 0px;
+	
 }
+
+.merriweather-regular {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	font-style: normal;
+  }
+
+  .merriweather-light {
+	font-family: "Merriweather", serif;
+	font-weight: 200;
+	font-style: normal;
+	font-size: 13px;
+  }
+
+  #clicca .merriweather-light {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	font-style: normal;
+  }
 
 #location p {
 	text-align: center;
