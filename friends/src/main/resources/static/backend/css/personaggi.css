@@ -56,7 +56,8 @@
   }
 
   .pari.container .personaggio {
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
+    align-items: center;
   }
 
 .personaggio .descrizione {
