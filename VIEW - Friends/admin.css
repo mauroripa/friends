@@ -150,9 +150,23 @@ section{
   display:block;
 }
 .content-manager{
-  grid-template-columns: 1fr 1fr 1fr;
 }
+.col-content-manager{
+  transition: all 1s;
+}
+.hidden {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
 
+}
+.show{
+  display: block;
+  height: 300px;
+  overflow: auto;
+}
 .col-content-manager .card-body {
   display: flex;
   flex-direction: column;
