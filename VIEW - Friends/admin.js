@@ -63,14 +63,17 @@ const handleDrop = (e) => {
 function apri(){
     const categorie = document.querySelector(".carta");
     const pulsante = document.getElementById("pulsanteCat");
-    
-    categorie.style.display = "block";
-    pulsante.style.display = "none";
+   categorie.classList.add("show");
+    pulsante.classList.add("hidden");
 }
 function chiudi(){
     const categorie = document.querySelector(".carta");
     const pulsante = document.getElementById("pulsanteCat");
-    
-    categorie.style.display = "none";
-    pulsante.style.display = "block";
+    const pulsanteX = document.getElementById("pulsanteX");
+    categorie.classList.add("hidden");
+    categorie.classList.remove("show");
+    pulsante.classList.add("show");
+    pulsante.classList.remove("hidden");
+    pulsanteX.style.display = "none";
+
 }

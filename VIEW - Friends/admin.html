@@ -91,15 +91,15 @@
     -->
 		<div class="container">
 			<section class="h-100 ">
-				<div class="container ">
-					<div class="d-grid content-manager  h-100">
-						<div class="d-flex col-content-manager mx-2">
+				<div class="container">
+					<div class="row content-manager  h-100">
+						<div class="col-content-manager col-4">
 							<div class="card w-100 shadow-lg my-5">
 								<div class="card-body p-5">
 
 									<button class="glow-on-hover" id="pulsanteCat" onclick="apri()">Modifica categoria</button>
 									<div class="container" style="display: flex; justify-content: flex-end; margin-top: -4%; margin-left: 10%;">
-									<button class="button" onclick="chiudi()">
+									<button class="button" id="pulsanteX" onclick="chiudi()" style="display: none;">
 										<span class="X"></span>
 										<span class="Y"></span>
 										<div class="close">Chiudi</div>
@@ -363,7 +363,7 @@
 
 						<!--INSERT FORM-->
 
-						<div class="d-flex col-content-manager mx-2">
+						<div class="col-content-manager col-4">
 
 							<div class="card w-100 shadow-lg my-5">
 								<div class="card-body p-5" id="cardBodyInsert">
@@ -424,7 +424,7 @@
 						<!--fine row-->
 
 
-						<div class="d-flex col-content-manager mx-2">
+						<div class="col-content-manager col-4">
 							<div class="card w-100 shadow-lg my-5">
 								<div class="card-body p-5" id="cardBodyAdmin">
 									<h1 class="fs-4 card-title fw-bold" id="titleAdmin">Modifica Admin</h1>
