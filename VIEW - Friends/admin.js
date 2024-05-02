@@ -151,3 +151,10 @@ function chiudiadm(){
     title.style.display = "none";
 
 }
+function mostra(){
+    const password = document.getElementById("password");
+    const occhio = document.getElementById("occhio");
+    password.innerHTML = "abc";
+    
+   
+}
