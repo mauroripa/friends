@@ -25,12 +25,16 @@ public class ContenutoController {
    public String getContenuto(Model model,
                               @PathVariable String path,
                               HttpSession session) {
+
       List<Categoria> categorie = categoriaService.listaCategorie();
       model.addAttribute("categorie", categorie);
       model.addAttribute("login", session.getAttribute("admin") != null);
+
       Categoria categoria = categoriaService.getCategoriaByName(path);
+
       if(categoria != null) {
          model.addAttribute("categoria", categoria);
+         model.addAttribute("contenuti", categoria.getContenuti());
          return path.toLowerCase();
       }
       return "index";

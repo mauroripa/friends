@@ -39,7 +39,7 @@
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control " type="search" placeholder="Search" aria-label="Search" style="width: 200px;">
-                        <button class="btn btn-outline-success" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}"/></button>
+                        <button class="btn btn-outline-success" type="submit"><img class="lente" th:src="@{immagini/lentepng.png}"/></button>
                     </form>
                 </div>
             </div>
@@ -47,7 +47,7 @@
     </div>
 
 <div class="d-flex justify-content-center" id="topPage">
-    <img class="w-50" src="scritte con font friends/personaggipng.png" style="margin-top: 10%; margin-bottom: 5%;" />
+    <img class="w-50" th:src="@{immagini/personaggipng.png}" style="margin-top: 10%; margin-bottom: 5%;}" />
 </div>
 
 <div class="d-flex justify-content-center">
@@ -61,33 +61,23 @@
 <div>
     <!-- content -->
     <section class="py-2 w-100 h-100" id="ross"></section>
-    <section class="py-5 mt-5">
-        <div class="container">
-            <div class="row gx-5">
-                <aside class="col-lg-6">
+    <section th:each="contenuto, index : ${contenuti}" class="py-5 mt-5">
+        <div th:class="${index.index % 2 == 0 ? 'pari' : ''} + 'container' ">
+            <div class="row gx-5 personaggio">
+                <div class="col-lg-6">
                     <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                        <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image"
-                           href="https://upload.wikimedia.org/wikipedia/it/3/3c/Friends%2C_Ross_Geller.png">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                                 src="https://upload.wikimedia.org/wikipedia/it/3/3c/Friends%2C_Ross_Geller.png" />
+                        <a class="rounded-4" target="_blank" th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
+                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" th:src="@{${contenuto.immagini.get(0).galleria}}" />
                         </a>
                     </div>
-                </aside>
-                <main class="col-lg-6">
+                </div>
+                <div class="col-lg-6">
                     <div class="ps-lg-3">
-                        <h4 class="title text-dark">
-                            Ross Geller<br /></h4>
-                        <p>
-                            Fratello di Monica, è un geek, paleontologo, cade in situazioni surreali soprattutto nei rapporti
-                            amorosi: la serie inizia con il suo matrimonio appena fallito perché sua moglie Carol, aveva appena
-                            scoperto di essere lesbica ed era andata a vivere con la sua nuova ragazza, Susan. Il difficile
-                            rapporto "a tre" di Ross con Carol e Susan sarà un tema ricorrente della serie. Alla fine della prima
-                            stagione nasce suo figlio, di nome Ben. Il nome viene suggerito a Susan e Ross da Phoebe, dopo che
-                            sono rimasti rinchiusi in uno sgabuzzino.
-                        </p>
+                        <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
+                        <p th:text="${contenuto.descrizione}" class="descrizione"></p>
                         <button class="glow-on-hover" onclick="scrollArrowUp('topPage')">Torna su!</button>
                     </div>
-                </main>
+                </div>
             </div>
         </div>
     </section>
