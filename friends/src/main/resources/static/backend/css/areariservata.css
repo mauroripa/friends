@@ -19,36 +19,36 @@
 
 }/* for all social containers*/
 .socialContainer {
-  width: 52px;
-  height: 52px;
-  border-radius: 5px;
-  background-color: rgb(44, 44, 44);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: 0.3s;
-}
-/* instagram*/
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: 0.3s;
-}
-/* twitter*/
-.containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: 0.3s;
-}
-/* linkdin*/
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: 0.3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: green;
-  transition-duration: 0.3s;
-}
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+  }
+  /* linkedin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: green;
+    transition-duration: 0.3s;
+  }
 
 .socialContainer:active {
   transform: scale(0.9);
