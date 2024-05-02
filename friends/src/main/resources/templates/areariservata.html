@@ -17,232 +17,281 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100" >
-        <!--da capire se mettere opacity 50-->
-        <!-- Container wrapper -->
+<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
+    <!--da capire se mettere opacity 50-->
+    <!-- Container wrapper -->
 
-        <div class="container-fluid">
-            <!-- Navbar brand -->
-            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
+    <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
 
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-                <!-- ICONA HAMBURGER -->
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- ICONA HAMBURGER -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <!-- Left links -->
-                <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
-                    <!--dropdown -->
-                    <li th:each="categoria : ${categorie}" class="nav-item">
-                        <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
-                    </li>
-                    <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item" >Area riservata</a></li>
-                    <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item" >Login</a></li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input  style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
-                                                                                 th:src="@{lentepng.png}" /></button>
-                </form>
-            </div>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!--dropdown -->
+                <li th:each="categoria : ${categorie}" class="nav-item">
+                    <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
+                       th:text="${categoria.nomeCategoria}"></a>
+                </li>
+                <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item">Area riservata</a></li>
+                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item">Login</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+                                                                             th:src="@{immagini/lentepng.png}"/>
+                </button>
+            </form>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <div class="container" id="gestioneContent">
-        <section class="h-100 mt-5">
-            <div class="container h-100">
-                <div class="d-grid content-manager h-100">
-                    <div class="d-flex col-content-manager mx-2">
-                        <div class="p-3 border rounded-2 bg-white w-100 shadow-lg my-5 category-container" id="cardBody">
-                            <h1 class="mt-2 mb-5 fs-4 fw-bold d-flex justify-content-between">
-                                <span>Categorie</span>
-                                <button th:class="${categoria.nomeCategoria != null ? 'routed' : ''} + ' btn btn-primary d-inline-flex p-1 new-category'">
-                                    <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="close">
-                                        <path d="M4 12H20M12 4V20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="container" id="gestioneContent">
+    <section class="h-100 mt-5">
+        <div class="container h-100">
+            <div class="d-grid content-manager h-100">
+                <div class="d-flex col-content-manager mx-2">
+                    <div class="p-3 border rounded-2 bg-white w-100 shadow-lg my-5 category-container" id="cardBody">
+                        <h1 class="mt-2 mb-5 fs-4 fw-bold d-flex justify-content-between">
+                            <span>Categorie</span>
+                            <button th:class="${categoria.nomeCategoria != null ? 'routed' : ''} + ' btn btn-primary d-inline-flex p-1 new-category'">
+                                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                     class="close">
+                                    <path d="M4 12H20M12 4V20" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                </svg>
+
+                                <svg th:if="${categoria.nomeCategoria != null}" width="20" viewBox="0 0 192 192"
+                                     xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none"
+                                     class="pencil d-none">
+                                        <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67"
+                                              class="cls-1"
+                                              style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                                              transform="translate(-77.923 40.646)"></path>
+                                    <path d="m195.656 33.271-52.882 52.882"
+                                          style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+                                          transform="translate(-77.923 40.646)"></path>
                                     </svg>
+                            </button>
+                        </h1>
 
-                                    <svg th:if="${categoria.nomeCategoria != null}" width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none" class="pencil d-none">
-                                        <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67" class="cls-1" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
-                                        <path d="m195.656 33.271-52.882 52.882" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
-                                    </svg>
-                                </button>
-                            </h1>
-
-                            <div th:class="${categoria.nomeCategoria != null ? 'd-none' : ''} + ' list-category'">
-                                <div th:each="categoria : ${categorie}" class="my-4 single-categoria d-flex justify-content-between">
-                                    <h5 th:text="${categoria.nomeCategoria}"></h5>
-                                    <div class="actions">
-                                        <a class="btn btn-primary d-inline-flex p-1" th:href="@{/areariservata(categoriaId=${categoria.id})}">
-                                            <svg width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none">
-                                                <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67" class="cls-1" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
-                                                <path d="m195.656 33.271-52.882 52.882" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
+                        <div th:class="${categoria.nomeCategoria != null ? 'd-none' : ''} + ' list-category'">
+                            <div th:each="categoria : ${categorie}"
+                                 class="my-4 single-categoria d-flex justify-content-between">
+                                <h5 th:text="${categoria.nomeCategoria}"></h5>
+                                <div class="actions">
+                                    <a class="btn btn-primary d-inline-flex p-1"
+                                       th:href="@{/areariservata(categoriaId=${categoria.id})}">
+                                        <svg width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+                                             xml:space="preserve" fill="none">
+                                                <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67"
+                                                      class="cls-1"
+                                                      style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                                                      transform="translate(-77.923 40.646)"></path>
+                                            <path d="m195.656 33.271-52.882 52.882"
+                                                  style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+                                                  transform="translate(-77.923 40.646)"></path>
                                             </svg>
-                                        </a>
-                                        <a class="btn btn-danger d-inline-flex p-1" th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">
-                                            <svg fill="#fff" width="20" viewBox="0 0 456.686 456.686" xml:space="preserve">
+                                    </a>
+                                    <a class="btn btn-danger d-inline-flex p-1"
+                                       th:href="@{/areariservata/categoria/elimina(id=${categoria.id})}">
+                                        <svg fill="#fff" width="20" viewBox="0 0 456.686 456.686" xml:space="preserve">
                                                 <path d="M363.541,120.847H93.16c-8.005,0-15.623,3.367-21.04,9.263c-5.389,5.896-8.052,13.798-7.363,21.761l24.767,278.836 c1.303,14.71,13.619,25.98,28.39,25.98h220.874c14.772,0,27.073-11.271,28.391-25.98L391.93,151.87 c0.705-7.963-1.975-15.864-7.363-21.761C379.165,124.214,371.547,120.847,363.541,120.847z M155.896,382.248 c-0.48,0.029-0.929,0.045-1.378,0.045c-9.308,0-17.18-7.169-17.884-16.597l-9.651-127.207 c-0.749-9.876,6.644-18.496,16.537-19.244c9.921-0.778,18.512,6.643,19.26,16.536l9.638,127.206 C173.181,372.879,165.773,381.499,155.896,382.248z M246.003,372.535c0,9.922-8.038,17.944-17.944,17.944 c-9.922,0-17.959-8.022-17.959-17.944V205.012c0-9.922,8.036-17.944,17.959-17.944c9.906,0,17.944,8.022,17.944,17.944V372.535z M320.052,365.696c-0.705,9.428-8.576,16.597-17.884,16.597c-0.449,0-0.898-0.016-1.378-0.045 c-9.877-0.749-17.285-9.369-16.521-19.261l9.638-127.206c0.749-9.894,9.398-17.346,19.262-16.536 c9.892,0.748,17.284,9.368,16.536,19.244L320.052,365.696z"></path>
-                                                <path d="M370.589,22.344h-52.887C314.889,9.578,303.544,0,289.912,0h-123.15c-13.619,0-24.964,9.578-27.791,22.344H86.097 c-16.941,0-30.649,13.723-30.649,30.648c0,16.927,13.708,30.649,30.649,30.649h284.493c16.941,0,30.649-13.723,30.649-30.649 C401.239,36.066,387.531,22.344,370.589,22.344z"></path>
+                                            <path d="M370.589,22.344h-52.887C314.889,9.578,303.544,0,289.912,0h-123.15c-13.619,0-24.964,9.578-27.791,22.344H86.097 c-16.941,0-30.649,13.723-30.649,30.648c0,16.927,13.708,30.649,30.649,30.649h284.493c16.941,0,30.649-13.723,30.649-30.649 C401.239,36.066,387.531,22.344,370.589,22.344z"></path>
                                             </svg>
-                                        </a>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
+                        </div>
 
-                            <form action="/areariservata/categoria" method="post" th:class="${categoria.nomeCategoria != null ? '' : 'd-none'} + ' needs-validation'" novalidate="" autocomplete="off">
-                                <label class="text-muted mt-3" for="nomeCategoria">Categoria</label>
-                                <input type="text" id="nomeCategoria" name="nomeCategoria" class="form-control mt-2"  th:value="${categoria.nomeCategoria}" placeholder="Nome Categoria" required>
-                                <button th:text="${categoria.nomeCategoria != null ? 'Aggiorna Categoria' : 'Aggiungi Categoria'}" type="submit" class="btn btn-success mt-3"></button>
+                        <form action="/areariservata/categoria" method="post"
+                              th:class="${categoria.nomeCategoria != null ? '' : 'd-none'} + ' needs-validation'"
+                              novalidate="" autocomplete="off">
+                            <label class="text-muted mt-3" for="nomeCategoria">Categoria</label>
+                            <input type="text" id="nomeCategoria" name="nomeCategoria" class="form-control mt-2"
+                                   th:value="${categoria.nomeCategoria}" placeholder="Nome Categoria" required>
+                            <button th:text="${categoria.nomeCategoria != null ? 'Aggiorna Categoria' : 'Aggiungi Categoria'}"
+                                    type="submit" class="btn btn-success mt-3"></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex col-content-manager mx-2">
+                    <div class="card w-100 shadow-lg my-5">
+                        <div class="card-body p-5" id="cardBodyInsert">
+                            <h1 class="fs-4 card-title fw-bold mt-5">Inserisci un nuovo contenuto</h1>
+                            <form action="/areariservata/contenuto" method="POST" enctype="multipart/form-data"
+                                  class="needs-validation" novalidate="" autocomplete="off">
+                                <div class="mb-3">
+                                    <label class="mb-2 text-muted" for="nome">Titolo</label>
+                                    <input id="nome" type="text" class="form-control" name="titolo"
+                                           th:value="${contenuto.titolo}" required autofocus>
+                                </div>
+
+                                <div class="mb-3 w-100">
+                                    <label class="text-muted" for="descrizione">Descrizione</label>
+                                    <textarea name="descrizione" class="form-control w-100" id="descrizione" rows="5"
+                                              aria-label="With textarea" th:text="${contenuto.descrizione}"></textarea>
+                                </div>
+                                <label class="text-muted" for="categoria">Categoria</label>
+                                <select id="categoria" name="categoria" class="form-select mt-2 mb-5"
+                                        aria-label="Categoria">
+                                    <option th:selected="${contenuto.categoria == null}" disabled hidden="hidden">Scegli
+                                        la categoria
+                                    </option>
+                                    <option th:each="categoria : ${categorie}"
+                                            th:value="${categoria.id}"
+                                            th:text="${categoria.nomeCategoria}"
+                                            th:selected="${contenuto.categoria != null && contenuto.categoria.nomeCategoria == categoria.nomeCategoria}"
+                                    ></option>
+                                </select>
+
+                                <div class="position-relative">
+
+                                    <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
+                                        <input type="file" name="foto"
+                                               class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
+                                               accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+                                        <p>Oppure trascinala qui</p>
+                                        <p><small>Fino a 20 immagini, limite peso 10MB.</small></p>
+                                    </section>
+
+                                    <section>
+                                            <span th:if="${ contenuto.immagini.size() > 0 }"
+                                                  th:each="immagine : ${contenuto.immagini}">
+                                                <img th:src="@{${immagine.galleria}}" width="300"/>
+                                                <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
+                                            </span>
+                                    </section>
+                                </div>
+
+                                <button type="submit" class="btn btn-success w-50 d-block mx-auto">Invia</button>
                             </form>
                         </div>
                     </div>
-                    <div class="d-flex col-content-manager mx-2">
-                        <div class="card w-100 shadow-lg my-5">
-                            <div class="card-body p-5" id="cardBodyInsert">
-                                <h1 class="fs-4 card-title fw-bold mt-5">Inserisci un nuovo contenuto</h1>
-                                <form action="/areariservata/contenuto" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate="" autocomplete="off">
-                                    <div class="mb-3">
-                                        <label class="mb-2 text-muted" for="nome">Titolo</label>
-                                        <input id="nome" type="text" class="form-control" name="titolo" th:value="${contenuto.titolo}" required autofocus>
+                </div>
+                <div class="d-flex col-content-manager mx-2">
+                    <div class="card w-100 shadow-lg my-5">
+                        <div class="card-body p-5" id="cardBodyAdmin">
+                            <h1 class="fs-4 card-title fw-bold" id="titleAdmin">Lista Admin</h1>
+                            <div class="mb-3">
+
+                                <div th:each="admin : ${admins}" class="row justify-content-evenly align-items-center">
+                                    <div class="col">
+                                        <h3 th:text="${admin.username}" class="mb-0"></h3>
+                                        <span th:text="${admin.password.replaceAll('[\w]', '*')}"></span>
                                     </div>
-
-                                    <div class="mb-3 w-100">
-                                        <label class="text-muted" for="descrizione">Descrizione</label>
-                                        <textarea name="descrizione" class="form-control w-100" id="descrizione" rows="5" aria-label="With textarea" th:text="${contenuto.descrizione}"></textarea>
+                                    <div class="col text-end">
+                                        <a th:href="@{/areariservata(adminId=${admin.id})}"
+                                           class="btn btn-primary d-inline-flex p-1">
+                                            <svg width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+                                                 xml:space="preserve" fill="none">
+                                                    <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67"
+                                                          class="cls-1"
+                                                          style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                                                          transform="translate(-77.923 40.646)"></path>
+                                                <path d="m195.656 33.271-52.882 52.882"
+                                                      style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1"
+                                                      transform="translate(-77.923 40.646)"></path>
+                                                </svg>
+                                        </a>
+                                        <a th:href="@{/areariservata/admin/elimina(id=${admin.id})}"
+                                           class="btn btn-danger d-inline-flex p-1">
+                                            <svg fill="#fff" width="20" viewBox="0 0 456.686 456.686"
+                                                 xml:space="preserve">
+                                                    <path d="M363.541,120.847H93.16c-8.005,0-15.623,3.367-21.04,9.263c-5.389,5.896-8.052,13.798-7.363,21.761l24.767,278.836 c1.303,14.71,13.619,25.98,28.39,25.98h220.874c14.772,0,27.073-11.271,28.391-25.98L391.93,151.87 c0.705-7.963-1.975-15.864-7.363-21.761C379.165,124.214,371.547,120.847,363.541,120.847z M155.896,382.248 c-0.48,0.029-0.929,0.045-1.378,0.045c-9.308,0-17.18-7.169-17.884-16.597l-9.651-127.207 c-0.749-9.876,6.644-18.496,16.537-19.244c9.921-0.778,18.512,6.643,19.26,16.536l9.638,127.206 C173.181,372.879,165.773,381.499,155.896,382.248z M246.003,372.535c0,9.922-8.038,17.944-17.944,17.944 c-9.922,0-17.959-8.022-17.959-17.944V205.012c0-9.922,8.036-17.944,17.959-17.944c9.906,0,17.944,8.022,17.944,17.944V372.535z M320.052,365.696c-0.705,9.428-8.576,16.597-17.884,16.597c-0.449,0-0.898-0.016-1.378-0.045 c-9.877-0.749-17.285-9.369-16.521-19.261l9.638-127.206c0.749-9.894,9.398-17.346,19.262-16.536 c9.892,0.748,17.284,9.368,16.536,19.244L320.052,365.696z"/>
+                                                <path d="M370.589,22.344h-52.887C314.889,9.578,303.544,0,289.912,0h-123.15c-13.619,0-24.964,9.578-27.791,22.344H86.097 c-16.941,0-30.649,13.723-30.649,30.648c0,16.927,13.708,30.649,30.649,30.649h284.493c16.941,0,30.649-13.723,30.649-30.649 C401.239,36.066,387.531,22.344,370.589,22.344z"/>
+                                                </svg>
+                                        </a>
                                     </div>
-                                    <label class="text-muted" for="categoria">Categoria</label>
-                                    <select id="categoria" name="categoria" class="form-select mt-2 mb-5" aria-label="Categoria">
-                                        <option th:selected="${contenuto.categoria == null}" disabled hidden="hidden">Scegli la categoria</option>
-                                        <option th:each="categoria : ${categorie}"
-                                                th:value="${categoria.id}"
-                                                th:text="${categoria.nomeCategoria}"
-                                                th:selected="${contenuto.categoria != null && contenuto.categoria.nomeCategoria == categoria.nomeCategoria}"
-                                        ></option>
-                                    </select>
+                                </div>
 
-                                    <div class="position-relative">
-
-                                        <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
-                                            <input type="file" name="foto" class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0" accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
-                                            <p>Oppure trascinala qui</p>
-                                            <p><small>Fino a 20 immagini, limite peso 10MB.</small></p>
-                                        </section>
-
-                                        <section>
-                                            <span th:if="${ contenuto.immagini.size() > 0 }" th:each="immagine : ${contenuto.immagini}">
-                                                <img th:src="@{${immagine.galleria}}" width="300" />
-                                                <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
-                                            </span>
-                                        </section>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-success w-50 d-block mx-auto">Invia</button>
+                                <form action="/areariservata/admin" method="POST" class="needs-validation" novalidate=""
+                                      autocomplete="off">
+                                    <label class="text-muted" for="username">Nome</label><br/>
+                                    <input type="text" id="username" name="username" class="form-control"
+                                           th:value="${admin.username}" placeholder="username">
+                                    <label class="text-muted" for="password">Password</label><br/>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                           th:value="${admin.password}" placeholder="Password"><br/>
+                                    <button type="submit" class="btn btn-success">Registra</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex col-content-manager mx-2">
-                        <div class="card w-100 shadow-lg my-5">
-                            <div class="card-body p-5" id="cardBodyAdmin">
-                                <h1 class="fs-4 card-title fw-bold" id="titleAdmin">Lista Admin</h1>
-                                <div class="mb-3">
-
-                                    <div th:each="admin : ${admins}" class="row justify-content-evenly align-items-center">
-                                        <div class="col">
-                                            <h3 th:text="${admin.username}" class="mb-0"></h3>
-                                            <span th:text="${admin.password.replaceAll('[\w]', '*')}"></span>
-                                        </div>
-                                        <div class="col text-end">
-                                            <a th:href="@{/areariservata(adminId=${admin.id})}" class="btn btn-primary d-inline-flex p-1">
-                                                <svg width="20" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill="none">
-                                                    <path d="m104.175 90.97-4.252 38.384 38.383-4.252L247.923 15.427V2.497L226.78-18.646h-12.93zm98.164-96.96 31.671 31.67" class="cls-1" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
-                                                    <path d="m195.656 33.271-52.882 52.882" style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke: #ffffff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1" transform="translate(-77.923 40.646)"></path>
-                                                </svg>
-                                            </a>
-                                            <a th:href="@{/areariservata/admin/elimina(id=${admin.id})}" class="btn btn-danger d-inline-flex p-1">
-                                                <svg fill="#fff" width="20" viewBox="0 0 456.686 456.686" xml:space="preserve">
-                                                    <path d="M363.541,120.847H93.16c-8.005,0-15.623,3.367-21.04,9.263c-5.389,5.896-8.052,13.798-7.363,21.761l24.767,278.836 c1.303,14.71,13.619,25.98,28.39,25.98h220.874c14.772,0,27.073-11.271,28.391-25.98L391.93,151.87 c0.705-7.963-1.975-15.864-7.363-21.761C379.165,124.214,371.547,120.847,363.541,120.847z M155.896,382.248 c-0.48,0.029-0.929,0.045-1.378,0.045c-9.308,0-17.18-7.169-17.884-16.597l-9.651-127.207 c-0.749-9.876,6.644-18.496,16.537-19.244c9.921-0.778,18.512,6.643,19.26,16.536l9.638,127.206 C173.181,372.879,165.773,381.499,155.896,382.248z M246.003,372.535c0,9.922-8.038,17.944-17.944,17.944 c-9.922,0-17.959-8.022-17.959-17.944V205.012c0-9.922,8.036-17.944,17.959-17.944c9.906,0,17.944,8.022,17.944,17.944V372.535z M320.052,365.696c-0.705,9.428-8.576,16.597-17.884,16.597c-0.449,0-0.898-0.016-1.378-0.045 c-9.877-0.749-17.285-9.369-16.521-19.261l9.638-127.206c0.749-9.894,9.398-17.346,19.262-16.536 c9.892,0.748,17.284,9.368,16.536,19.244L320.052,365.696z"/>
-                                                    <path d="M370.589,22.344h-52.887C314.889,9.578,303.544,0,289.912,0h-123.15c-13.619,0-24.964,9.578-27.791,22.344H86.097 c-16.941,0-30.649,13.723-30.649,30.648c0,16.927,13.708,30.649,30.649,30.649h284.493c16.941,0,30.649-13.723,30.649-30.649 C401.239,36.066,387.531,22.344,370.589,22.344z"/>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <form action="/areariservata/admin" method="POST" class="needs-validation" novalidate="" autocomplete="off">
-                                        <label class="text-muted" for="username">Nome</label><br />
-                                        <input type="text" id="username"  name="username" class="form-control" th:value="${admin.username}" placeholder="username">
-                                        <label class="text-muted" for="password">Password</label><br />
-                                        <input type="password" name="password" id="password" class="form-control" th:value="${admin.password}" placeholder="Password"><br />
-                                        <button type="submit" class="btn btn-success">Registra</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <h1 class="card-title text-center my-5 py-5">Gestisci i contenuti pubblici</h1>
-
-        <div class="row d-flex justify-content-center">
-            <div th:each="contenuto : ${contenuti}" class="card mx-auto shadow-lg bg-body-tertiary p-0" style="width: 18rem;">
-                <img th:src="@{${contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top">
-                <div class="card-body">
-                    <h5 th:text="${contenuto.titolo}" class="card-title"></h5>
-                    <p th:text="${contenuto.descrizione}" class="card-text"></p>
-                    <a th:href="@{/areariservata(contenutoId=${contenuto.id})}" class="btn btn-primary">Modifica</a>
-                    <a th:href="@{/areariservata/contenuto/elimina(id=${contenuto.id})}" class="btn btn-danger">Elimina</a>
                 </div>
             </div>
+
         </div>
+    </section>
 
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                    </a>
-                    <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
-                </div>
+    <h1 class="card-title text-center my-5 py-5">Gestisci i contenuti pubblici</h1>
 
-
-
-                <div class="cardfooter" style="display: inline-block;">
-                    <a class="socialContainer containerOne" href="#" style="float: left;">
-                        <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
-                            <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                            ></path>
-                        </svg>
-                    </a>
-
-                    <a class="socialContainer containerTwo" href="#" style="float: left; ">
-                        <svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
-                            <path
-                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-                            ></path>
-                        </svg>
-                    </a>
-
-                    <a class="socialContainer containerThree" href="#" style="float: left;">
-                        <svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
-                            <path
-                                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
-                            ></path>
-                        </svg>
-                    </a>
-
-
-                </div>
-            </footer>
+    <div class="row d-flex justify-content-center">
+        <div th:each="contenuto : ${contenuti}" class="card mx-auto shadow-lg bg-body-tertiary p-0"
+             style="width: 18rem;">
+            <img th:src="@{${contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top">
+            <div class="card-body">
+                <h5 th:text="${contenuto.titolo}" class="card-title"></h5>
+                <p th:text="${contenuto.descrizione}" class="card-text"></p>
+                <a th:href="@{/areariservata(contenutoId=${contenuto.id})}" class="btn btn-primary">Modifica</a>
+                <a th:href="@{/areariservata/contenuto/elimina(id=${contenuto.id})}" class="btn btn-danger">Elimina</a>
+            </div>
         </div>
+    </div>
 
-    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
+            </div>
+
+
+            <div class="cardfooter" style="display: inline-block;">
+                <a class="socialContainer containerOne" href="#" style="float: left;">
+                    <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
+                        <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                        ></path>
+                    </svg>
+                </a>
+
+                <a class="socialContainer containerTwo" href="#" style="float: left; ">
+                    <svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
+                        <path
+                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                        ></path>
+                    </svg>
+                </a>
+
+                <a class="socialContainer containerThree" href="#" style="float: left;">
+                    <svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
+                        <path
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                        ></path>
+                    </svg>
+                </a>
+
+
+            </div>
+        </footer>
+    </div>
+
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
     <script th:src="@{/backend/js/areariservata.js}"></script>
+</div>
 </body>
 </html>
