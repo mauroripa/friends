@@ -10,26 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-    <link href="backend/css/style.css" rel="stylesheet" />
+    <link th:href="@{backend/css/style.css}" rel="stylesheet" />
+    <script th:src="@{backend/js/index.js}"></script>
     <link rel="icon" type="image/x-icon" href="">
-    <!--Colori friends logo
-      ROSSO #ee2825
-      GIALLO #ffb828
-      AZZURRO #02b0ec
-      BIANCO #FFFFFF
-      -->
 </head>
 <body class="bg-body-tertiary">
 <div>
 
-    <div><img id="sfondolocation" src="foto4.jpg" class="img-fluid">
 <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
     <!--da capire se mettere opacity 50-->
     <!-- Container wrapper -->
 
     <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" src="immagini/logo friend png.png"></a>
+        <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{immagini/logo friend png.png}"></a>
 
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -47,13 +41,12 @@
                 <li th:each="categoria : ${categorie}" class="nav-item">
                     <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
                 </li>
-                <li>
-                    <a th:href="@{/admin/login}">Login</a>
-                </li>
+                <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item" >Area riservata</a></li>
+                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item" >Login</a></li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control " type="search" placeholder="Search" aria-label="Search" style="width: 200px;">
-                <button class="btn btn-outline-success" type="submit"><img style="width: 18px;" class="lente" src="immagini/lentepng.png"/></button>
+                <button class="btn btn-outline-success" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}"/></button>
             </form>
         </div>
     </div>
@@ -63,7 +56,7 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide mb-5 " data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="immagini/friends-scura-nav.jpeg" alt="First slide">
+            <img class="d-block w-100" th:src="@{immagini/friends-scura-nav.jpeg}" alt="First slide">
         </div>
     </div>
 
@@ -71,16 +64,16 @@
     </div>
 
 </div>
-</div>
-</div>
+
+
 <div class="container-fluid">
-    <img src="immagini/storiapng.png" alt="Storia" style="display: flex; margin: auto;">
+    <img th:src="@{immagini/storiapng.png}" alt="Storia" style="display: flex; margin: auto;">
 </div>
 
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-md-4 col-sm-3">
-            <img src="immagini/storiafoto1.jpg" class="rounded float-start" alt="..." style="width: 60%;">
+            <img th:src="@{immagini/storiafoto1.jpg}" class="rounded float-start" alt="..." style="width: 60%;">
         </div>
         <div class="col-md-4 col-sm-6 text-center">
             <br><span style="font-style: italic; font-size: 20px;">Sei pronto per un tuffo nel passato?</span>
@@ -90,19 +83,17 @@
             Monica, Chandler, Joey e Phoebe.</span> </br>Qui potrai trovare .</p>
         </div>
         <div class="col-md-4 col-sm-3">
-            <img src="immagini/fotostoria2.jpg" class="rounded float-end" alt="..." style="width: 60%;">
+            <img th:src="@{immagini/fotostoria2.jpg}" class="rounded float-end" alt="fotostoria2" style="width: 60%;">
         </div>
     </div>
 
     <div class="container-fluid">
-        <div class="card p-4 m-5 shadow-lg"><img src="immagini/newspng.png"
-                                                 style="display: flex; margin: auto;">
+        <div class="card p-4 m-5 shadow-lg"><img th:src="@{immagini/newspng.png}" style="display: flex; margin: auto;">
 
             <div class="row d-flex justify-content-center">
 
-
                 <div class="card col-4 shadow-lg bg-body-tertiary">
-                    <img class="card-img-top" src="immagini/sfondo.jpg" alt="Card image cap">
+                    <img class="card-img-top" th:src="@{immagini/sfondo.jpg}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -113,7 +104,6 @@
             </div>
 
         </div>
-
 
         <!--fine ROW-->
     </div>
@@ -130,13 +120,13 @@
                 <li class="ms-3 list-group-item">
                     <a class="text-muted" href="#">
               <span>
-                <img class="contatti" src="https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid"
+                <img class="contatti" th:src="@{https://cdn-icons-png.freepik.com/256/1384/1384005.png?semt=ais_hybrid}"
                      style="width: 23px; height: auto; margin-right: 6px; margin-top: 5px;"></span>
                         <img class="contatti"
-                             src="https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg"
+                             th:src="@{https://img.freepik.com/premium-vector/new-twitter-logo-x-2023-twitter-x-logo-vector-download_691560-10808.jpg}"
                              style="width: 30px; height: auto; margin-right: 5px; margin-top: 2px;">
                         <img class="contatti"
-                             src="https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg"
+                             th:src="@{https://static.vecteezy.com/system/resources/previews/018/910/691/non_2x/instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg}"
                              style="width: 40px; height: auto; margin-top: -3px;">
                     </a>
                 </li>
@@ -144,7 +134,8 @@
         </footer>
     </div>
 
-</div></body>
+</div>
+</body>
 
 
 </html>

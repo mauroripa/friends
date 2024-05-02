@@ -99,6 +99,8 @@ public class AreaRiservataController {
             model.addAttribute("admins", admins);
             model.addAttribute("admin", admin);
             model.addAttribute("messaggio", messaggio);
+            System.out.println(session.getAttribute("username"));
+            model.addAttribute("login", session.getAttribute("admin") != null);
 
             return "areariservata";
         }

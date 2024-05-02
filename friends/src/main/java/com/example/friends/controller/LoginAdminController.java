@@ -1,6 +1,8 @@
 package com.example.friends.controller;
 
+import com.example.friends.model.Categoria;
 import com.example.friends.service.AdminService;
+import com.example.friends.service.CategoriaService;
 import com.example.friends.service.ServizioTentativiAccessoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
 
+import java.util.List;
+
 @Controller
 public class LoginAdminController {
 
@@ -16,10 +20,22 @@ public class LoginAdminController {
     private AdminService adminService;
 
     @Autowired
+    private CategoriaService categoriaService;
+
+    @Autowired
     private ServizioTentativiAccessoImpl servizioTentativiAccesso;
 
     @GetMapping("/admin/login")
     public String showLoginForm(Model model, HttpSession session) {
+
+        if(session.getAttribute("admin") != null) {
+            return "redirect:/areariservata";
+        }
+
+        List<Categoria> categorie = categoriaService.listaCategorie();
+        model.addAttribute("categorie", categorie);
+        model.addAttribute("login", session.getAttribute("admin") != null);
+
         if (servizioTentativiAccesso.isBloccato(session)) {
             model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
         }
@@ -28,6 +44,7 @@ public class LoginAdminController {
 
     @PostMapping("/admin/login")
     public String loginAdmin(String username, String password, Model model, HttpSession session) {
+
         if (servizioTentativiAccesso.isBloccato(session)) {
             model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
             return "loginAdmin";
@@ -46,7 +63,8 @@ public class LoginAdminController {
 
     @GetMapping("/admin/logout")
     public String logoutAdmin(HttpSession session) {
-        session.removeAttribute("username");
+
+        session.removeAttribute("admin");
         servizioTentativiAccesso.accessoRiuscito(session); // Rimuove lo stato di blocco
         return "redirect:/";
     }

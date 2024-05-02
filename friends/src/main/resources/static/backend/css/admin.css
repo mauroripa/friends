@@ -68,6 +68,18 @@ section{
     cursor: pointer;
 }
 
+.card .card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 /*#cardBody{
   background-image: url(https://i.pinimg.com/564x/27/3f/58/273f58a9d910c8ed3aa96691d1b9a11c.jpg);
