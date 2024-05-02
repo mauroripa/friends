@@ -60,3 +60,10 @@ const handleDrop = (e) => {
 
 // const inserisci= document.querySelector
 // document.addEventListener("onclick", inserisci);
+function apri(){
+    const categorie = document.querySelector(".carta");
+    const pulsante = document.getElementById("pulsanteCat");
+    
+    categorie.style.display = "block";
+    pulsante.style.display = "none";
+}
