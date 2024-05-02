@@ -37,6 +37,29 @@
 .navbar{
   background-color: black;
 }
+#uno:hover {
+	color: #ee2825;
+}
+
+#due:hover {
+	color: #ffb828;
+}
+
+#tre:hover {
+	color: #02b0ec;
+}
+
+#quattro:hover {
+	color: #ee2825;
+}
+
+#cinque:hover {
+	color: #ffb828;
+}
+
+#sei:hover {
+	color: #02b0ec;
+}
 
 .list-group-item{
   border: 0px;
