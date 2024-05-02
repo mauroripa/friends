@@ -158,7 +158,34 @@ body {
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Colore rosso per la prima card */
+.card:nth-child(1) .card__content {
+  background-color: #ee2825d9;
+}
 
+/* Colore giallo per la seconda card */
+.card:nth-child(2) .card__content {
+  background-color: #ffb828d9;
+}
+
+/* Colore azzurro per la terza card */
+.card:nth-child(3) .card__content {
+  background-color: #02b0ecd9;
+}
+/* Colore rosso per la quarta card */
+.card:nth-child(4) .card__content {
+  background-color: #ee2825d9;
+}
+
+/* Colore giallo per la quinta card */
+.card:nth-child(5) .card__content {
+  background-color: #ffb828d9;
+}
+
+/* Colore azzurro per la sesta card */
+.card:nth-child(6) .card__content {
+  background-color: #02b0ecd9;
+}
 
 .card:hover .card__content {
   transform: rotateX(0deg);
