@@ -75,18 +75,15 @@
 			<div class="col-content-manager col-4 ">
 				<div class="p-3 border rounded-2 bg-white w-100 shadow-lg">
 
-					<button class="glow-on-hover d-block mx-auto my-4 open-column">Modifica categoria</button>
-
 					<div class="carta">
 						<div class="carta-title-container">
-							<div class="fs-4 card-title fw-bold" id="title">Modifica Categorie</div>
+							<div class="fs-4 card-title fw-bold">Modifica Categorie</div>
 							<button class="button close-column">
 								<span class="X"></span>
 								<span class="Y"></span>
-								<div class="close">Chiudi</div>
 							</button>
 						</div>
-						<div class="mb-3">
+						<div class="category-container mb-3">
 							<div class="category-row my-2">
 								<h5 class="labelCat">Gadget</h5>
 								<div class="actions">
@@ -335,192 +332,175 @@
 									</button>
 								</div>
 							</div>
-
-							<form method="POST" class="needs-validation mt-3" novalidate="" autocomplete="off">
-								<label class="fs-4 text-bold mt-2 mb-2">Categoria</label><br />
-								<input class="form-control mt-3 mb-5" type="text" placeholder="Nome Categoria">
-								<button class="glow-on-hover mt-3">Aggiungi Categoria</button>
-							</form>
 						</div>
+
+						<form method="POST" class="needs-validation mt-3" novalidate="" autocomplete="off">
+							<label class="fs-4 text-bold mt-2 mb-2">Categoria</label><br />
+							<input class="form-control mt-3 mb-5" type="text" placeholder="Nome Categoria">
+							<button class="glow-on-hover mt-3">Aggiungi Categoria</button>
+						</form>
 					</div>
+
+					<button class="glow-on-hover d-block mx-auto my-4 open-column">Modifica categoria</button>
 				</div>
 			</div>
 
 			<!--INSERT FORM-->
 
 			<div class="col-content-manager col-4">
+				<div class="py-3 ps-3 pe-2 border rounded-2 bg-white w-100 shadow-lg">
+					<div class="carta pe-2">
 
-				<div class="card w-100 shadow-lg">
-					<div class="card-body p-5">
-						<button class="glow-on-hover mx-auto" id="pulsanteIns" onclick="apriins()">Inserisci
-							un contenuto</button>
-						<div class="cartaIns">
-							<div class="container" style="display: flex; justify-content: flex-end;">
-								<div class="fs-4 card-title fw-bold " id="titleIns" style="display: none;">
-									Inserisci un nuovo contenuto
-								</div>
-								<button class="button" id="pulsanteXIns" onclick="chiudiins()" style="display: none; ">
-									<span class="X"></span>
-									<span class="Y"></span>
-									<div class="close">Chiudi</div>
-								</button>
-							</div>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
-								<div class="mb-3">
-									<label class="mb-2 text-muted">Titolo</label>
-									<input id="name" type="text" class="form-control" name="nome" value="" required
-										autofocus>
-
-								</div>
-
-								<div class="mb-3">
-									<div class="mb-2 w-100">
-										<label class="text-muted">Descrizione</label>
-									</div>
-									<div class="input-group">
-
-										<textarea class="form-control" id="textarea" cols="40" rows="5"
-											aria-label="With textarea"></textarea>
-									</div>
-								</div>
-								<label class="text-muted">Categoria</label><br />
-								<select class="form-select mt-2 mb-5" aria-label="Categoria">
-									<option selected>Scegli la categoria</option>
-									<option value="gadget">Gadget</option>
-									<option value="location">Location</option>
-									<option value="personaggi">Personaggi</option>
-									<option value="scene">Scene Iconiche</option>
-									<option value="news">News sui Personaggi</option>
-									<option value="storia">La Storia di Friends</option>
-									<option value="backstage">Backstage</option>
-								</select>
-								<div class="d-flex align-items-center">
-									<section class="droparea card shadow-lg w-100 h-100 p-5 mb-3  bg-body-tertiary">
-										<input type="file" name="foto"
-											class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
-											accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
-										<p>Oppure trascinala qui</p>
-										<p><small>Fino a 20 immagini, non c'è limite per il peso del
-												file.</small></p>
-									</section>
-								</div>
-								<div class="d-flex justify-content-center">
-									<button type="submit" class="glow-on-hover">
-										Invia
-									</button>
-								</div>
-
-							</form>
+						<div class="carta-title-container">
+							<div class="fs-4 card-title fw-bold">Inserisci un nuovo contenuto</div>
+							<button class="button close-column">
+								<span class="X"></span>
+								<span class="Y"></span>
+							</button>
 						</div>
+
+						<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+
+							<div class="mb-3">
+								<label class="mb-2 text-muted">Titolo</label>
+								<input id="name" type="text" class="form-control" name="nome" value="" required
+									autofocus>
+							</div>
+
+							<div class="mb-3">
+								<div class="mb-2 w-100">
+									<label class="text-muted">Descrizione</label>
+								</div>
+								<div class="input-group">
+									<textarea class="form-control" id="textarea" cols="40" rows="5"
+										aria-label="With textarea"></textarea>
+								</div>
+							</div>
+
+							<label class="text-muted">Categoria</label><br />
+
+							<select class="form-select mt-2 mb-5" aria-label="Categoria">
+								<option selected>Scegli la categoria</option>
+								<option value="gadget">Gadget</option>
+								<option value="location">Location</option>
+								<option value="personaggi">Personaggi</option>
+								<option value="scene">Scene Iconiche</option>
+								<option value="news">News sui Personaggi</option>
+								<option value="storia">La Storia di Friends</option>
+								<option value="backstage">Backstage</option>
+							</select>
+
+							<div class="d-flex align-items-center">
+								<section class="droparea card shadow-lg w-100 h-100 p-5 mb-3  bg-body-tertiary">
+									<input type="file" name="foto"
+										class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
+										accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+									<p>Oppure trascinala qui</p>
+									<p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
+								</section>
+							</div>
+
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="glow-on-hover">Invia</button>
+							</div>
+						</form>
 					</div>
+
+					<button class="glow-on-hover d-block mx-auto my-4 open-column">Inserisci un contenuto</button>
 				</div>
 			</div>
 
 
 			<div class="col-content-manager col-4">
-				<div class="card w-100 shadow-lg my-5">
-					<div class="card-body p-5" id="cardBodyAdmin">
-						<button class="glow-on-hover mx-auto" id="pulsanteAdm" onclick="apriadm()">Modifica
-							Admin</button>
-						<div class="cartaAdm">
-							<div class="container" style="display: flex; justify-content: flex-end;">
-								<div class="fs-4 card-title fw-bold" id="titleAdmin">Modifica Admin</div>
-								<button class="button" id="pulsanteXAdm" onclick="chiudiadm()"
-									style="display: none; margin-left: 10px;">
-									<span class="X"></span>
-									<span class="Y"></span>
-									<div class="close">Chiudi</div>
-								</button>
-							</div>
-							<div class="mb-3">
-								<label class="text-muted">Lista</label><br />
-								<label class="text-muted">Username</label><br />
+				<div class="py-3 ps-3 pe-2 border rounded-2 bg-white w-100 shadow-lg">
+					<div class="carta pe-2">
+						<div class="carta-title-container">
+							<div class="fs-4 card-title fw-bold">Modifica Admin</div>
+							<button class="button close-column">
+								<span class="X"></span>
+								<span class="Y"></span>
+							</button>
+						</div>
+						<div class="users-list">
+
+							<p class="text-muted mb-0">Lista</p>
+							
+							<div class="user mb-3">
+
+								<p class="text-muted mb-0">Username</p>
 								<h5>Mario</h5>
-								<label class="text-muted">Password</label>
-								<div class="container">
-									<h5 id="password">*********</h5>
-									<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
-										<input type="checkbox" checked="checked" id="boxOcchio" onchange="mostra()">
-										<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
-											viewBox="0 0 576 512">
-											<path
-												d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
-											</path>
+
+								<p class="text-muted mb-0">Password</p>
+
+								<div class="px-2">
+									<h5 class="password">*********</h5>
+									<label class="containerEye d-flex justify-content-end my-auto">
+										<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+											<path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path>
 										</svg>
-										<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
-											viewBox="0 0 640 512">
-											<path
-												d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
-											</path>
+										<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+											<path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path>
 										</svg>
 									</label>
 								</div>
-								<div class="mb-3">
+							</div>
+	
+							<div class="user mb-3">
+								
+								<p class="text-muted mb-0">Username</p>
+								<h5>Mario</h5>
 
-									<label class="text-muted">Username</label><br />
-									<h5>Mario</h5>
-									<label class="text-muted">Password</label>
-									<div class="container">
-										<h5 id="password">*********</h5>
-										<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
-											<input type="checkbox" checked="checked" id="boxOcchio" onchange="mostra()">
-											<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
-												viewBox="0 0 576 512">
-												<path
-													d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
-												</path>
-											</svg>
-											<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
-												viewBox="0 0 640 512">
-												<path
-													d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
-												</path>
-											</svg>
-										</label>
-									</div>
-									<div class="mb-3">
-										<label class="text-muted">Username</label><br />
-										<h5>Mario</h5>
-										<label class="text-muted">Password</label>
-										<div class="container">
-											<h5 id="password">*********</h5>
-											<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
-												<input type="checkbox" checked="checked" id="boxOcchio"
-													onchange="mostra()">
-												<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
-													viewBox="0 0 576 512">
-													<path
-														d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
-													</path>
-												</svg>
-												<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
-													viewBox="0 0 640 512">
-													<path
-														d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
-													</path>
-												</svg>
-											</label>
-										</div>
-										<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+								<p class="text-muted mb-0">Password</p>
 
-											<label class="text-muted">Nome</label><br />
-											<input class="form-control" type="text" placeholder="username">
-											<label class="text-muted">Password</label><br />
-											<input class="form-control" type="text" placeholder="Password"><br />
-											<button class="btn btn-primary mt-3 w-50">Modifica</button>
-											<button class="btn btn-danger mt-3 w-20">Elimina</button>
-											<button class="glow-on-hover mt-3">Registra</button>
-										</form>
-									</div>
+								<div class="px-2">
+									<h5 class="password">*********</h5>
+									<label class="containerEye d-flex justify-content-end my-auto">
+										<input type="checkbox" checked="checked">
+										<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+											<path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path>
+										</svg>
+										<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+											<path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path>
+										</svg>
+									</label>
+								</div>
+							</div>
+	
+							<div class="user mb-3">
+								
+								<p class="text-muted mb-0">Username</p>
+								<h5>Mario</h5>
+
+								<p class="text-muted mb-0">Password</p>
+
+								<div class="px-2">
+									<h5 class="password">*********</h5>
+									<label class="containerEye d-flex justify-content-end my-auto">
+										<input type="checkbox" checked="checked">
+										<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+											<path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path>
+										</svg>
+										<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+											<path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path>
+										</svg>
+									</label>
 								</div>
 							</div>
 						</div>
 
+						<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+
+							<label class="text-muted">Nome</label><br />
+							<input class="form-control" type="text" placeholder="username">
+							<label class="text-muted">Password</label><br />
+							<input class="form-control" type="text" placeholder="Password"><br />
+							<button class="btn btn-primary mt-3 w-50">Modifica</button>
+							<button class="btn btn-danger mt-3 w-20">Elimina</button>
+							<button class="glow-on-hover mt-3">Registra</button>
+						</form>
 					</div>
 
-
-					<!--fine form inserimento-->
-					<!--Fine LOGIN FORM-->
+					<button class="glow-on-hover d-block mx-auto my-4 open-column">Modifica Admin</button>
 				</div>
 			</div>
 		</div>
@@ -541,7 +521,7 @@
 		<div class="row ">
 
 
-			<div class="cardf mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+			<div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
 				<img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -559,7 +539,7 @@
 
 
 
-			<div class="cardf mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
+			<div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
 				<img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
