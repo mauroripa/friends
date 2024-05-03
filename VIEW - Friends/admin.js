@@ -60,27 +60,29 @@ const handleDrop = (e) => {
 
 // const inserisci= document.querySelector
 // document.addEventListener("onclick", inserisci);
+/*
+const btn_carta = document.querySelector("#pulsanteCat");
+
 function apri(){
     const categorie = document.querySelector(".carta");
-    const pulsante = document.getElementById("pulsanteCat");
+    
     const pulsanteX = document.getElementById("pulsanteX");
     const title = document.getElementById("title");
     categorie.classList.remove("hidden");
     categorie.classList.add("show");
-    pulsante.style.display="none";
+    btn_carta.style.display="none";
     pulsanteX.style.display = "block";
     title.style.display = "block";
 }
 function chiudi(){
     const categorie = document.querySelector(".carta");
-    const pulsante = document.getElementById("pulsanteCat");
     const pulsanteX = document.getElementById("pulsanteX");
     const title = document.getElementById("title");
 
     categorie.classList.remove("show");
     categorie.classList.add("hidden");
 
-    pulsante.style.display = "block";
+    btn_carta.style.display = "block";
     pulsanteX.style.display = "none";
     title.style.display = "none";
 
@@ -151,10 +153,50 @@ function chiudiadm(){
     title.style.display = "none";
 
 }
-function mostra(){
+function mostra() {
     const password = document.getElementById("password");
-    const occhio = document.getElementById("occhio");
-    password.innerHTML = "abc";
+    const occhio = document.getElementById("occhio");   
     
-   
+   let boxOcchio = document.getElementById("boxOcchio");
+   if (boxOcchio.checked) {
+       password.innerHTML = "*********";
+    }else {
+       password.innerHTML = "password123";
+   }
 }
+*/
+
+
+// Discord? sala 2
+const handle_open_column = (btn) => {
+    
+    const container = btn.closest('.col-content-manager')
+    const carta = container.querySelector('.carta')
+    
+    btn.classList.remove('show')
+    btn.classList.add('hidden')
+
+    carta.classList.remove('hidden')
+    carta.classList.add('show')
+}
+
+const handle_close_column = (btn) => {
+    
+    const container = btn.closest('.col-content-manager')
+    const carta = container.querySelector('.carta')
+    
+    container.querySelector('.open-column').classList.remove('hidden')
+    container.querySelector('.open-column').classList.add('show')
+
+    carta.classList.remove('show')
+    carta.classList.add('hidden')
+}
+
+
+const open_column = document.querySelectorAll('.open-column')
+open_column.forEach(btn => btn.addEventListener('click', ev => handle_open_column(btn), false))
+
+const close_column = document.querySelectorAll('.close-column')
+close_column.forEach(btn => btn.addEventListener('click', ev => handle_close_column(btn), false))
+
+

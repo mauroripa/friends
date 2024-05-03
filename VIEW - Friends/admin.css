@@ -91,6 +91,7 @@
 #textarea{
   resize: none;
 }
+
 input[type="file"] {
   display: none;
 }
@@ -153,36 +154,80 @@ section{
   display:block;
 }
 
-.col-content-manager{
+.col-content-manager {
   transition: all 1s;
   display: flex;
   align-items: center;
+}
+
+
+.col-content-manager .carta-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-content-manager .carta-title-container button {
 
 }
+
+.col-content-manager .category-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-content-manager .category-row .labelCat {
+  margin-bottom: 0;
+}
+
+.col-content-manager .category-row .actions {
+  display: flex;
+}
+
+.col-content-manager .category-row .actions .bin-button {
+  margin-left: 10px;
+}
+
 .hidden {
-  display: block;
-  margin: 0;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-  transition: all 1s;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0;
+    height: 0 !important;
+    overflow: hidden;
+    transition: all 1s;
 }
 .show{
   display: block;
   height: 750px;
   transition: all 1s;
 }
-.col-content-manager .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 .file-input {
   z-index: 1;
   cursor: pointer;
 }
-#titleAdmin{
-  margin-top: -70px;
+.cardf {
+  box-sizing: border-box;
+  width: 190px;
+  height: 600px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+.cardf:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
 }
 /*------ Settings ------*/
 .containerEye {
