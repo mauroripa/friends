@@ -26,6 +26,7 @@
   justify-content: center;
   overflow: hidden;
   transition-duration: 0.3s;
+  margin: 5px;
 }
 
 /* instagram*/
@@ -144,7 +145,17 @@ header {
 
 
 }
-
+.card-footer{
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(238, 238, 238, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
+}
 .green-border {
   border-color: green;
 }
@@ -245,8 +256,6 @@ section {
   display: flex;
   justify-content: space-between;
 }
-
-.col-content-manager .carta-title-container button {}
 
 .col-content-manager .category-row {
   display: flex;
