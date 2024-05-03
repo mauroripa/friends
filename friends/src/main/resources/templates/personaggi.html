@@ -84,7 +84,7 @@
                         <a class="rounded-4" target="_blank"
                            th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
                             <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                                 th:src="@{${contenuto.immagini.get(0).galleria}}"/>
+                                 th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}"/>
                         </a>
                     </div>
                 </div>
