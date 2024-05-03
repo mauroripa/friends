@@ -5,6 +5,7 @@ import com.example.friends.model.Contenuto;
 import com.example.friends.service.CategoriaService;
 import com.example.friends.service.ContenutoService;
 import jakarta.servlet.http.HttpSession;
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,9 @@ public class ContenutoController {
 
    @Autowired
    private ContenutoService contenutoService;
+
+   @Autowired
+   private ApplicationContext appContext;
 
 
    @GetMapping
