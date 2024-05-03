@@ -40,7 +40,8 @@ public class ContenutoController {
       Categoria categoria = categoriaService.getCategoriaByName(path);
 
       String templateName = path.toLowerCase().replace(' ', '-') + ".html";
-
+      System.out.println(appContext.getResource("classpath:/template/" + templateName).exists());
+      System.out.println(templateName);
       if(categoria != null && appContext.getResource("classpath:/template/" + templateName).exists()) {
          model.addAttribute("categoria", categoria);
          model.addAttribute("contenuti", categoria.getContenuti());
@@ -66,7 +67,7 @@ public class ContenutoController {
             model.addAttribute("contenuto", contenuto);
             model.addAttribute("categoria", contenuto.getCategoria());
             return "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase().replace(' ', '-');
-         } 
+         }
       }
       return "404";
    }
