@@ -75,9 +75,13 @@
     <br>
 
     <div class="container-fluid">
+        <div id="divlocation" class=" col-md-12  col-sm-12 d-flex flex-column align-items-center justify-content-center">
+            <img id="location" th:src="@{immagini/SCRITTA A MANO LOACTION.png}" class="img-fluid ">
+        </div>
+
         <div class="row">
 
-            <div class="col-md-3 col-sm-6  justify-content-center">
+            <div th:each="contenuto : ${contenuti}" class="col-md-3 col-sm-6  justify-content-center">
                 <div class="card">
                     <img  class="img" th:src="@{immagini/foto interna della card.png}" />
                     <div class="rounded">
@@ -96,11 +100,7 @@
                     </svg>
                 </div>
             </div>
-
-            <div id="divlocation" class=" col-md-12  col-sm-12 d-flex flex-column align-items-center justify-content-center">
-                <img id="location" th:src="@{immagini/SCRITTA A MANO LOACTION.png}" class="img-fluid ">
-            </div>
-
+            
         </div>
     </div>
 
