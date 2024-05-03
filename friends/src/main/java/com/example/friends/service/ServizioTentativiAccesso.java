@@ -9,5 +9,7 @@ public interface ServizioTentativiAccesso {
     void accessoFallito(HttpSession session);
 
     boolean isBloccato(HttpSession session);
+    
+    int tempoRimanenteSblocco(HttpSession session);
 
 }
