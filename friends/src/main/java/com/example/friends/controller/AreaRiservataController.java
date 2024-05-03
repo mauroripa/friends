@@ -63,6 +63,7 @@ public class AreaRiservataController {
             @RequestParam(name = "categoriaId", required = false) String categoriaId,
             @RequestParam(name = "contenutoId", required = false) String contenutoId,
             @RequestParam(name = "adminId", required = false) String adminId
+
     ) {
 
         Admin logged = (Admin) session.getAttribute("admin");
@@ -102,6 +103,7 @@ public class AreaRiservataController {
             model.addAttribute("messaggio", messaggio);
             System.out.println(session.getAttribute("username"));
             model.addAttribute("login", session.getAttribute("admin") != null);
+
 
             return "areariservata";
         }
@@ -234,27 +236,28 @@ public class AreaRiservataController {
             Admin logged = (Admin) session.getAttribute("admin");
 
             if (logged != null) {
-                contenuto.setTitolo(titolo);
-                contenuto.setDescrizione(descrizione);
-                contenuto.setCategoria(
-                        categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
-                );
+                try {
+                    contenuto.setTitolo(titolo);
+                    contenuto.setDescrizione(descrizione);
+                    contenuto.setCategoria(
+                            categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
+                    );
 
-                // Se il contenuto è nuovo e non è stato fornito alcun file, reindirizza con un messaggio di errore
-                if (isNewContent && (galleria == null || galleria.length == 0)) {
-                    redirectAttributes.addFlashAttribute("errorMessage", "Devi caricare almeno una foto o un video");
-                    return "redirect:/areariservata/formContenuto";
-                }
-
-                // Se è stato fornito un file e il contenuto è nuovo o esistente, gestisci il caricamento
-                if (galleria != null && galleria.length > 0) {
-                    List<Galleria> images = getListGalleria(galleria);
-                    List<Galleria> originalGalleria = contenuto.getImmagini();
-                    if (!originalGalleria.isEmpty()) {
-                        images.addAll(originalGalleria);
+                    // Se il contenuto è nuovo e non è stato fornito alcun file, reindirizza con un messaggio di errore
+                    if (isNewContent && (galleria == null || galleria.length == 0)) {
+                        redirectAttributes.addFlashAttribute("errorMessage", "Devi caricare almeno una foto o un video");
+                        return "redirect:/areariservata?error";
                     }
-                    contenuto.setImmagini(images);
-                }
+
+                    // Se è stato fornito un file e il contenuto è nuovo o esistente, gestisci il caricamento
+                    if (galleria != null && galleria.length > 0) {
+                        List<Galleria> images = getListGalleria(galleria);
+                        List<Galleria> originalGalleria = contenuto.getImmagini();
+                        if (!originalGalleria.isEmpty()) {
+                            images.addAll(originalGalleria);
+                        }
+                        contenuto.setImmagini(images);
+                    }
 
                 /*List<Galleria> images = getListGalleria(galleria);
                 List<Galleria> originalGalleria = contenuto.getImmagini();
@@ -267,13 +270,19 @@ public class AreaRiservataController {
                     contenuto.setImmagini(images);
                 }*/
 
-                contenutoService.addContenuto(contenuto);
+                    contenutoService.addContenuto(contenuto);
 
-                return "redirect:/areariservata";
+                    return "redirect:/areariservata";
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    redirectAttributes.addFlashAttribute("errorMessage", "Si è verificato un errore durante il caricamento del file.");
+                    return "redirect:/areariservata";
+
+                }
             }
-
         return "redirect:/admin/login";
     }
+
 
     @GetMapping("/contenuto/elimina")
     public String eliminaContenuto(
