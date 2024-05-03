@@ -40,9 +40,9 @@ public class ContenutoController {
       if(categoria != null) {
          model.addAttribute("categoria", categoria);
          model.addAttribute("contenuti", categoria.getContenuti());
-         return path.toLowerCase();
+         return path.toLowerCase().replace(' ','-');
       }
-      return "index";
+      return "404";
    }
 
    @GetMapping ("/dettaglio")
