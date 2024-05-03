@@ -41,4 +41,13 @@ public class ServizioTentativiAccessoImpl {
         session.setAttribute("utenteBloccato", true);
         session.setAttribute("utenteBloccatoFino", tempoSblocco);
     }
+    public synchronized int tempoRimanenteSblocco(HttpSession session) {
+        Integer utenteBloccatoFino = (Integer) session.getAttribute("utenteBloccatoFino");
+        if (utenteBloccatoFino != null) {
+            int tempoAttuale = (int) (System.currentTimeMillis() / 1000);
+            return Math.max(0, utenteBloccatoFino - tempoAttuale);
+        }
+        return 0;
+    }
+
 }
