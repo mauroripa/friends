@@ -162,7 +162,7 @@
                                     <section class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
                                         <input type="file" name="foto"
                                                class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
-                                               accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+                                               accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw,.mp4" multiple="true">
                                         <p>Oppure trascinala qui</p>
                                         <p><small>Fino a 20 immagini, limite peso 10MB.</small></p>
                                     </section>
@@ -170,7 +170,12 @@
                                     <section>
                                             <span th:if="${ contenuto.immagini.size() > 0 }"
                                                   th:each="immagine : ${contenuto.immagini}">
-                                                <img th:src="@{${'/uploads/' + immagine.galleria}}" width="300"/>
+                                                <img th:unless="${#strings.endsWith(immagine.galleria, '.mp4')}"
+                                                     th:src="@{${'/uploads/' + immagine.galleria}}" width="300"/>
+                                                <video th:if="${#strings.endsWith(immagine.galleria, '.mp4')}">
+                                                    <source th:src="@{${'/uploads/' + immagine.galleria}}"
+                                                            type="video/mp4">
+                                                </video>
                                                 <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
                                             </span>
                                     </section>
@@ -241,7 +246,12 @@
     <div class="row d-flex justify-content-center">
         <div th:each="contenuto : ${contenuti}" class="card mx-auto shadow-lg bg-body-tertiary p-0"
              style="width: 18rem;">
-            <img th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top">
+            <img th:if="${not contenuto.immagini.isEmpty() and not #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}"
+                 th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}" class="card-img-top"/>
+            <video th:if="${not contenuto.immagini.isEmpty() and #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}">
+                <source th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
+                        type="video/mp4">
+            </video>
             <div class="card-body">
                 <h5 th:text="${contenuto.titolo}" class="card-title"></h5>
                 <p th:text="${contenuto.descrizione}" class="card-text"></p>
