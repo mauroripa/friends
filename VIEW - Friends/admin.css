@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+.cardf {
+  box-sizing: border-box;
+  width: 190px;
+  height: 500px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+  
+  }
 .box__dragndrop,
 .box__uploading,
 .box__success,
@@ -12,18 +32,7 @@
 .cartaAdm{
   display: none;
 }
-.cardf {
-  width: fit-content;
-  height: fit-content;
-  background-color: rgb(238, 238, 238);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 25px;
-  gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-  
-}/* for all social containers*/
+  /* for all social containers*/
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -84,10 +93,11 @@
     opacity: 1;
   }
 }
-
+/*
 .carta{
   display: none;
 }
+*/
 #textarea{
   resize: none;
 }
@@ -154,10 +164,84 @@ section{
   display:block;
 }
 
+.hidden {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0;
+  height: 0 !important;
+  overflow: hidden;
+  transition: all 1s;
+}
+.show{
+display: block;
+height: 750px;
+transition: all 1s;
+}
+
+
+/* ??? */
+
+
+.col-content-manager:not(.open) .carta,
+.col-content-manager.open .open-column {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.col-content-manager.open .carta,
+.col-content-manager .open-column {
+  display: block;
+  transition: all 1s;
+}
+
+.col-content-manager .category-container {
+  height: 250px;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.col-content-manager .carta::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 10px;
+}
+
+.col-content-manager .category-container::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 6px;
+}
+
+
+.col-content-manager .carta::-webkit-scrollbar-thumb,
+.col-content-manager .category-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.col-content-manager .carta::-webkit-scrollbar-track,
+.col-content-manager .category-container::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+
+.col-content-manager .carta {
+  height: 550px;
+  overflow: auto;
+}
+/* ??? */
+
+
+
+
 .col-content-manager {
   transition: all 1s;
   display: flex;
   align-items: center;
+
 }
 
 
@@ -188,19 +272,7 @@ section{
   margin-left: 10px;
 }
 
-.hidden {
-    display: block !important;
-    margin: 0 !important;
-    padding: 0;
-    height: 0 !important;
-    overflow: hidden;
-    transition: all 1s;
-}
-.show{
-  display: block;
-  height: 750px;
-  transition: all 1s;
-}
+
 
 .file-input {
   z-index: 1;
@@ -208,7 +280,7 @@ section{
 }
 .cardf {
   box-sizing: border-box;
-  width: 190px;
+  width: 690px;
   height: 600px;
   background: rgba(217, 217, 217, 0.58);
   border: 1px solid white;
