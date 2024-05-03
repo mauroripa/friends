@@ -171,34 +171,10 @@ function mostra() {
 const handle_column = (btn) => {
     
     const container = btn.closest('.col-content-manager')
-    //closest: cerca il selettore più vicino al btn
-
-    
 
     container.classList.toggle('open')
     container.querySelector('.carta').scrollTop = 0;
-
-    // const carta = container.querySelector('.carta')
-    // //.col content manager .carta
-    // btn.classList.remove('show')
-    // btn.classList.add('hidden')
-
-    // carta.classList.remove('hidden')
-    // carta.classList.add('show')
 }
-
-// const handle_close_column = (btn) => {
-    
-//     const container = btn.closest('.col-content-manager')
-//     const carta = container.querySelector('.carta')
-    
-//     container.querySelector('.open-column').classList.remove('hidden')
-//     container.querySelector('.open-column').classList.add('show')
-
-//     carta.classList.remove('show')
-//     carta.classList.add('hidden')
-// }
-
 
 const open_column = document.querySelectorAll('.open-column')
 open_column.forEach(btn => btn.addEventListener('click', ev => handle_column(btn), false))
@@ -207,3 +183,19 @@ const close_column = document.querySelectorAll('.close-column')
 close_column.forEach(btn => btn.addEventListener('click', ev => handle_column(btn), false))
 
 
+const handle_password_eyes = (btn) => {
+
+    const container = btn.closest('.pwd-info')
+    const pwd = container.querySelector('.password[pwd]')
+    const password = pwd.getAttribute('pwd')
+
+    container.classList.toggle('see')
+
+    if(!container.classList.contains('see')) {
+        pwd.textContent = password.replace(/\w/g, '*')
+    } else {
+        pwd.textContent = password
+    }
+}
+const show_passwords = document.querySelectorAll('.container-eyes')
+show_passwords.forEach(btn => btn.addEventListener('click', ev => handle_password_eyes(btn), false))
