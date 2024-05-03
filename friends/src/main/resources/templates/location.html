@@ -12,13 +12,20 @@
             crossorigin="anonymous"></script>
     <link href="backend/css/location.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="">
-
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne+Mono&display=swap"
+            rel="stylesheet">
 </head>
 
 <body class="bg-body-tertiary">
-<div>
     <div>
-        <img id="sfondolocation" th:src="@{immagini/foto4.jpg}" style="z-index: -3;" class="img-fluid">
+
         <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
             <!--da capire se mettere opacity 50-->
             <!-- Container wrapper -->
@@ -59,34 +66,31 @@
 <br>
 <br>
 
-
     <div id="testo" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <h3 class="merriweather-regular">Alla scoperta dei luoghi di Friends !!!</h3>
-    <p class="merriweather-light">I veri fan conoscono ogni battutta a memoria
-        e puntualmente inziano il rewatch ogni volta che ne hanno l’occasione.</p>
-
-    <p class="merriweather-regular">Clicca sulle card e scopri i posti più iconici della tua serie preferita</p>
-
-</div>
-
-
+        <h3 class="merriweather-regular">Alla scoperta dei luoghi di Friends !!!</h3>
+        <p class="merriweather-regular">Clicca sulle card e scopri i posti più iconici della tua serie preferita</p>
+    </div>
 
     <br>
     <br>
+
     <div class="container-fluid">
+        <div id="divlocation" class=" col-md-12  col-sm-12 d-flex flex-column align-items-center justify-content-center">
+            <img id="location" th:src="@{immagini/SCRITTA A MANO LOACTION.png}" class="img-fluid ">
+        </div>
 
         <div class="row">
 
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
+            <div th:each="contenuto : ${contenuti}" class="col-md-3 col-sm-6  justify-content-center">
                 <div class="card">
-                    <img  class="img" th:src="@{immagini/foto interna della card.png}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends_ Rachel Get her First Paycheck from Central Perk (Season 1 Clip) _ TBS.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p style="display: none;" class="paragrafo">Il bar di fiducia</p>
+                    <img  class="img" th:src="@{immagini/foto interna della card.png}" />
+                    <div class="rounded">
+                        <video th:if="${not contenuto.immagini.isEmpty()}" th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" style="display: none;" class="video1"  muted loop playsinline>
+                            <source >
+                         </video>
+                    </div>
+                    <h3 th:text="${contenuto.titolo}" class="titolocard" style="margin: auto; display: none;"></h3>
+                    <p th:text="${contenuto.descrizione}" style="display: none;" class="paragrafo"></p>
                     <svg width="30px" viewBox="0 0 24 24" fill="none" class="close-card"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -96,103 +100,8 @@
                 </div>
             </div>
 
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-
-            <div id="divlocation" class=" col-md-12  col-sm-12 d-flex flex-column align-items-center justify-content-center">
-                <img id="location" th:src="@{immagini/SCRITTA A MANO LOACTION.png}" class="img-fluid "> </div>
-
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6  justify-content-center">
-                <div class="card">
-                    <img  class="img" th:src="@{Caffetteria Central Perk.jpg}">
-                    <video style="display: none;" class="video1"  muted loop playsinline>
-                        <source th:src="@{video/Friends - Sigla.mp4}"
-                                type="video/mp4">
-                    </video>
-                    <h3 class="titolocard" style="margin: auto; display: none;">Central Perk</h3>
-                    <p  style="display: none;" class="paragrafo">Il bar di fiducia</p>
-                </div>
-            </div>
-
-
         </div>
-
     </div>
-
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
@@ -200,8 +109,6 @@
                 </a>
                 <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
             </div>
-
-
 
             <div class="cardfooter" style="display: inline-block;">
                 <a class="socialContainer containerOne" href="#" style="float: left;">
@@ -231,10 +138,7 @@
 
             </div>
         </footer>
-    </div>
 
     <script src="backend/js/location.js" ></script>
-
 </body>
-
 </html>

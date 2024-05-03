@@ -7,477 +7,527 @@
 	<title>Admin Page</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-		crossorigin="anonymous"></script>
+
 	<link href="admin.css" rel="stylesheet" />
 </head>
 
 <body>
 
-	<div class="container-fluid">
-		<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
-			<!--da capire se mettere opacity 50-->
-			<!-- Container wrapper -->
+	<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
+		<!--da capire se mettere opacity 50-->
+		<!-- Container wrapper -->
 
-			<div class="container-fluid">
-				<!-- Navbar brand -->
-				<a class="navbar-brand" href="index.html"><img style="width: 200px;" src="logo friend png.png"></a>
+		<div class="container-fluid">
+			<!-- Navbar brand -->
+			<a class="navbar-brand" href="index.html"><img style="width: 200px;" src="logo friend png.png"></a>
 
-				<!-- Toggle button -->
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation">
+			<!-- Toggle button -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
 
-					<!-- ICONA HAMBURGER -->
-					<span class="navbar-toggler-icon"></span>
-				</button>
+				<!-- ICONA HAMBURGER -->
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-				<!-- Collapsible wrapper -->
-				<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-					<!-- Left links -->
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-
-						<!--dropdown -->
+			<!-- Collapsible wrapper -->
+			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				<!-- Left links -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
-						<li class="nav-item">
-							<a id="uno" class="nav-link" href="index.html">Home Page</a>
-						</li>
-						<li class="nav-item">
-							<a id="due" class="nav-link" href="location.html">Location</a>
-						</li>
-						<li class="nav-item">
-							<a id="tre" class="nav-link" href="gadget.html">Gadget</a>
-						</li>
-						<li class="nav-item">
-							<a id="quattro" class="nav-link" href="personaggi.html">Personaggi</a>
-						</li>
-						<li class="nav-item">
-							<a id="cinque" class="nav-link" href="backstage.html">Backstage</a>
-						</li>
-						<li class="nav-item">
-							<a id="sei" class="nav-link" href="backstage.html">Area Riservata</a>
-						</li>
+					<!--dropdown -->
 
 
-					</ul>
-					<form class="d-flex" role="search">
-						<input style="width: 200px; margin-right: 10px;" class="form-control" type="search"
-							placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
-								src="lentepng.png" /></button>
-					</form>
-				</div>
+					<li class="nav-item">
+						<a id="uno" class="nav-link" href="index.html">Home Page</a>
+					</li>
+					<li class="nav-item">
+						<a id="due" class="nav-link" href="location.html">Location</a>
+					</li>
+					<li class="nav-item">
+						<a id="tre" class="nav-link" href="gadget.html">Gadget</a>
+					</li>
+					<li class="nav-item">
+						<a id="quattro" class="nav-link" href="personaggi.html">Personaggi</a>
+					</li>
+					<li class="nav-item">
+						<a id="cinque" class="nav-link" href="backstage.html">Backstage</a>
+					</li>
+					<li class="nav-item">
+						<a id="sei" class="nav-link" href="backstage.html">Area Riservata</a>
+					</li>
+
+
+				</ul>
+				<form class="d-flex" role="search">
+					<input style="width: 200px; margin-right: 10px;" class="form-control" type="search"
+						placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+							src="lentepng.png" /></button>
+				</form>
 			</div>
-		</nav>
+		</div>
+	</nav>
 
-		<div class="container ">
-			<section class="h-100 ">
-				<div class="container " style="margin-top: 100px" >
-					<div class="row content-manager  h-100 " >
-						<div class="col-content-manager col-4 " >
-							<div class="card w-100 shadow-lg">
-								<div class="card-body p-5 ">
-									<!--DA FARE CHE QUANDO SI CLICCA MODIFICA BUTTON TI PORTA CON L'AUTOFOCUS SULL'INPUT-->
-									<button class="glow-on-hover mx-auto" id="pulsanteCat" onclick="apri()">Modifica
-										categoria</button>
-									<div class="container"
-										style="display: flex; justify-content: flex-end; margin-top: 15%; margin-left: 10%;">
-										<button class="button" id="pulsanteX" onclick="chiudi()" style="display: none;">
-											<span class="X"></span>
-											<span class="Y"></span>
-											<div class="close">Chiudi</div>
-										</button>
-									</div>
-									<div class="carta">
-										<h1 class="fs-4 card-title fw-bold" id="title" style="display: none;">Modifica
-											Categorie</h1>
-										<div class="mb-3">
-											<div class="container"
-												style="display: flex; justify-content: flex-end; margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">Gadget</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px; ">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
-											<div class="container"
-												style="display: flex; justify-content: flex-end;  margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">Location
-												</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px;">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
-											<div class="container"
-												style="display: flex; justify-content: flex-end; margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">Personaggi
-												</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px;">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
+	<div class="container mt-5 pt-5">
+		<div class="row content-manager h-100 ">
+			<div class="col-content-manager col-4 ">
+				<div class="p-3 border rounded-2 bg-white w-100 shadow-lg">
 
-											<div class="container"
-												style="display: flex; justify-content: flex-end;  margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">News</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px;">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
-											<div class="container"
-												style="display: flex; justify-content: flex-end; margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">La Storia
-												</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px;">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
-											<div class="container"
-												style="display: flex; justify-content: flex-end; margin: 10%;">
-												<h5 style="float:left; margin-right: 10%;" class="labelCat">Backstage
-												</h5>
-												<button class="edit-button" style="float: left; margin-right: 5px;">
-													<svg class="edit-svgIcon" viewBox="0 0 512 512">
-														<path
-															d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
-														</path>
-													</svg>
-												</button>
-												<button class="bin-button">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 39 7" class="bin-top">
-														<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
-														</line>
-														<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357"
-															y1="1.5" x1="12"></line>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 33 39" class="bin-bottom">
-														<mask fill="white" id="path-1-inside-1_8_19">
-															<path
-																d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
-															</path>
-														</mask>
-														<path mask="url(#path-1-inside-1_8_19)" fill="white"
-															d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
-														</path>
-														<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
-														<path stroke-width="4" stroke="white" d="M21 6V29"></path>
-													</svg>
-													<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-														viewBox="0 0 89 80" class="garbage">
-														<path fill="white"
-															d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
-														</path>
-													</svg>
-												</button>
-											</div>
-											<form method="POST" class="needs-validation mt-3" novalidate=""
-												autocomplete="off">
+					<button class="glow-on-hover d-block mx-auto my-4 open-column">Modifica categoria</button>
 
-												<label class="fs-4 text-bold mt-2 mb-2">Categoria</label><br />
-												<input class="form-control mt-3 mb-5" type="text"
-													placeholder="Nome Categoria">
-												<button class="glow-on-hover mt-3">Aggiungi Categoria</button>
-											</form>
-										</div>
-									</div>
+					<div class="carta">
+						<div class="carta-title-container">
+							<div class="fs-4 card-title fw-bold" id="title">Modifica Categorie</div>
+							<button class="button close-column">
+								<span class="X"></span>
+								<span class="Y"></span>
+								<div class="close">Chiudi</div>
+							</button>
+						</div>
+						<div class="mb-3">
+							<div class="category-row my-2">
+								<h5 class="labelCat">Gadget</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
 								</div>
 							</div>
+							<div class="category-row my-2">
+								<h5 class="labelCat">Location
+								</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="category-row my-2">
+								<h5 class="labelCat">Personaggi</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<div class="category-row my-2">
+								<h5 class="labelCat">News</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="category-row my-2">
+								<h5 class="labelCat">La Storia</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="category-row my-2">
+								<h5 class="labelCat">Backstage</h5>
+								<div class="actions">
+									<button class="edit-button">
+										<svg class="edit-svgIcon" viewBox="0 0 512 512">
+											<path
+												d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+											</path>
+										</svg>
+									</button>
+									<button class="bin-button">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 7"
+											class="bin-top">
+											<line stroke-width="4" stroke="white" y2="5" x2="39" y1="5">
+											</line>
+											<line stroke-width="3" stroke="white" y2="1.5" x2="26.0357" y1="1.5"
+												x1="12">
+											</line>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 39"
+											class="bin-bottom">
+											<mask fill="white" id="path-1-inside-1_8_19">
+												<path
+													d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+												</path>
+											</mask>
+											<path mask="url(#path-1-inside-1_8_19)" fill="white"
+												d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z">
+											</path>
+											<path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+											<path stroke-width="4" stroke="white" d="M21 6V29"></path>
+										</svg>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 89 80"
+											class="garbage">
+											<path fill="white"
+												d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z">
+											</path>
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<form method="POST" class="needs-validation mt-3" novalidate="" autocomplete="off">
+								<label class="fs-4 text-bold mt-2 mb-2">Categoria</label><br />
+								<input class="form-control mt-3 mb-5" type="text" placeholder="Nome Categoria">
+								<button class="glow-on-hover mt-3">Aggiungi Categoria</button>
+							</form>
 						</div>
+					</div>
+				</div>
+			</div>
 
-						<!--INSERT FORM-->
+			<!--INSERT FORM-->
 
-						<div class="col-content-manager col-4">
+			<div class="col-content-manager col-4">
 
-							<div class="card w-100 shadow-lg">
-								<div class="card-body p-5">
-									<button class="glow-on-hover mx-auto" id="pulsanteIns" onclick="apriins()">Inserisci
-										un contenuto</button>
-									<div class="container"
-										style="display: flex; justify-content: flex-end; margin-top: 15%; margin-left: 10%;">
-										<button class="button" id="pulsanteXIns" onclick="chiudiins()"
-											style="display: none;">
-											<span class="X"></span>
-											<span class="Y"></span>
-											<div class="close">Chiudi</div>
-										</button>
+				<div class="card w-100 shadow-lg">
+					<div class="card-body p-5">
+						<button class="glow-on-hover mx-auto" id="pulsanteIns" onclick="apriins()">Inserisci
+							un contenuto</button>
+						<div class="cartaIns">
+							<div class="container" style="display: flex; justify-content: flex-end;">
+								<div class="fs-4 card-title fw-bold " id="titleIns" style="display: none;">
+									Inserisci un nuovo contenuto
+								</div>
+								<button class="button" id="pulsanteXIns" onclick="chiudiins()" style="display: none; ">
+									<span class="X"></span>
+									<span class="Y"></span>
+									<div class="close">Chiudi</div>
+								</button>
+							</div>
+							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+								<div class="mb-3">
+									<label class="mb-2 text-muted">Titolo</label>
+									<input id="name" type="text" class="form-control" name="nome" value="" required
+										autofocus>
+
+								</div>
+
+								<div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="text-muted">Descrizione</label>
 									</div>
-									<div class="cartaIns">
-										<h1 class="fs-4 card-title fw-bold " id="titleIns" style="display: none;">
-											Inserisci un nuovo contenuto
-										</h1>
+									<div class="input-group">
+
+										<textarea class="form-control" id="textarea" cols="40" rows="5"
+											aria-label="With textarea"></textarea>
+									</div>
+								</div>
+								<label class="text-muted">Categoria</label><br />
+								<select class="form-select mt-2 mb-5" aria-label="Categoria">
+									<option selected>Scegli la categoria</option>
+									<option value="gadget">Gadget</option>
+									<option value="location">Location</option>
+									<option value="personaggi">Personaggi</option>
+									<option value="scene">Scene Iconiche</option>
+									<option value="news">News sui Personaggi</option>
+									<option value="storia">La Storia di Friends</option>
+									<option value="backstage">Backstage</option>
+								</select>
+								<div class="d-flex align-items-center">
+									<section class="droparea card shadow-lg w-100 h-100 p-5 mb-3  bg-body-tertiary">
+										<input type="file" name="foto"
+											class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
+											accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
+										<p>Oppure trascinala qui</p>
+										<p><small>Fino a 20 immagini, non c'è limite per il peso del
+												file.</small></p>
+									</section>
+								</div>
+								<div class="d-flex justify-content-center">
+									<button type="submit" class="glow-on-hover">
+										Invia
+									</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-content-manager col-4">
+				<div class="card w-100 shadow-lg my-5">
+					<div class="card-body p-5" id="cardBodyAdmin">
+						<button class="glow-on-hover mx-auto" id="pulsanteAdm" onclick="apriadm()">Modifica
+							Admin</button>
+						<div class="cartaAdm">
+							<div class="container" style="display: flex; justify-content: flex-end;">
+								<div class="fs-4 card-title fw-bold" id="titleAdmin">Modifica Admin</div>
+								<button class="button" id="pulsanteXAdm" onclick="chiudiadm()"
+									style="display: none; margin-left: 10px;">
+									<span class="X"></span>
+									<span class="Y"></span>
+									<div class="close">Chiudi</div>
+								</button>
+							</div>
+							<div class="mb-3">
+								<label class="text-muted">Lista</label><br />
+								<label class="text-muted">Username</label><br />
+								<h5>Mario</h5>
+								<label class="text-muted">Password</label>
+								<div class="container">
+									<h5 id="password">*********</h5>
+									<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
+										<input type="checkbox" checked="checked" id="boxOcchio" onchange="mostra()">
+										<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
+											viewBox="0 0 576 512">
+											<path
+												d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
+											</path>
+										</svg>
+										<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
+											viewBox="0 0 640 512">
+											<path
+												d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
+											</path>
+										</svg>
+									</label>
+								</div>
+								<div class="mb-3">
+
+									<label class="text-muted">Username</label><br />
+									<h5>Mario</h5>
+									<label class="text-muted">Password</label>
+									<div class="container">
+										<h5 id="password">*********</h5>
+										<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
+											<input type="checkbox" checked="checked" id="boxOcchio" onchange="mostra()">
+											<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
+												viewBox="0 0 576 512">
+												<path
+													d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
+												</path>
+											</svg>
+											<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
+												viewBox="0 0 640 512">
+												<path
+													d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
+												</path>
+											</svg>
+										</label>
+									</div>
+									<div class="mb-3">
+										<label class="text-muted">Username</label><br />
+										<h5>Mario</h5>
+										<label class="text-muted">Password</label>
+										<div class="container">
+											<h5 id="password">*********</h5>
+											<label class="containerEye d-flex justify-content-end my-auto" id="occhio">
+												<input type="checkbox" checked="checked" id="boxOcchio"
+													onchange="mostra()">
+												<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em"
+													viewBox="0 0 576 512">
+													<path
+														d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z">
+													</path>
+												</svg>
+												<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em"
+													viewBox="0 0 640 512">
+													<path
+														d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z">
+													</path>
+												</svg>
+											</label>
+										</div>
 										<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
-											<div class="mb-3">
-												<label class="mb-2 text-muted">Titolo</label>
-												<input id="name" type="text" class="form-control" name="nome" value=""
-													required autofocus>
 
-											</div>
-
-											<div class="mb-3">
-												<div class="mb-2 w-100">
-													<label class="text-muted">Descrizione</label>
-												</div>
-												<div class="input-group">
-
-													<textarea class="form-control" id="textarea" cols="40" rows="5"
-														aria-label="With textarea"></textarea>
-												</div>
-											</div>
-											<label class="text-muted">Categoria</label><br />
-											<select class="form-select mt-2 mb-5" aria-label="Categoria">
-												<option selected>Scegli la categoria</option>
-												<option value="gadget">Gadget</option>
-												<option value="location">Location</option>
-												<option value="personaggi">Personaggi</option>
-												<option value="scene">Scene Iconiche</option>
-												<option value="news">News sui Personaggi</option>
-												<option value="storia">La Storia di Friends</option>
-												<option value="backstage">Backstage</option>
-											</select>
-											<div class="d-flex align-items-center">
-												<section
-													class="droparea card shadow-lg w-100 h-100 p-5 mb-5 bg-body-tertiary">
-													<input type="file" name="foto"
-														class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
-														accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw" multiple="true">
-													<p>Oppure trascinala qui</p>
-													<p><small>Fino a 20 immagini, non c'è limite per il peso del
-															file.</small></p>
-												</section>
-											</div>
-											<div class="d-flex align-items-center">
-												<button type="submit" class="glow-on-hover">
-													Invia
-												</button>
-											</div>
-
+											<label class="text-muted">Nome</label><br />
+											<input class="form-control" type="text" placeholder="username">
+											<label class="text-muted">Password</label><br />
+											<input class="form-control" type="text" placeholder="Password"><br />
+											<button class="btn btn-primary mt-3 w-50">Modifica</button>
+											<button class="btn btn-danger mt-3 w-20">Elimina</button>
+											<button class="glow-on-hover mt-3">Registra</button>
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 
-
-						<div class="col-content-manager col-4">
-							<div class="card w-100 shadow-lg my-5">
-								<div class="card-body p-5" id="cardBodyAdmin">
-									<button class="glow-on-hover mx-auto" id="pulsanteAdm" onclick="apriadm()">Modifica
-										Admin</button>
-									<div class="container"
-										style="display: flex; justify-content: flex-end; margin-top: 15%; margin-left: 10%;">
-										<button class="button" id="pulsanteXAdm" onclick="chiudiadm()"
-											style="display: none;">
-											<span class="X"></span>
-											<span class="Y"></span>
-											<div class="close">Chiudi</div>
-										</button>
-									</div>
-									<div class="cartaAdm">
-										<h1 class="fs-4 card-title fw-bold" id="titleAdmin">Modifica Admin</h1>
-										<div class="mb-3">
-											<label class="text-muted">Lista Admin</label><br />
-											<label class="text-muted">Username</label><br />
-											<h1>Mario</h1>
-											<label class="text-muted">Password</label>
-											<div class="container">
-												<h5 id="password">*********</h5>
-													<label class="containerEye d-flex justify-content-end my-auto" id="occhio"  onclick="mostra()">
-														<input type="checkbox" checked="checked">
-														<svg class="eye" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"></path></svg>
-														<svg class="eye-slash" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"></path></svg>
-													  </label>
-												</div>
-											<form method="POST" class="needs-validation" novalidate=""
-												autocomplete="off">
-
-												<label class="text-muted">Nome</label><br />
-												<input class="form-control" type="text" placeholder="username">
-												<label class="text-muted">Password</label><br />
-												<input class="form-control" type="text" placeholder="Password"><br />
-												<button class="btn btn-primary mt-3 w-50">Modifica</button>
-												<button class="btn btn-danger mt-3 w-20">Elimina</button>
-												<button class="glow-on-hover mt-3">Registra</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-
-						<!--fine form inserimento-->
-						<!--Fine LOGIN FORM-->
 					</div>
-				</div>
 
-			</section>
+
+					<!--fine form inserimento-->
+					<!--Fine LOGIN FORM-->
+				</div>
+			</div>
 		</div>
 
+	</div>
+
+	<div class="container-fluid">
 		<div class="row h-100 ">
 			<div class="col-12 d-flex justify-content-center text-center mb-5">
 				<div class="card shadow-lg w-50 h-20 p-5">
@@ -487,10 +537,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="row d-flex justify-content-center">
+
+		<div class="row ">
 
 
-			<div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+			<div class="cardf mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
 				<img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -508,7 +559,7 @@
 
 
 
-			<div class="card mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
+			<div class="cardf mx-auto  shadow-lg bg-body-tertiary" style="width: 18rem;">
 				<img class="card-img-top" src="sfondo2.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -524,7 +575,7 @@
 
 
 
-			<div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
+			<div class="cardf mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
 				<img class="card-img-top" src="sfondo.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Card title</h5>
@@ -539,58 +590,53 @@
 
 		</div>
 		<!--fine ROW-->
-		<!--FINE ROW GESTIONE CONTENUTI-->
-		<div class="container">
-			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-				<div class="col-md-4 d-flex align-items-center">
-					<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-					</a>
-					<span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
-				</div>
-
-
-
-				<div class="card" style="display: inline-block;">
-					<a class="socialContainer containerOne" href="#" style="float: left;">
-						<svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
-							<path
-								d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-							</path>
-						</svg>
-					</a>
-
-					<a class="socialContainer containerTwo" href="#" style="float: left; ">
-						<svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
-							<path
-								d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
-							</path>
-						</svg>
-					</a>
-
-					<a class="socialContainer containerThree" href="#" style="float: left;">
-						<svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
-							<path
-								d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-							</path>
-						</svg>
-					</a>
-
-
-				</div>
-			</footer>
-		</div>
-
-
-
-
-
-
-
-
-
-
 	</div>
+
+	<!--FINE ROW GESTIONE CONTENUTI-->
+	<div class="container">
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<div class="col-md-4 d-flex align-items-center">
+				<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+				</a>
+				<span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
+			</div>
+
+
+
+			<div class="card" style="display: inline-block;">
+				<a class="socialContainer containerOne" href="#" style="float: left;">
+					<svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
+						<path
+							d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+						</path>
+					</svg>
+				</a>
+
+				<a class="socialContainer containerTwo" href="#" style="float: left; ">
+					<svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
+						<path
+							d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+						</path>
+					</svg>
+				</a>
+
+				<a class="socialContainer containerThree" href="#" style="float: left;">
+					<svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
+						<path
+							d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+						</path>
+					</svg>
+				</a>
+
+
+			</div>
+		</footer>
+	</div>
+
 	<script src="admin.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

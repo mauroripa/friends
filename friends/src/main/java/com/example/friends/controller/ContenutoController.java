@@ -40,7 +40,7 @@ public class ContenutoController {
       Categoria categoria = categoriaService.getCategoriaByName(path);
 
       String templateName = path.toLowerCase().replace(' ', '-') + ".html";
-      
+
       if(categoria != null && appContext.getResource("classpath:/templates/" + templateName).exists()) {
          model.addAttribute("categoria", categoria);
          model.addAttribute("contenuti", categoria.getContenuti());
