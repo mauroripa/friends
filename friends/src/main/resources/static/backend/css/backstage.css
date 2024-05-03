@@ -6,7 +6,6 @@
 }
 
 .dropdown-content {
-
 	position: absolute;
 	background-color: #ff0000;
 	min-width: 150px;
@@ -26,11 +25,11 @@
 }
 
 .navbar {
-
-	background-color: black;
-	min-height: 80px;
+    background-color: black;
+	min-height: 90px;
 	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
-
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .navbar-brand {
@@ -85,6 +84,9 @@ body {
 	padding: 20px;
 }
 
+#titolocard {
+  margin: 20px;
+}
 
 .card {
   position: relative;
@@ -97,16 +99,19 @@ body {
   justify-content: center;
   overflow: hidden;
   perspective: 1000px;
-  box-shadow: 0 0 0 5px #a7a7a780;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 1px 0px 12px 8px rgba(59, 59, 59, 0.445);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: 20px;
 }
 
 .card img {
-  width: 400px;
-
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 400px;
+    border-radius: 10px;
+    fill: #333;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 110%; /* Imposta la larghezza desiderata */
+    height: 100%; /* Imposta l'altezza desiderata */
+    object-fit: cover; /* Mantiene le proporzioni dell'immagine */
 }
 
 .card:hover {
@@ -125,7 +130,21 @@ body {
   background-color: #ee2825d9;
   transform: rotateX(-90deg);
   transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ee2825d9;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
@@ -140,25 +159,37 @@ body {
   background-color: #ee2825d9;
   transform: rotateX(-90deg);
   transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-.card__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+/* Colore rosso per la prima card */
+.card:nth-child(1) .card__content {
   background-color: #ee2825d9;
-  transform: rotateX(-90deg);
-  transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Colore giallo per la seconda card */
+.card:nth-child(2) .card__content {
+  background-color: #ffb828d9;
+}
 
+/* Colore azzurro per la terza card */
+.card:nth-child(3) .card__content {
+  background-color: #02b0ecd9;
+}
+/* Colore rosso per la quarta card */
+.card:nth-child(4) .card__content {
+  background-color: #ee2825d9;
+}
+
+/* Colore giallo per la quinta card */
+.card:nth-child(5) .card__content {
+  background-color: #ffb828d9;
+}
+
+/* Colore azzurro per la sesta card */
+.card:nth-child(6) .card__content {
+  background-color: #02b0ecd9;
+}
 
 .card:hover .card__content {
   transform: rotateX(0deg);
@@ -171,10 +202,6 @@ body {
   font-weight: 700;
 }
 
-.card:hover svg {
-  scale: 0;
-}
-
 .card__description {
   margin: auto;
   font-size: 13px;
@@ -182,11 +209,10 @@ body {
   line-height: 1.4;
 }
 
-
 .cardfooter {
     width: fit-content;
     height: fit-content;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,6 +232,7 @@ body {
     justify-content: center;
     overflow: hidden;
     transition-duration: 0.3s;
+    margin: 5px;
   }
   /* instagram*/
   .containerOne:hover {
