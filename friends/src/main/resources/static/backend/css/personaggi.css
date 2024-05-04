@@ -1,10 +1,16 @@
 .navbar{
     background-color: black;
+    box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+    min-height: 90px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
-
 #uno:hover {
 	color: #ee2825;
 }
+
+
+
 
 #due:hover {
 	color: #ffb828;
@@ -80,28 +86,16 @@
     border-radius: 10px;
   }
 
-  .pari.container .personaggio {
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-
-.personaggio .descrizione {
-    display: -webkit-box;
-    -webkit-line-clamp: 10;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.cardfooter {
+  .cardfooter {
     width: fit-content;
     height: fit-content;
-    background-color: rgb(238, 238, 238);
+    background-color: rgba(238, 238, 238, 0);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
 
   }
 
@@ -116,6 +110,7 @@
     justify-content: center;
     overflow: hidden;
     transition-duration: 0.3s;
+    margin: 5px;
   }
   /* instagram*/
   .containerOne:hover {
@@ -127,7 +122,7 @@
     background-color: #00acee;
     transition-duration: 0.3s;
   }
-  /* linkdin*/
+  /* linkedin*/
   .containerThree:hover {
     background-color: #0072b1;
     transition-duration: 0.3s;
@@ -166,3 +161,4 @@
       opacity: 1;
     }
   }
+
