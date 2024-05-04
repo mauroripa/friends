@@ -40,10 +40,9 @@
                     <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
                        th:text="${categoria.nomeCategoria}"></a>
                 </li>
-                <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item">Area riservata</a><a th:href="@{/admin/logout}" class="dropdown-item">Logout</a></li>
-                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item">Login</a>
-                   </li>
-
+                <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link">Area riservata</a></li>
+                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item">Login</a></li>
+                <li><a th:href="@{/admin/logout}" class="nav-link">Logout</a></li>
             </ul>
             <form class="d-flex" role="search">
                 <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search"

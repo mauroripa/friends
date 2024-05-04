@@ -9,9 +9,6 @@
 	color: #ee2825;
 }
 
-
-
-
 #due:hover {
 	color: #ffb828;
 }
@@ -122,7 +119,7 @@
     background-color: #00acee;
     transition-duration: 0.3s;
   }
-  /* linkedin*/
+  /* linkdin*/
   .containerThree:hover {
     background-color: #0072b1;
     transition-duration: 0.3s;
@@ -161,4 +158,3 @@
       opacity: 1;
     }
   }
-

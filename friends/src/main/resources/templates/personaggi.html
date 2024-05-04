@@ -19,7 +19,7 @@
 
         <div class="container-fluid">
             <!-- Navbar brand -->
-            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{immagini/logo friend png.png}"></a>
+            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -44,9 +44,9 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search"
-                           style="width: 200px;">
-                    <button class="btn btn-outline-success" type="submit"><img style="width: 18px;" class="lente"
-                                                                               th:src="@{immagini/lentepng.png}"/>
+                           style="width: 200px; margin-right: 10px;">
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+                                                                                 th:src="@{/immagini/lentepng.png}"/>
                     </button>
                 </form>
             </div>
@@ -94,7 +94,6 @@
         </section>
     </div>
 
-    <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -129,7 +128,6 @@
                 </a>
             </div>
         </footer>
-    </div>
 
 </div>
 <script th:src="@{/backend/js/personaggi.js}"></script>
