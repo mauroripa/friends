@@ -145,7 +145,8 @@ header {
 
 
 }
-.card-footer{
+
+.card-footer {
   width: fit-content;
   height: fit-content;
   background-color: rgba(238, 238, 238, 0);
@@ -156,6 +157,7 @@ header {
   gap: 20px;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
 }
+
 .green-border {
   border-color: green;
 }
@@ -187,7 +189,6 @@ section {
 
 /* ??? */
 
-
 .col-content-manager:not(.open) .carta,
 .col-content-manager.open .open-column {
   display: block !important;
@@ -196,6 +197,12 @@ section {
   height: 0;
   overflow: hidden;
   transition: all 1s;
+}
+
+.col-content-manager.open .open-column {
+  margin: auto !important;
+  font-size: 0;
+  width: 0;
 }
 
 .col-content-manager.open .carta,
@@ -236,7 +243,7 @@ section {
 
 .col-content-manager .carta {
   height: 550px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 /* ??? */

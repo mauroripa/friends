@@ -1,29 +1,29 @@
 const initApp = () => {
     //selezionamo il div con classe droparea
     const droparea = document.querySelector('.droparea');
-//funzione che fa diventare il bordo verde se viene messo un file
-    const active = () => droparea.classList.add("green-border"); 
-//funzione che rimuove la green area se non viene droppato file
+    //funzione che fa diventare il bordo verde se viene messo un file
+    const active = () => droparea.classList.add("green-border");
+    //funzione che rimuove la green area se non viene droppato file
     const inactive = () => droparea.classList.remove("green-border");
     //
     const prevents = (e) => e.preventDefault();
-/*
-dragenter: entri nell'area definita
-dragover: controlla in ogni millisecondo se stiamo trascinando un file
-dragleave: controlla ogni ms se non stiamo trascinando un file
-drop: se lasciamo il file nella droparea 
-*/
+    /*
+    dragenter: entri nell'area definita
+    dragover: controlla in ogni millisecondo se stiamo trascinando un file
+    dragleave: controlla ogni ms se non stiamo trascinando un file
+    drop: se lasciamo il file nella droparea 
+    */
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(evtName => {
         //per ognuno di questi eventi 
         droparea.addEventListener(evtName, prevents);
         //chiameremo la funzione prevents
     });
-//se il file è nell'area e se lo stiamo mumovendo su quell'area
+    //se il file è nell'area e se lo stiamo mumovendo su quell'area
     ['dragenter', 'dragover'].forEach(evtName => {
-//attiva la funzione active e cambia lo sfondo del droparea verde
+        //attiva la funzione active e cambia lo sfondo del droparea verde
         droparea.addEventListener(evtName, active);
     });
-//se il file non c'è cambia lo sfondo in rosso
+    //se il file non c'è cambia lo sfondo in rosso
     ['dragleave', 'drop'].forEach(evtName => {
         droparea.addEventListener(evtName, inactive);
     });
@@ -52,10 +52,10 @@ const handleDrop = (e) => {
     const fileArray = [...files];
     console.log(files); // FileList restituisce le info del file
     console.log(fileArray);//restituisce 
-  if (fileArray.length > 0 && fileArray.length <=5) {
-    document.querySelector(".droparea").innerHTML = ""; 
-    document.querySelector(".droparea").innerHTML += "Ok! File caricato.";
-  } //Da capire se implementare il limite di file di caricamento e se creare un'animazione di popup/blocco del caricamento
+    if (fileArray.length > 0 && fileArray.length <= 5) {
+        document.querySelector(".droparea").innerHTML = "";
+        document.querySelector(".droparea").innerHTML += "Ok! File caricato.";
+    } //Da capire se implementare il limite di file di caricamento e se creare un'animazione di popup/blocco del caricamento
 }
 
 // const inserisci= document.querySelector
@@ -167,13 +167,20 @@ function mostra() {
 */
 
 
-// Discord? sala 2
 const handle_column = (btn) => {
-    
+
     const container = btn.closest('.col-content-manager')
+    const carta = container.querySelector('.carta')
+    const fix_content_height = carta.querySelector('.carta-content-fix')
 
     container.classList.toggle('open')
-    container.querySelector('.carta').scrollTop = 0;
+    carta.scrollTop = 0;
+
+    carta.style.height = (
+        container.classList.contains('open')
+            ? (fix_content_height.offsetHeight + 10) + 'px'
+            : 0
+    )
 }
 
 const open_column = document.querySelectorAll('.open-column')
@@ -191,7 +198,7 @@ const handle_password_eyes = (btn) => {
 
     container.classList.toggle('see')
 
-    if(!container.classList.contains('see')) {
+    if (!container.classList.contains('see')) {
         pwd.textContent = password.replace(/\w/g, '*')
     } else {
         pwd.textContent = password
