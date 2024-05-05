@@ -174,17 +174,17 @@
                                 ></option>
                             </select>
 
-                            <div class="d-flex align-items-center">
+                            <div class="droparea-container">
                                 <section class="droparea card shadow-lg w-100 h-100 p-5 mb-3  bg-body-tertiary">
                                     <input type="file" name="foto"
-                                           class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0"
+                                           class="file-input position-absolute top-0 right-0 d-block h-100 w-100 opacity-0 drop-images"
                                            accept=".jpg,.jpeg,.png,.bmp,.tiff,.raw,.mp4" multiple="true">
 
                                     <p>Oppure trascinala qui</p>
                                     <p><small>Fino a 20 immagini, non c'è limite per il peso del file.</small></p>
                                 </section>
 
-                                <section>
+                                <section class="thumbnails">
 
                                     <span th:if="${ contenuto.immagini.size() > 0 }"
                                           th:each="immagine : ${contenuto.immagini}">

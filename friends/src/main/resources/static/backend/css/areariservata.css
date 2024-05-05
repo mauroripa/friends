@@ -137,13 +137,25 @@ header {
 }
 
 .droparea {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.thumbnails {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+}
 
+.thumbnails span {
+    display: block;
+}
+
+.thumbnails span video,
+.thumbnails span img {
+    max-width: 100px;
 }
 
 .card-footer {
