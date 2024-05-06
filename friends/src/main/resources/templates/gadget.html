@@ -70,8 +70,8 @@
                 <img class="card-img-top mt-3" th:src="@{immagini/sfondo.jpg}" alt="Card image cap">
                 <div class="card-body">
                     <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
-                    <p th:text="${contenuto.descrizione}" class="card-text mt-3"></p>
-                    <button class="glow-on-hover mt-3"><a th:href="@{'/dettaglio-gadget(id=${contenuto.id})}">Dettaglio</a></button>
+                    <p th:text="${#strings.substring(contenuto.descrizione, 0, 60)} + '...'" class="card-text mt-3"></p>
+                    <button class="glow-on-hover mt-3"><a th:href="@{/dettaglio(id=${contenuto.id})}">Dettagli</a></button>
                 </div>
             </div>
 
