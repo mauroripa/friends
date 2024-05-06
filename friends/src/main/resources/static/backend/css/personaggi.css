@@ -163,4 +163,8 @@ a{
       transform: translateY(0);
       opacity: 1;
     }
+
   }
+  .pari.container .personaggio {
+      flex-direction: row-reverse
+    }

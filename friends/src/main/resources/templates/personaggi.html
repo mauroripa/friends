@@ -75,16 +75,17 @@
                 <div class="row gx-5 personaggio">
                     <div class="col-lg-6">
                         <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                            <a class="rounded-4" target="_blank"
-                               th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
+                            <a class="rounded-4" target="_blank" th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
+                                <!-- Se l'indice è pari, mostra l'immagine a sinistra -->
                                 <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
                                      th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
-                                     th:alt="${contenuto.titolo}"/>
+                                     th:alt="${contenuto.titolo}" />
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="ps-lg-3">
+                            <!-- Se l'indice è pari, mostra la descrizione a destra -->
                             <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
                             <p th:text="${contenuto.descrizione}" class="descrizione"></p>
                             <button class="glow-on-hover" onclick="scrollArrowUp('topPage')">Torna su!</button>
@@ -94,6 +95,7 @@
             </div>
         </section>
     </div>
+
 
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
