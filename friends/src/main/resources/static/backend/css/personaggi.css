@@ -5,6 +5,9 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+.navbar-brand {
+	line-height: 5px;
+}
 #uno:hover {
 	color: #ee2825;
 
@@ -28,13 +31,6 @@
 
 #sei:hover {
 	color: #02b0ec;
-}
-
-body {
-	background-color: #333;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
 }
 
 .glow-on-hover {
