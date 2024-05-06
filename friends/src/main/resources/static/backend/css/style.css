@@ -5,8 +5,94 @@
   max-width: 10%;
   max-height: 10%;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background: #f2f2f2;
+}
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.carousel-item img{
+  height: 450px;
+object-fit: cover;
+margin-top: 85px;
+}
+
+.cardf {
+  box-sizing: border-box;
+  width: 300px;
+  height: 500px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+   user-select: none;
+  font-weight: bolder;
+  color: black;
+  border-radius: 20px;
+  margin: 2%;
+}
+.cardf:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.logos {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 100px;
+  margin: 0 40px;
+}
 .sfondo{
   position: fixed;
   top: 0;
@@ -15,6 +101,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 
 .dropdown-content {
@@ -36,6 +123,10 @@
 }
 .navbar{
   background-color: black;
+  box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+  min-height: 90px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 #uno:hover {
 	color: #ee2825;
@@ -131,13 +222,13 @@ a{
 .cardfooter {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(238, 238, 238, 0);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 25px 25px;
   gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  box-shadow: 0px 0px 20px rgba(151, 132, 132, 0)
 
 }
 
@@ -152,6 +243,7 @@ a{
   justify-content: center;
   overflow: hidden;
   transition-duration: 0.3s;
+  margin: 5px;
 }
 /* instagram*/
 .containerOne:hover {
@@ -202,4 +294,22 @@ a{
     opacity: 1;
   }
 }
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #343333;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .cardf img {
+    height: 11em;
+  }
+}
