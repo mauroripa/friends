@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+#uno:hover{ /*uno*/
+    color: #ee2825;
+}
+
+.red:hover { /*due*/
+    color: #ffb828;
+}
+
+.orange:hover { /*tre*/
+    color: #02b0ec;
+}
+
+.blue:hover { /*quattro*/
+    color: #ee2825;
+}
+
+.cinque:hover{
+    color: #02b0ec;
+}
+
 .box__dragndrop,
 .box__uploading,
 .box__success,
