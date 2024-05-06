@@ -192,31 +192,22 @@ public class AreaRiservataController {
 
     private List<Galleria> getListGalleria(MultipartFile[] galleria) {
 
-        try {
+        List<Galleria> listGalleria = new ArrayList<>();
 
-            List<Galleria> listGalleria = new ArrayList<>();
-
-            for (MultipartFile file : galleria) {
-
-                // data:image/png;base64,.....
-                String formato = file.getContentType();
-                String imageGalleria = "data:" + formato + ";base64," + Base64.getEncoder().encodeToString(file.getBytes());
+        for (MultipartFile file : galleria) {
+            if( !file.isEmpty() ) {
 
                 String fileName = file.getOriginalFilename();
                 uploadPhotoService.uploadFile(file, fileName);
-
 
                 Galleria galleriaImg = new Galleria();
                 galleriaImg.setGalleria(fileName);
                 galleriaImg.setContenuto(contenuto);
                 listGalleria.add(galleriaImg);
             }
-
-            return listGalleria;
-
-        } catch (IOException e) {
-            return null;
         }
+
+        return listGalleria;
     }
 
     @PostMapping("/contenuto")
@@ -225,10 +216,8 @@ public class AreaRiservataController {
             @RequestParam("descrizione") String descrizione,
             @RequestParam("categoria") String idCategoria,
             @RequestParam(value = "foto", required = false) MultipartFile[] galleria,
-            @RequestParam(value = "isNewContent", required = false, defaultValue = "false") boolean isNewContent,
             HttpSession session,
-            RedirectAttributes redirectAttributes,
-            Model model
+            RedirectAttributes redirectAttributes
     ) {
         Admin logged = (Admin) session.getAttribute("admin");
 
@@ -240,41 +229,20 @@ public class AreaRiservataController {
                         categoriaService.getCategoriaById(Integer.parseInt(idCategoria))
                 );
 
-                // Se il contenuto è nuovo e non è stato fornito alcun file, reindirizza con un messaggio di errore
-                if (isNewContent && (galleria == null || galleria.length == 0)) {
-                    redirectAttributes.addFlashAttribute("errorMessage", "Devi caricare almeno una foto o un video");
-                    return "redirect:/areariservata?error";
-                }
-
-                // Se è stato fornito un file e il contenuto è nuovo o esistente, gestisci il caricamento
-                if (galleria != null && galleria.length > 0) {
-                    List<Galleria> images = getListGalleria(galleria);
-                    List<Galleria> originalGalleria = contenuto.getImmagini();
-                    if (!originalGalleria.isEmpty()) {
-                        images.addAll(originalGalleria);
-                    }
-                    contenuto.setImmagini(images);
-                }
-
-                /*List<Galleria> images = getListGalleria(galleria);
+                List<Galleria> images = getListGalleria(galleria);
                 List<Galleria> originalGalleria = contenuto.getImmagini();
-                if (images != null && !images.isEmpty()) {
+                if (!originalGalleria.isEmpty()) {
+                    images.addAll(originalGalleria);
+                }
 
-                    if (!originalGalleria.isEmpty()) {
-                        images.addAll(originalGalleria);
-                    }
-
-                    contenuto.setImmagini(images);
-                }*/
+                contenuto.setImmagini(images);
 
                 contenutoService.addContenuto(contenuto);
 
                 return "redirect:/areariservata";
             } catch (Exception e) {
                 e.printStackTrace();
-                redirectAttributes.addFlashAttribute("errorMessage", "Si è verificato un errore durante il caricamento del file.");
                 return "redirect:/areariservata";
-
             }
         }
         return "redirect:/admin/login";
