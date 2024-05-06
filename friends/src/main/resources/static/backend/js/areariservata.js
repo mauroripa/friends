@@ -123,4 +123,36 @@ const handle_upload_image = () => {
         reader.readAsDataURL(file);
     })
 }
-drop_images.addEventListener('change', ev=>handle_upload_image(), false)
+drop_images.addEventListener('change', ev => handle_upload_image(), false)
+
+
+// required all fields before sumbit
+const submit_columns = document.querySelectorAll('.col-content-manager [type="submit"]')
+
+const chack_empty_fileds = (form) => {
+
+    let has_empty_fields = false
+
+    const inputs = form.querySelectorAll('input, select, textarea')
+    inputs.forEach(el => {
+        if(
+            el.value == '' ||
+            ( el.nodeName == 'SELECT' && el.options[el.selectedIndex].hasAttribute('hidden') )
+        ) {
+            el.classList.add('is-invalid')
+            has_empty_fields = true
+        }
+    })
+
+    return has_empty_fields
+}
+
+const handle_submit = (ev, form) => {
+
+    if( chack_empty_fileds(form) ) {
+        ev.stopPropagation()
+        ev.preventDefault()
+    }
+}
+
+submit_columns.forEach(btn => btn.addEventListener('click', ev => handle_submit(ev, btn.closest('form')), false))
