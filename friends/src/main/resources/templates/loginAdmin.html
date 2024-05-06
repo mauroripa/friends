@@ -50,8 +50,7 @@
                            th:text="${categoria.nomeCategoria}"
                            th:class="${iterStat.index % 3 == 0} ? 'red' : (${iterStat.index % 3 == 1} ? 'orange' : 'blue')"></a>
                     </li>
-                    <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link cinque">Area riservata</a></li>
-                    <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
+                    <li><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input  style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search" aria-label="Search">
