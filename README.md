@@ -19,5 +19,14 @@ JavaScript: JavaScript è stato utilizzato per aggiungere interattività alla pa
 Come Contribuire
 Se sei un fan appassionato di "Friends" e desideri contribuire a migliorare questa applicazione, sei il benvenuto! Puoi dare un'occhiata al nostro codice su GitHub e inviare pull request per suggerire miglioramenti, risolvere bug o aggiungere nuove funzionalità. Assicurati di seguire le linee guida di contribuzione nel nostro file CONTRIBUTING.md.
 
+# Contatti e Collaboratori
+Mauro Ripa | https://www.linkedin.com/in/mauro-ripa-47b86620a/
+Fabiana Farias | https://www.linkedin.com/in/fabiana-farias-00b33b205/
+Andrei Leca | https://www.linkedin.com/in/andrei-leca/
+Chiara di Carlo | https://www.linkedin.com/in/chiara-dicarlo/
+Gianmarco Amendola | https://www.linkedin.com/in/gianmarco-amendola-5aa74a28b/
+Claudia Antonaci | https://www.linkedin.com/in/claudiaantonaci/
+Luciano Lamberti | https://www.linkedin.com/in/luciano-lamberti-9169a9153/
+
 # Licenza
-Questo progetto è rilasciato sotto la licenza MIT. Per ulteriori informazioni, consulta il file LICENSE.md
+
