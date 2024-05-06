@@ -59,9 +59,9 @@
 <div class="container mt-5 pt-5">
     <div class="row content-manager h-100">
         <div class="col-content-manager col-4">
-            <div class="p-3 border rounded-2 bg-white w-100 shadow-lg">
+            <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
-                    <div class="carta-content-fix">
+                    <div class="carta-content-fix px-3">
                         <div class="carta-title-container">
                             <div class="fs-4 card-title fw-bold">Categorie</div>
                             <button class="button close-column">
@@ -128,9 +128,9 @@
             </div>
         </div>
         <div class="col-content-manager col-4">
-            <div class="p-3 border rounded-2 bg-white w-100 shadow-lg">
+            <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
-                    <div class="carta-content-fix">
+                    <div class="carta-content-fix px-3">
                         <div class="carta-title-container">
                             <div class="fs-4 card-title fw-bold">Inserisci un nuovo contenuto</div>
                             <button class="button close-column">
@@ -211,9 +211,9 @@
             </div>
         </div>
         <div class="col-content-manager col-4">
-            <div class="p-3 border rounded-2 bg-white w-100 shadow-lg">
+            <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
-                    <div class="carta-content-fix">
+                    <div class="carta-content-fix px-3">
                         <div class="carta-title-container">
                             <div class="fs-4 card-title fw-bold">Modifica Admin</div>
                             <button class="button close-column">
@@ -303,7 +303,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div th:if="${contenuti.size() > 0}" class="container-fluid">
     <h1 class="text-center my-5 py-5">Gestisci i contenuti pubblici</h1>
 
     <div class="row">
