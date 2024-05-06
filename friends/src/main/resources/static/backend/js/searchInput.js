@@ -32,17 +32,17 @@ function redirectToPage() {
 var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
 if (searchQuery === "location" || searchQuery === "luoghi" || searchQuery==="posti" || searchQuery ==="set") {
-    window.location.href = "location.html"; //
+    window.location.href = "/Location"; //
 } else if (searchQuery === "gadget" || searchQuery === "oggetti") {
-    window.location.href = "gadget.html";
+    window.location.href = "/Gadget";
 } else if (searchQuery === "personaggi" || searchQuery === "protagonisti" || searchQuery === "ross" || searchQuery === "rachel" || searchQuery === "chandler" || searchQuery === "monica" || searchQuery === "joey" || searchQuery === "phoebe" || searchQuery==="joy") {
-    window.location.href = "personaggi.html#" + searchQuery;
+    window.location.href = "/Personaggi";
 } else if (searchQuery === "backstage" || searchQuery === "dietro le quinte") {
-    window.location.href = "backstage.html";
+    window.location.href = "/Backstage";
 } else if (searchQuery === "home" || searchQuery === "homepage" || searchQuery ==="news" || searchQuery ==="storia" ){
-window.location.href ="index.html";
+window.location.href ="/";
 } else if(searchQuery==="area riservata" || searchQuery === "login" || searchQuery ==="accesso" || searchQuery==="admin"){
-    window.location.href="login.html";
+    window.location.href="/admin/login";
 }
 else {
     // Nessuna corrispondenza, puoi gestire questa situazione come preferisci
@@ -55,7 +55,7 @@ document.getElementById("searchInput").addEventListener("keypress", function (ev
     if (event.key === "Enter") {
         // Impedisce l'invio del modulo per default
         event.preventDefault();
-        
+
         // Chiama la funzione per reindirizzare alla pagina
         redirectToPage();
     }

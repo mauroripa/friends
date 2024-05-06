@@ -52,9 +52,11 @@
 
 
                 </ul>
-                <form class="d-flex" role="search">
-                    <input  style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{/immagini/lentepng.png}"/></button>
+                <form class="d-flex" role="search" onsubmit="redirectToPage(); return false;" >
+                    <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Cerca"
+                           aria-label="Search" id="searchInput" list="options">
+                    <datalist id="options"></datalist>
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}" /></button>
                 </form>
             </div>
         </div>
@@ -147,6 +149,7 @@
         </footer>
     </div>
 </div>
+<script th:src="@{/backend/js/searchInput.js}"></script>
 
 </body>
 </html>
