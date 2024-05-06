@@ -2,7 +2,7 @@
 # Friends Web Application
 
 # Descrizione del Progetto
-La Friends Web Application è un progetto sviluppato come lavoro di fine corso presso Generation Italy, con l'obiettivo di creare una piattaforma online dedicata agli appassionati della celebre serie televisiva degli anni '90, "Friends". Il sito è stato realizzato per offrire agli utenti un'esperienza interattiva e nostalgica, consentendo loro di esplorare contenuti relativi alla serie.
+Friends Web Application è un progetto sviluppato come lavoro di fine corso presso Generation Italy, con l'obiettivo di creare una piattaforma online dedicata agli appassionati della celebre serie televisiva degli anni '90, "Friends". Il sito è stato realizzato per offrire agli utenti un'esperienza interattiva e nostalgica, consentendo loro di esplorare contenuti relativi alla serie.
 
 
 ![fotoreadme](https://github.com/mauroripa/friends/assets/22256710/8b063c84-87b4-467f-953f-00b44d298718)
