@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServizioTentativiAccessoImpl {
 
-    private final int MAX_TENTATIVI = 3; // numero massimo di tentativi di accesso
-    private final int TEMPO_SBLOCCO_SECONDI = 60; // tempo per lo sblocco 60 secondi
+   public final int MAX_TENTATIVI = 3; // numero massimo di tentativi di accesso
+    public final int TEMPO_SBLOCCO_SECONDI = 60; // tempo per lo sblocco 60 secondi
 
     public synchronized void accessoRiuscito(HttpSession session) {
         session.removeAttribute("tentativiAccesso");
