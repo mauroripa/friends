@@ -65,18 +65,13 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-center">
-
-
+        <div th:each="contenuto : ${contenuti}" class="row d-flex justify-content-center">
             <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
                 <img class="card-img-top mt-3" th:src="@{immagini/sfondo.jpg}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title mt-3">Card title</h5>
-                    <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of
-                        the card's
-                        content.</p>
-                    <button class="glow-on-hover mt-3"><a th:href="@{/dettaglio-gadget}">Dettaglio</a></button>
-
+                    <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
+                    <p th:text="${contenuto.descrizione}" class="card-text mt-3"></p>
+                    <button class="glow-on-hover mt-3"><a th:href="@{'/dettaglio-gadget(id=${contenuto.id})}">Dettaglio</a></button>
                 </div>
             </div>
 

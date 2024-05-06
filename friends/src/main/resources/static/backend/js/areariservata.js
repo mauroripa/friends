@@ -1,27 +1,3 @@
-/*
-const list_category = document.querySelector('.list-category')
-const new_category_form = document.querySelector('.category-container form.needs-validation')
-const new_category_btn = document.querySelector('.new-category')
-const new_category_btn_close = document.querySelector('.new-category .close')
-const new_category_btn_pencil = document.querySelector('.new-category .pencil')
-
-
-const hundle_click = () => {
-
-    if( new_category_btn_pencil && new_category_btn.classList.contains('routed') ) {
-        new_category_btn_pencil.classList.remove('d-none')
-        new_category_btn_close.classList.add('d-none')
-    }
-
-    list_category.classList.toggle('d-none')
-    new_category_form.classList.toggle('d-none')
-    new_category_btn.classList.toggle('routed')
-}
-
-new_category_btn.addEventListener('click', ev=>hundle_click(), false)
-
-*/
-
 const column_fix_height = (container) => {
 
     const carta = container.querySelector('.carta')
@@ -33,6 +9,10 @@ const column_fix_height = (container) => {
         : 0
     )
 }
+
+// fix column on edit content or edit column mode
+const pre_opened_columns = document.querySelector('.col-content-manager.open')
+pre_opened_columns && column_fix_height(pre_opened_columns)
 
 const handle_column = (btn) => {
 
