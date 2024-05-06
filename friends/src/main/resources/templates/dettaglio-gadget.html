@@ -19,7 +19,7 @@
 
         <div class="container-fluid">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="index.html"><img style="width: 200px;" src="logo friend png.png"></a>
+            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{immagini/logo friend png.png}"></a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -46,7 +46,7 @@
                 <form class="d-flex" role="search">
                     <input style="width: 200px; margin-right: 10px;" class="form-control" type="search"
                            placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}"/></button>
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{/immagini/lentepng.png}"/></button>
                 </form>
             </div>
         </div>
@@ -109,9 +109,6 @@
                             </p>
                             <p th:if="${contenuto.descrizione != null}">
                                 <span th:text="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('Per acquistare'))}" ></span>
-                                <a th:href="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('https'))}" target="_blank">
-                                    <span th:text="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('https'))}"></span>
-                                </a>
                             </p>
                         </div>
                 </main>
