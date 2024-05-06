@@ -99,41 +99,20 @@
                     <!-- thumbs-wrap.// -->
                     <!-- gallery-wrap .end// -->
                 </aside>
-                <main class="col-lg-6">
-                    <div class="ps-lg-3">
-                        <h4 class="title text-dark">
-                            LEGO Ideas Central Perk, Set con l'Iconico Caffè e 7 Minifigure Friends,<br/> Gadget per il
-                            25° Anniversario della Serie TV, Costruzioni per Adulti
-                        </h4>
+                <main class="col-lg-6" th:if="${contenuto != null}">
+                        <div class="ps-lg-3">
+                            <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
 
-
-                        <p>
-                            Il modellino da costruire LEGO Central Perk contiene l’iconico salotto con un divano, una
-                            poltrona, 2 sedie e un tavolo, che possono essere rimossi dal set per facilitare il gioco
-                            creativo
-                        </p>
-
-                        <!-- <div class="row">
-                           <dt class="col-3">Type:</dt>
-                           <dd class="col-9">Edizione del 25* anniversario</dd>
-
-                           <dt class="col-3">Color</dt>
-                           <dd class="col-9">Brown</dd>
-
-                           <dt class="col-3">Material</dt>
-                           <dd class="col-9">Plastica</dd>
-
-                           <dt class="col-3">Brand</dt>
-                           <dd class="col-9">Lego</dd>
-                         </div>
-               -->
-                        <hr/>
-
-
-                        <!-- col.// -->
-
-                        <!--COPIARE NAVBAR BUONA, METTERE LO SCROLL SOPRA IL NOME-->
-                    </div>
+                            <p th:if="${contenuto.descrizione != null}">
+                                <span th:text="${contenuto.descrizione.substring(0, contenuto.descrizione.indexOf('Per acquistare'))}"></span>
+                            </p>
+                            <p th:if="${contenuto.descrizione != null}">
+                                <span th:text="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('Per acquistare'))}" ></span>
+                                <a th:href="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('https'))}" target="_blank">
+                                    <span th:text="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('https'))}"></span>
+                                </a>
+                            </p>
+                        </div>
                 </main>
             </div>
         </div>
