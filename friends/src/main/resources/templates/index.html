@@ -37,12 +37,15 @@
         <div  class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
             <!-- Left links -->
             <ul  class="navbar-nav me-auto mb-2 mb-lg-0" >
+                <li class="nav-item"> <a th:href="@{/}" class="nav-link" id="uno">Home Page</a></li>
                 <!--dropdown -->
-                <li th:each="categoria : ${categorie}" class="nav-item">
-                    <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
+                <li th:each="categoria, iterStat : ${categorie}" class="nav-link">
+                    <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
+                       th:text="${categoria.nomeCategoria}"
+                       th:class="${iterStat.index % 3 == 0} ? 'red' : (${iterStat.index % 3 == 1} ? 'orange' : 'blue')"></a>
                 </li>
-                <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item" >Area riservata</a></li>
-                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item" >Login</a></li>
+                <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link cinque">Area riservata</a></li>
+                <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control " type="search" placeholder="Search" aria-label="Search" style="width: 200px; margin-right: 10px;">
@@ -109,14 +112,14 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <img th:src="@{immagini/storiapng.png}" alt="Storia" style="display: flex; margin: auto;">
 </div>
 
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-md-4 col-sm-3">
-            <img th:src="@{immagini/storiafoto1.jpg}" class="rounded float-start" alt="..." style="width: 60%;">
+            <img th:src="@{immagini/storiafoto1.jpg}" class="rounded float-start mt-5" alt="..." style="width: 60%;">
         </div>
         <div class="col-md-4 col-sm-6 text-center">
             <br><span style="font-style: italic; font-size: 20px;">Sei pronto per un tuffo nel passato?</span>
@@ -131,24 +134,121 @@
     </div>
 
     <div class="container-fluid">
-        <div class="card p-4 m-5 shadow-lg"><img th:src="@{immagini/newspng.png}" style="display: flex; margin: auto;">
-
+        <div class="card p-4 m-5 shadow-lg"><img th:src="@{immagini/newspng.png}"
+                                                 style="display: flex; margin: auto;">
             <div class="row d-flex justify-content-center">
 
-                <div class="card col-4 shadow-lg bg-body-tertiary">
-                    <img class="card-img-top" th:src="@{immagini/sfondo.jpg}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                            content.</p>
-                        <a href="#" class="btn btn-warning">Go somewhere</a>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="cards-wrapper">
+                                <div class="cardf">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                                <div class="cardf d-none d-md-block">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                                <div class="cardf d-none d-md-block">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="cards-wrapper">
+                                <div class="cardf">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                                <div class="cardf d-none d-md-block">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                                <div class="cardf d-none d-md-block">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.</p>
+                                        <button href="#" class="glow-on-hover">Go somewhere</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="cards-wrapper">
+                            <div class="cardf">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.</p>
+                                    <button href="#" class="glow-on-hover">Go somewhere</button>
+                                </div>
+                            </div>
+                            <div class="cardf d-none d-md-block">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.</p>
+                                    <button href="#" class="glow-on-hover">Go somewhere</button>
+                                </div>
+                            </div>
+                            <div class="cardf d-none d-md-block">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.</p>
+                                    <button href="#" class="glow-on-hover">Go somewhere</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
             </div>
-
         </div>
+    </div>
 
-        <!--fine ROW-->
+
+    <!--fine ROW-->
     </div>
 
     <div class="container">

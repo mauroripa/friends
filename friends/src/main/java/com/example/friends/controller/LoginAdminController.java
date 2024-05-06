@@ -35,7 +35,6 @@ public class LoginAdminController {
         List<Categoria> categorie = categoriaService.listaCategorie();
         model.addAttribute("categorie", categorie);
 
-
         if (servizioTentativiAccesso.isBloccato(session)) {
             model.addAttribute("error", "Utente bloccato. Riprova più tardi.");
         }
@@ -57,7 +56,8 @@ public class LoginAdminController {
             return "redirect:/areariservata";
         } else {
             servizioTentativiAccesso.accessoFallito(session);
-            model.addAttribute("error", "Credenziali non valide. Riprova.");
+            int tentativiRimanenti = servizioTentativiAccesso.MAX_TENTATIVI - (Integer) session.getAttribute("tentativiAccesso");
+            model.addAttribute("error", "Credenziali non valide. Riprova. Tentativi rimanenti: " + tentativiRimanenti);
             return "loginAdmin";
         }
     }

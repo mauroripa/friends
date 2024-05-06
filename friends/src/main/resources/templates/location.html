@@ -45,13 +45,15 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <!-- Left links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"> <a th:href="@{/}" class="nav-link" id="uno">Home Page</a></li>
                         <!--dropdown -->
-                        <li th:each="categoria : ${categorie}" class="nav-item">
+                        <li th:each="categoria, iterStat : ${categorie}" class="nav-link">
                             <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
-                               th:text="${categoria.nomeCategoria}"></a>
+                               th:text="${categoria.nomeCategoria}"
+                               th:class="${iterStat.index % 3 == 0} ? 'red' : (${iterStat.index % 3 == 1} ? 'orange' : 'blue')"></a>
                         </li>
-                        <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link">Area riservata</a></li>
-                        <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link">Login</a></li>
+                        <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link cinque">Area riservata</a></li>
+                        <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control " type="search" placeholder="Search" aria-label="Search"
