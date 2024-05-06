@@ -235,7 +235,7 @@ const check_empty_fileds = (form) => {
             if(el.nodeName === 'INPUT' && el.type === 'file' && thumbnails.children.length <= 0) {
                 el.parentNode.classList.add('is-invalid')
                 has_empty_fields = true
-            } else if(el.nodeName !== 'INPUT') {
+            } else {
                 el.classList.add('is-invalid')
                 has_empty_fields = true
             }
