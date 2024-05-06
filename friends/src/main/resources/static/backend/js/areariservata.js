@@ -51,9 +51,26 @@ show_passwords.forEach(btn => btn.addEventListener('click', ev => handle_passwor
 
 
 const drop_images = document.querySelector('.drop-images')
+const drop_area = document.querySelector('.droparea')
 const thumbnails = document.querySelector('.thumbnails .thumbnails-content')
 
-const build_close_btn = (item, file) => {
+const drag_image_in = () => {
+    drop_area.classList.add('hover')
+}
+
+const drag_image_out = () => {
+    drop_area.classList.remove('hover')
+    drop_area.classList.remove('is-invalid')
+    drop_area.classList.add('droped')
+}
+
+drop_area.addEventListener('dragenter', ev => drag_image_in(), false)
+drop_area.addEventListener('dragover', ev => drag_image_in(), false)
+drop_area.addEventListener('dragleave', ev => drag_image_out(), false)
+drop_area.addEventListener('drop', ev => drag_image_out(), false)
+
+
+const remove_item_btn = (item, file) => {
 
     const remove_btn = document.createElement('span')
     remove_btn.classList.add('remove-image')
@@ -66,6 +83,10 @@ const build_close_btn = (item, file) => {
             .files;
 
         item.remove();
+
+        if( drop_images.files.length <= 0 ) {
+            drop_area.classList.remove('droped')
+        }
 
         column_fix_height(
             drop_images.closest('.col-content-manager')
@@ -86,7 +107,7 @@ const build_thumbnail_item = (reader, file) => {
         const img = document.createElement('img')
         img.src = reader.result
         item.append(img)
-        item.append(build_close_btn(item, file))
+        item.append(remove_item_btn(item, file))
     } else {
 
         const video = document.createElement('video')
@@ -95,7 +116,7 @@ const build_thumbnail_item = (reader, file) => {
 
         video.append(source)
         item.append(video)
-        item.append(build_close_btn(item, file))
+        item.append(remove_item_btn(item, file))
     }
 
     return item
@@ -129,7 +150,7 @@ drop_images.addEventListener('change', ev => handle_upload_image(), false)
 // required all fields before sumbit
 const submit_columns = document.querySelectorAll('.col-content-manager [type="submit"]')
 
-const chack_empty_fileds = (form) => {
+const check_empty_fileds = (form) => {
 
     let has_empty_fields = false
 
@@ -139,7 +160,11 @@ const chack_empty_fileds = (form) => {
             el.value == '' ||
             ( el.nodeName == 'SELECT' && el.options[el.selectedIndex].hasAttribute('hidden') )
         ) {
-            el.classList.add('is-invalid')
+            if(el.nodeName === 'INPUT' && el.type === 'file') {
+                el.parentNode.classList.add('is-invalid')
+            } else {
+                el.classList.add('is-invalid')
+            }
             has_empty_fields = true
         }
     })
@@ -149,7 +174,7 @@ const chack_empty_fileds = (form) => {
 
 const handle_submit = (ev, form) => {
 
-    if( chack_empty_fileds(form) ) {
+    if( check_empty_fileds(form) ) {
         ev.stopPropagation()
         ev.preventDefault()
     }
