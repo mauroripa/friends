@@ -32,9 +32,6 @@ public class ContenutoController {
    @Autowired
    private ApplicationContext appContext;
 
-   @Autowired
-   private ResourceLoader resourceLoader;
-
    @GetMapping
    public String getContenuto(Model model,
                               @PathVariable String path,
@@ -48,7 +45,6 @@ public class ContenutoController {
 
       String templateName = path.toLowerCase().replace(' ', '-') + ".html";
 
-      /*
       if(categoria != null && appContext.getResource("classpath:/templates/" + templateName).exists()) {
          System.out.println(appContext.getResource("classpath:/templates/" + templateName).exists());
          model.addAttribute("categoria", categoria);
@@ -57,21 +53,7 @@ public class ContenutoController {
       }
       System.out.println(appContext.getResource("classpath:/templates/" + templateName).exists());
       System.out.println(path.toLowerCase().replace(' ', '-'));
-      return "404";*/
-
-      Resource templateResource = resourceLoader.getResource("classpath:/templates/" + templateName);
-
-      if (templateResource.exists()) {
-         System.out.println(resourceLoader.getResource("classpath:/templates/" + templateName));
-         System.out.println(templateResource.exists());
-         model.addAttribute("categoria", categoria);
-         model.addAttribute("contenuti", categoria.getContenuti());
-         return path.toLowerCase().replace(' ', '-');
-      } else {
-         System.out.println(path.toLowerCase().replace(' ', '-'));
-         
-         return "404";
-      }
+      return "dettaglio-gadget";
    }
 
    @GetMapping ("/dettaglio")

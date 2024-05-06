@@ -19,7 +19,7 @@
 
         <div class="container-fluid">
             <!-- Navbar brand -->
-            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{immagini/logo friend png.png}"></a>
+            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -62,39 +62,16 @@
                            href="https://m.media-amazon.com/images/I/81xZLq7UXUL.__AC_SX300_SY300_QL70_ML2_.jpg">
                             <img style="max-width: 100%; max-height: 100vh; margin: auto;" id="bigFoto" onmouseover=""
                                  class="rounded-4 fit"
-                                 src="https://m.media-amazon.com/images/I/81xZLq7UXUL.__AC_SX300_SY300_QL70_ML2_.jpg"/>
+                                 th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"/>
                         </a>
                     </div>
                     <div class="d-flex justify-content-center mb-3">
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
-                           href="https://m.media-amazon.com/images/I/81cutIwgWuS._AC_SY450_.jpg" >
+                        <a th:each="immagine, index : ${contenuto.immagini}"
+                           data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
+                           th:href="@{'/uploads/' + ${immagine.galleria}}"
+                           th:attr="data-img-index=${index}">
                             <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60"
-                                 class="rounded-2"
-                                 src="https://m.media-amazon.com/images/I/81cutIwgWuS._AC_SY450_.jpg"/>
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
-                           href="https://m.media-amazon.com/images/I/71Qy+5oS1dS._AC_SL1500_.jpg">
-                            <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60"
-                                 class="rounded-2"
-                                 src="https://m.media-amazon.com/images/I/71Qy+5oS1dS._AC_SL1500_.jpg"/>
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
-                           href="https://m.media-amazon.com/images/I/916e0NNv+WS._AC_SY450_.jpg" >
-                            <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60"
-                                 class="rounded-2"
-                                 src="https://m.media-amazon.com/images/I/916e0NNv+WS._AC_SY450_.jpg"/>
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
-                           href="https://m.media-amazon.com/images/I/81SWQkEU3VS._AC_SY450_.jpg" >
-                            <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60"
-                                 class="rounded-2"
-                                 src="https://m.media-amazon.com/images/I/81SWQkEU3VS._AC_SY450_.jpg"/>
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2 item-thumb" target="_blank" data-type="image"
-                           href="https://m.media-amazon.com/images/I/71bfL8B4azL._AC_SY450_.jpg" >
-                            <img onmouseover="setImg(this)" onmouseout="setOldImg()" width="60" height="60"
-                                 class="rounded-2"
-                                 src="https://m.media-amazon.com/images/I/71bfL8B4azL._AC_SY450_.jpg"/>
+                                 class="rounded-2" th:src="@{'/uploads/' + ${immagine.galleria}}"/>
                         </a>
                     </div>
                     <!-- thumbs-wrap.// -->

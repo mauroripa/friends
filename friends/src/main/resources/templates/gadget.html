@@ -68,11 +68,11 @@
 
         <div th:each="contenuto : ${contenuti}" class="row d-flex justify-content-center">
             <div class="card mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-                <img class="card-img-top mt-3" th:src="@{immagini/sfondo.jpg}" alt="Card image cap">
+                <img class="card-img-top mt-3" th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" style="width:200px;" alt="Card image cap">
                 <div class="card-body">
                     <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
                     <p th:text="${#strings.substring(contenuto.descrizione, 0, 60)} + '...'" class="card-text mt-3"></p>
-                    <button class="glow-on-hover mt-3"><a th:href="@{/dettaglio(id=${contenuto.id})}">Dettagli</a></button>
+                    <button class="glow-on-hover mt-3"><a th:href="@{'/dettaglio(id=${contenuto.id})}">Dettagli</a></button>
                 </div>
             </div>
 
