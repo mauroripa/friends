@@ -7,6 +7,10 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+.navbar-brand {
+	line-height: 5px;
+}
+
 #uno:hover {
 	color: #ee2825;
 }
