@@ -22,7 +22,7 @@
  }
 </style>
 <body>
-<div class="container-fluid"  style="background-image: url('../immagini/sfondo3.jpg'); background-size: cover; height: 100vh; background-position: center;">
+<div class="container-fluid"  style="background-image: url('../immagini/cornice00.jpg'); background-size: cover; height: 100vh; background-position: center;">
     <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100" >
         <!--da capire se mettere opacity 50-->
         <!-- Container wrapper -->
@@ -48,6 +48,8 @@
                     <li th:each="categoria : ${categorie}" class="nav-item">
                         <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}" th:text="${categoria.nomeCategoria}"></a>
                     </li>
+                    <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link">Area riservata</a></li>
+                    <li class="nav-item" ><a th:href="@{/admin/login}" class="nav-link">Login</a></li>
 
                 </ul>
                 <form class="d-flex" role="search">
