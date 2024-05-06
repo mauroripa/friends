@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
+
 .bg-body-tertiary #testo.bg-body-tertiary {
 	background-color: rgba(0, 0, 0, 0.5);
 	/* Un'opacità del 50% */
 }
+
 
 .titolocard {
 	font-family: "Syne Mono", monospace;
@@ -19,7 +21,10 @@
 	margin: auto;
 }
 
+
+
 .dropdown-content {
+
 	position: absolute;
 	background-color: #ff0000;
 	min-width: 150px;
@@ -39,9 +44,13 @@
 }
 
 .navbar {
+
 	background-color: black;
-	min-height: 80px;
+	min-height: 90px;
 	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+	border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
 }
 
 .navbar-brand {
@@ -95,6 +104,7 @@ body {
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.25);
+
 
 	padding: 5px;
 	transition: top 0s, right 0s, transform 0.7s, opacity 0.3s;
@@ -163,6 +173,7 @@ body {
 	transform: translateY(0);
 }
 
+
 #sfondolocation {
 	position: fixed;
 	object-fit: cover;
@@ -178,10 +189,11 @@ body {
 	overflow: hidden;
 	width: 95%;
 	margin: auto;
-}
 
+}
 .card video {
 	width: 100%;
+
 }
 
 #location {
@@ -192,7 +204,11 @@ body {
 	height: auto;
 	opacity: 90%;
 	z-index: -3;
+
 }
+
+
+
 
 #testo {
 	background-color: #ffb728dd;
@@ -206,6 +222,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 	box-shadow: #2a2a2a 0px 0px 15px 0px;
+
+
 }
 
 .merriweather-regular {
@@ -233,23 +251,27 @@ body {
 	z-index: -3;
 }
 
+
 @media (max-width: 800px) {
 	.col-md-12 {
 		order: -1;
 	}
 }
 
+
 .cardfooter {
     width: fit-content;
     height: fit-content;
-    background-color: rgb(238, 238, 238);
+    background-color: rgba(238, 238, 238, 0);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
- }
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
+
+
+  }
 
   /* for all social containers*/
   .socialContainer {
@@ -262,6 +284,7 @@ body {
     justify-content: center;
     overflow: hidden;
     transition-duration: 0.3s;
+	margin: 5px;
   }
   /* instagram*/
   .containerOne:hover {

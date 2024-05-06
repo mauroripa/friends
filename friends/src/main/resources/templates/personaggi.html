@@ -12,101 +12,94 @@
     <link th:href="@{/backend/css/personaggi.css}" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
-    <!--da capire se mettere opacity 50-->
-    <!-- Container wrapper -->
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100">
+        <!--da capire se mettere opacity 50-->
+        <!-- Container wrapper -->
 
-    <div class="container-fluid">
-        <!-- Navbar brand -->
-        <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" src="immagini/logo friend png.png"></a>
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" th:href="@{/}"><img style="width: 200px;" th:src="@{/immagini/logo friend png.png}"></a>
 
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-            <!-- ICONA HAMBURGER -->
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <!-- ICONA HAMBURGER -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!--dropdown -->
-                <li th:each="categoria : ${categorie}" class="nav-item">
-                    <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
-                       th:text="${categoria.nomeCategoria}"></a>
-                </li>
-                <li th:if="${login}"><a th:href="@{/areariservata}" class="dropdown-item">Area riservata</a></li>
-                <li th:if="${!login}"><a th:href="@{/admin/login}" class="dropdown-item">Login</a></li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control " type="search" placeholder="Search" aria-label="Search"
-                       style="width: 200px;">
-                <button class="btn btn-outline-success" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}"/></button>
-            </form>
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!--dropdown -->
+                    <li th:each="categoria : ${categorie}" class="nav-item">
+                        <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
+                           th:text="${categoria.nomeCategoria}"></a>
+                    </li>
+                    <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link">Area riservata</a></li>
+                    <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link">Login</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control " type="search" placeholder="Search" aria-label="Search"
+                           style="width: 200px; margin-right: 10px;">
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+                                                                                 th:src="@{/immagini/lentepng.png}"/>
+                    </button>
+                </form>
+            </div>
         </div>
+    </nav>
+
+    <div class="d-flex justify-content-center" id="topPage">
+        <img class="w-50" th:src="@{immagini/personaggipng.png}" style="margin-top: 150px; margin-bottom: 5%;}"/>
     </div>
-</nav>
 
-<div class="d-flex justify-content-center" id="topPage">
-    <img class="w-50" th:src="@{immagini/personaggipng.png}" style="margin-top: 10%; margin-bottom: 5%;}"/>
-</div>
+    <div class="d-flex justify-content-center">
+        <button
+                th:each="contenuto, stato : ${contenuti}"
+                th:text="${contenuto.titolo}"
+                style="margin-right: 20px;"
+                th:attr="nome-personaggio=${contenuto.titolo}"
+                th:class=" 'btn-personaggio btn ' + ${stato.index % 3 == 0 ? 'btn-danger ' : stato.index % 3 == 1 ? 'btn-primary ' : 'btn-warning '} "
+        ></button>
+    </div>
 
-<div class="d-flex justify-content-center">
-    <button
-            th:each="contenuto, stato : ${contenuti}"
-            th:text="${contenuto.titolo}"
-            style="margin-right: 20px;"
-            th:attr="nome-personaggio=${contenuto.titolo}"
-            th:class=" 'btn-personaggio btn ' + ${stato.index % 3 == 0 ? 'btn-danger ' : stato.index % 3 == 1 ? 'btn-primary ' : 'btn-warning '} "
-    ></button>
-    <!--<button class="btn btn-danger" onclick="scrollToSection('ross')" style="margin-right: 20px;">Ross Geller</button>
-    <button class="btn btn-primary" onclick="scrollToSection('joey')" style="margin-right: 20px;">Joey Tribbiani
-    </button>
-    <button class="btn btn-warning  " onclick="scrollToSection('monica')" style="margin-right: 20px;">Monica Geller
-    </button>
-    <button class="btn btn-danger " onclick="scrollToSection('rachel')" style="margin-right: 20px;">Rachel Green
-    </button>
-    <button class="btn btn-primary " onclick="scrollToSection('chandler')" style="margin-right: 20px;">Chandler Bing
-    </button>
-    <button class="btn btn-warning  " onclick="scrollToSection('phoebe')" style="margin-right: 20px;">Phoebe Buffay
-    </button>-->
-</div>
-<div>
-
-    <section class="py-2 w-100 h-100" id="ross"></section>
-    <section th:each="contenuto, index : ${contenuti}" th:attr="personaggio=${contenuto.titolo}" class="py-5 mt-5">
-        <div th:class="${index.index % 2 == 0 ? 'pari ' : ''} + 'container' ">
-            <div class="row gx-5 personaggio">
-                <div class="col-lg-6">
-                    <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                        <a class="rounded-4" target="_blank"
-                           th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                                 th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}"/>
-                        </a>
+    <div>
+        <section class="py-2 w-100 h-100" id="ross"></section>
+        <section th:each="contenuto, index : ${contenuti}" th:attr="personaggio=${contenuto.titolo}" class="py-5 mt-5">
+            <div th:class="${index.index % 2 == 0 ? 'pari ' : ''} + 'container' ">
+                <div class="row gx-5 personaggio">
+                    <div class="col-lg-6">
+                        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                            <a class="rounded-4" target="_blank"
+                               th:href="@{https://it.wikipedia.org/wiki/Personaggi_di_Friends}">
+                                <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
+                                     th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
+                                     th:alt="${contenuto.titolo}"/>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ps-lg-3">
-                        <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
-                        <p th:text="${contenuto.descrizione}" class="descrizione"></p>
-                        <button class="glow-on-hover" onclick="scrollArrowUp('topPage')">Torna su!</button>
+                    <div class="col-lg-6">
+                        <div class="ps-lg-3">
+                            <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
+                            <p th:text="${contenuto.descrizione}" class="descrizione"></p>
+                            <button class="glow-on-hover" onclick="scrollArrowUp('topPage')">Torna su!</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                 </a>
                 <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
             </div>
-
 
 
             <div class="cardfooter" style="display: inline-block;">
@@ -133,13 +126,10 @@
                         ></path>
                     </svg>
                 </a>
-
-
             </div>
         </footer>
-    </div>
-</div>
 
+</div>
 <script th:src="@{/backend/js/personaggi.js}"></script>
 </body>
 </html>

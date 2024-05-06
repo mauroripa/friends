@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+.navbar{
+    background-color: black;
+    box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+    min-height: 90px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#uno:hover {
+	color: #ee2825;
+}
+
+#due:hover {
+	color: #ffb828;
+}
+
+#tre:hover {
+	color: #02b0ec;
+}
+
+#quattro:hover {
+	color: #ee2825;
+}
+
+#cinque:hover {
+	color: #ffb828;
+}
+
+#sei:hover {
+	color: #02b0ec;
+}
+
+.cardfooter {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(238, 238, 238, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
+  }
+  .card {
+    box-sizing: border-box;
+    width: 190px;
+    height: 500px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+  }
+
+  .cardt{
+    margin-top: 20px;
+  }
+
+  /*.cardt {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 0px solid rgb(255, 255, 255);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.233);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+
+  }*/
+
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+
+
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    margin: 5px;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: green;
+    transition-duration: 0.3s;
+  }
+
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+
+  .socialSvg {
+    width: 17px;
+  }
+
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:active {
+    color: #000
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }

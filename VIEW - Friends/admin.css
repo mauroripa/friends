@@ -6,24 +6,16 @@
 .box__error {
   display: none;
 }
-.cartaIns{
+
+.cartaIns {
   display: none;
 }
-.cartaAdm{
+
+.cartaAdm {
   display: none;
 }
-.cardf {
-  width: fit-content;
-  height: fit-content;
-  background-color: rgb(238, 238, 238);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px 25px;
-  gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-  
-}/* for all social containers*/
+
+/* for all social containers*/
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -34,22 +26,27 @@
   justify-content: center;
   overflow: hidden;
   transition-duration: 0.3s;
+  margin: 5px;
 }
+
 /* instagram*/
 .containerOne:hover {
   background-color: #d62976;
   transition-duration: 0.3s;
 }
+
 /* twitter*/
 .containerTwo:hover {
   background-color: #00acee;
   transition-duration: 0.3s;
 }
+
 /* linkdin*/
 .containerThree:hover {
   background-color: #0072b1;
   transition-duration: 0.3s;
 }
+
 /* Whatsapp*/
 .containerFour:hover {
   background-color: green;
@@ -85,41 +82,45 @@
   }
 }
 
+/*
 .carta{
   display: none;
 }
-#textarea{
+*/
+#textarea {
   resize: none;
 }
 
 input[type="file"] {
   display: none;
 }
-.navbar{
+
+.navbar {
   background-color: black;
 }
+
 #uno:hover {
-	color: #ee2825;
+  color: #ee2825;
 }
 
 #due:hover {
-	color: #ffb828;
+  color: #ffb828;
 }
 
 #tre:hover {
-	color: #02b0ec;
+  color: #02b0ec;
 }
 
 #quattro:hover {
-	color: #ee2825;
+  color: #ee2825;
 }
 
 #cinque:hover {
-	color: #ffb828;
+  color: #ffb828;
 }
 
 #sei:hover {
-	color: #02b0ec;
+  color: #02b0ec;
 }
 
 .custom-file-upload {
@@ -128,46 +129,139 @@ input[type="file"] {
   padding: 12px 12px;
   cursor: pointer;
   justify-content: center;
-  
+
 }
+
 header {
   margin-top: 1rem;
 }
 
 .droparea {
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 
 }
+
+.card-footer {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(238, 238, 238, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
+}
+
 .green-border {
   border-color: green;
 }
-#theme__image{
+
+#theme__image {
   width: 40px;
   height: 40px;
 }
-section{
-  display:block;
+
+section {
+  display: block;
 }
+
+.hidden {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0;
+  height: 0 !important;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.show {
+  display: block;
+  height: 750px;
+  transition: all 1s;
+}
+
+
+/* ??? */
+
+.col-content-manager:not(.open) .carta,
+.col-content-manager.open .open-column {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.col-content-manager.open .open-column {
+  margin: auto !important;
+  font-size: 0;
+  width: 0;
+}
+
+.col-content-manager.open .carta,
+.col-content-manager .open-column {
+  display: block;
+  transition: all 1s;
+}
+
+.col-content-manager .category-container {
+  height: 250px;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.col-content-manager .carta::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 10px;
+}
+
+.col-content-manager .category-container::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 6px;
+}
+
+
+.col-content-manager .carta::-webkit-scrollbar-thumb,
+.col-content-manager .category-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.col-content-manager .carta::-webkit-scrollbar-track,
+.col-content-manager .category-container::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+
+.col-content-manager .carta {
+  height: 550px;
+  overflow: hidden;
+}
+
+/* ??? */
+
+
+
 
 .col-content-manager {
   transition: all 1s;
   display: flex;
   align-items: center;
+
 }
 
 
 .col-content-manager .carta-title-container {
   display: flex;
   justify-content: space-between;
-}
-
-.col-content-manager .carta-title-container button {
-
 }
 
 .col-content-manager .category-row {
@@ -188,28 +282,16 @@ section{
   margin-left: 10px;
 }
 
-.hidden {
-    display: block !important;
-    margin: 0 !important;
-    padding: 0;
-    height: 0 !important;
-    overflow: hidden;
-    transition: all 1s;
-}
-.show{
-  display: block;
-  height: 750px;
-  transition: all 1s;
-}
+
 
 .file-input {
   z-index: 1;
   cursor: pointer;
 }
+
 .cardf {
   box-sizing: border-box;
-  width: 190px;
-  height: 600px;
+  width: 690px;
   background: rgba(217, 217, 217, 0.58);
   border: 1px solid white;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
@@ -224,47 +306,58 @@ section{
   user-select: none;
   font-weight: bolder;
   color: black;
+  flex-direction: column;
 }
+
 .cardf:hover {
   border: 1px solid black;
   transform: scale(1.05);
 }
-/*------ Settings ------*/
-.containerEye {
-  --color: #a5a5b0;
-  --size: 20px;
+
+.cardf .card-body {
+  padding: 1rem 1rem;
+}
+
+.cardf .card-title {
+  margin-bottom: 0.5rem;
+}
+
+.cardf .card-body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*------ Settings ------*/
+.container-eyes {
   align-items: center;
   position: relative;
   cursor: pointer;
-  font-size: var(--size);
+  font-size: 20px;
   user-select: none;
-  fill: var(--color);
+  fill: #a5a5b0;
 }
 
-.containerEye .eye {
-  position: absolute;
+.container-eyes .eye {
   animation: keyframes-fill .5s;
 }
 
-.containerEye .eye-slash {
-  position: absolute;
+.container-eyes .eye-slash {
   animation: keyframes-fill .5s;
   display: none;
 }
 
 /* ------ On check event ------ */
-.containerEye input:checked ~ .eye {
+.container-eyes input:checked~.eye {
   display: none;
 }
 
-.containerEye input:checked ~ .eye-slash {
+.container-eyes input:checked~.eye-slash {
   display: block;
 }
 
 /* ------ Hide the default checkbox ------ */
-.containerEye input {
+.container-eyes input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -283,6 +376,7 @@ section{
     transform: scale(1.2);
   }
 }
+
 .glow-on-hover {
   width: 220px;
   height: 50px;
@@ -301,7 +395,7 @@ section{
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -344,6 +438,15 @@ section{
   border: none;
   border-radius: 5px;
   transition: background 0.5s;
+}
+
+a.glow-on-hover {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0 23px;
 }
 
 .X {
@@ -396,7 +499,7 @@ section{
   background-color: rgb(130, 0, 0);
 }
 
-.button:hover > .close {
+.button:hover>.close {
   animation: close 0.2s forwards 0.25s;
 }
 
@@ -407,10 +510,19 @@ section{
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
+
 .bin-button {
   display: flex;
   flex-direction: column;
@@ -426,25 +538,31 @@ section{
   position: relative;
   overflow: hidden;
 }
+
 .bin-bottom {
   width: 15px;
   z-index: 2;
 }
+
 .bin-top {
   width: 17px;
   transform-origin: right;
   transition-duration: 0.3s;
   z-index: 2;
 }
+
 .bin-button:hover .bin-top {
   transform: rotate(45deg);
 }
+
 .bin-button:hover {
   background-color: rgb(255, 0, 0);
 }
+
 .bin-button:active {
   transform: scale(0.9);
 }
+
 .garbage {
   position: absolute;
   width: 14px;
@@ -453,19 +571,23 @@ section{
   opacity: 0;
   transition: all 0.3s;
 }
+
 .bin-button:hover .garbage {
   animation: throw 0.4s linear;
 }
+
 @keyframes throw {
   from {
     transform: translate(-400%, -700%);
     opacity: 0;
   }
+
   to {
     transform: translate(0%, 0%);
     opacity: 1;
   }
 }
+
 .edit-button {
   width: 30px;
   height: 30px;
@@ -531,12 +653,13 @@ section{
 }
 
 @media screen and (max-width: 1024px) {
-  .content-manager{
+  .content-manager {
     grid-template-columns: 1fr 1fr;
-  } 
+  }
 }
+
 @media screen and (max-width: 768px) {
-  .content-manager{
+  .content-manager {
     grid-template-columns: 1fr;
   }
 }

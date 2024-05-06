@@ -1,20 +1,58 @@
 @charset "UTF-8";
 .navbar{
     background-color: black;
+    box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+    min-height: 90px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
+
+#descrizionegadget{
+  font-size: 18px;
+}
+
+#linkaffiliazione{
+  font-size: 14px;
+  opacity: 90%;
+}
+
+#uno:hover {
+	color: #ee2825;
+}
+
+#due:hover {
+	color: #ffb828;
+}
+
+#tre:hover {
+	color: #02b0ec;
+}
+
+#quattro:hover {
+	color: #ee2825;
+}
+
+#cinque:hover {
+	color: #ffb828;
+}
+
+#sei:hover {
+	color: #02b0ec;
+}
+
 img{
     object-fit: contain;
 }
-.cardf {
+.cardfooter {
     width: fit-content;
     height: fit-content;
-    background-color: rgb(238, 238, 238);
+    background-color: rgba(238, 238, 238, 0);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
 
   }/* for all social containers*/
   .socialContainer {
@@ -27,6 +65,7 @@ img{
     justify-content: center;
     overflow: hidden;
     transition-duration: 0.3s;
+    margin: 5px;
   }
   /* instagram*/
   .containerOne:hover {
@@ -38,7 +77,7 @@ img{
     background-color: #00acee;
     transition-duration: 0.3s;
   }
-  /* linkedin*/
+  /* linkdin*/
   .containerThree:hover {
     background-color: #0072b1;
     transition-duration: 0.3s;
