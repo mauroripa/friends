@@ -208,7 +208,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center pb-2">
-                                <button type="submit" class="glow-on-hover" th:text="${contenuto.titolo != null ? 'Invia' : 'Aggiorna'}"></button>
+                                <button type="submit" class="glow-on-hover" th:text="${contenuto.titolo != null ? 'Aggiorna' : 'Invia'}"></button>
                             </div>
                         </form>
                     </div>
@@ -299,7 +299,7 @@
                             <label class="text-muted">Password</label><br/>
                             <input class="form-control" type="text" name="password" th:value="${admin.password}"
                                    placeholder="Password"><br/>
-                            <button type="submit" class="glow-on-hover mt-3 mb-2 d-block mx-auto" th:text="${admin.username != null ? 'Registra' : 'Aggiorna'}"></button>
+                            <button type="submit" class="glow-on-hover mt-3 mb-2 d-block mx-auto" th:text="${admin.username != null ? 'Aggiorna' : 'Registra'}"></button>
                         </form>
                     </div>
                 </div>

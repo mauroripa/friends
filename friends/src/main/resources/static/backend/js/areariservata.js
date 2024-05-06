@@ -235,7 +235,7 @@ const check_empty_fileds = (form) => {
             if(el.nodeName === 'INPUT' && el.type === 'file' && thumbnails.children.length <= 0) {
                 el.parentNode.classList.add('is-invalid')
                 has_empty_fields = true
-            } else {
+            } else if(el.nodeName !== 'INPUT' || (el.nodeName === 'INPUT' && el.type !== 'file')) {
                 el.classList.add('is-invalid')
                 has_empty_fields = true
             }
@@ -258,6 +258,7 @@ const check_empty_fileds = (form) => {
  */
 const handle_submit = (ev, form) => {
 
+        console.log(check_empty_fileds(form))
     if( check_empty_fileds(form) ) {
         ev.stopPropagation()
         ev.preventDefault()
