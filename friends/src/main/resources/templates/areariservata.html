@@ -58,7 +58,7 @@
 
 <div class="container mt-5 pt-5">
     <div class="row content-manager h-100">
-        <div class="col-content-manager col-4">
+        <div th:class="'col-content-manager col-4 ' + ${categoria.nomeCategoria != null ? 'open' : ''}">
             <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
                     <div class="carta-content-fix px-3">
@@ -127,7 +127,7 @@
                 <button class="glow-on-hover d-block mx-auto my-4 open-column">Modifica categoria</button>
             </div>
         </div>
-        <div class="col-content-manager col-4">
+        <div th:class="'col-content-manager col-4 ' + ${contenuto.titolo != null ? 'open' : ''}">
             <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
                     <div class="carta-content-fix px-3">
@@ -211,7 +211,7 @@
                 <button class="glow-on-hover d-block mx-auto my-4 open-column">Inserisci un contenuto</button>
             </div>
         </div>
-        <div class="col-content-manager col-4">
+        <div th:class="'col-content-manager col-4 ' + ${admin.username != null ? 'open' : ''}">
             <div class="py-3 border rounded-2 bg-white w-100 shadow-lg">
                 <div class="carta">
                     <div class="carta-content-fix px-3">
