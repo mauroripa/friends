@@ -73,10 +73,6 @@
 	color: #02b0ec;
 }
 
-
-
-
-
 /* css per location */
 body {
 	background-color: #333;
@@ -96,8 +92,6 @@ body {
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.25);
-
-
 	padding: 5px;
 	transition: top 0s, right 0s, transform 0.7s, opacity 0.3s;
 	width: 250px;
@@ -244,12 +238,19 @@ body {
 }
 
 
+
 @media (max-width: 800px) {
 	.col-md-12 {
 		order: -1;
 	}
 }
 
+#containerfooter {
+	padding-left: 78px;
+	padding-right: 78px;
+	padding-top: 56px;
+	margin-top: 5px;
+}
 
 .cardfooter {
     width: fit-content;
@@ -260,9 +261,7 @@ body {
     justify-content: center;
     padding: 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
-
-
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
   }
 
   /* for all social containers*/
@@ -288,7 +287,7 @@ body {
     background-color: #00acee;
     transition-duration: 0.3s;
   }
-  /* linkedin*/
+  /* linkdin*/
   .containerThree:hover {
     background-color: #0072b1;
     transition-duration: 0.3s;

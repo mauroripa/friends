@@ -23,6 +23,12 @@ body {
     transform: translateX(-100%);
   }
 }
+.carousel-item img{
+  height: 450px;
+object-fit: cover;
+margin-top: 85px;
+}
+
 .cardf {
   box-sizing: border-box;
   width: 300px;
@@ -38,7 +44,8 @@ body {
    user-select: none;
   font-weight: bolder;
   color: black;
-  
+  border-radius: 20px;
+  margin: 2%;
 }
 .cardf:hover {
   border: 1px solid black;
@@ -47,7 +54,7 @@ body {
 
 .logos {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 20px 0;
   background: white;
   white-space: nowrap;
   position: relative;
@@ -221,7 +228,7 @@ a{
   justify-content: center;
   padding: 25px 25px;
   gap: 20px;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0)
+  box-shadow: 0px 0px 20px rgba(151, 132, 132, 0)
   
 }
 
@@ -287,9 +294,22 @@ a{
     opacity: 1;
   }
 }
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
-
-
-
-
-
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #343333;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .cardf img {
+    height: 11em;
+  }
+}
