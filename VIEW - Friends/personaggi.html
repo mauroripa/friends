@@ -61,9 +61,10 @@
 
 
           </ul>
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" onsubmit="redirectToPage(); return false;" >
             <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search"
-              aria-label="Search">
+              aria-label="Search" id="searchInput" list="options">
+              <datalist id="options"></datalist>
             <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
                 src="lentepng.png" /></button>
           </form>
@@ -331,6 +332,7 @@
     </div>
 
     <script src="personaggi.js"></script>
+    <script src="SearchInput.js"></script>
 </body>
 
 </html>
