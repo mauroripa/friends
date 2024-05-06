@@ -46,29 +46,34 @@ public class ContenutoController {
          model.addAttribute("contenuti", categoria.getContenuti());
          return path.toLowerCase().replace(' ', '-');
       }
-      return "404";
+      return "dettaglio-gadget";
    }
 
-   @GetMapping ("/dettaglio")
-   public String getDettaglio(Model model,
-                              @RequestParam("id") String id,
-                              HttpSession session){
+   @GetMapping("/dettaglio-gadget")
+   public String getDettaglioGadget(Model model,
+                                    @RequestParam("id") String id,
+                                    HttpSession session){
 
       List<Categoria> categorie = categoriaService.listaCategorie();
       model.addAttribute("categorie", categorie);
       model.addAttribute("login", session.getAttribute("admin") != null);
 
-      Contenuto contenuto = contenutoService.getContenutoById(Integer.parseInt(id));
+      try {
+         int contenutoId = Integer.parseInt(id);
+         Contenuto contenuto = contenutoService.getContenutoById(contenutoId);
 
-      if(contenuto != null) {
-         String templateName = "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase().replace(' ', '-') + ".html";
-         if(appContext.getResource("classpath:/templates/" + templateName).exists()) {
+         if (contenuto != null) {
             model.addAttribute("contenuto", contenuto);
-            model.addAttribute("categoria", contenuto.getCategoria());
-            return "dettaglio-" + contenuto.getCategoria().getNomeCategoria().toLowerCase().replace(' ', '-');
+            return "dettaglio-gadget"; // Aggiorna con il nome del template per il dettaglio del gadget
+         } else {
+            System.out.println("Contenuto non trovato per ID: " + contenutoId);
          }
+      } catch (NumberFormatException e) {
+         System.out.println("ID non valido: " + id);
       }
+
       return "404";
    }
+
 
 }
