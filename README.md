@@ -50,4 +50,4 @@ Luciano Lamberti | https://www.linkedin.com/in/luciano-lamberti-9169a9153/
 
 
 # Licenza
-
+Il software è protetto dalla licenza  GNU AFFERO GENERAL PUBLIC LICENSE 3.0, per ulteriori informazioni consultare il file LICENSE.
