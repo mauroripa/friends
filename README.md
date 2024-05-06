@@ -1,9 +1,15 @@
-#Friends Web Application
 
-Descrizione del Progetto
+# Friends Web Application
+
+# Descrizione del Progetto
 La Friends Web Application è un progetto sviluppato come lavoro di fine corso presso Generation Italy, con l'obiettivo di creare una piattaforma online dedicata agli appassionati della celebre serie televisiva degli anni '90, "Friends". Il sito è stato realizzato per offrire agli utenti un'esperienza interattiva e nostalgica, consentendo loro di esplorare contenuti relativi alla serie, connettersi con altri fan e partecipare a discussioni sulla loro sitcom preferita.
+![fotoreadme](https://github.com/mauroripa/friends/assets/22256710/8b063c84-87b4-467f-953f-00b44d298718)
 
-Tecnologie Utilizzate
+# Come Aprire il Progetto
+Prerequisiti: Un'IDE che supporti l'installazione di progetti Spring(IntelliJ, Eclipse, Visual Studio Code, ...), Xampp per il database.  
+Come Aprirlo: scaricare il database dal nome "friends.sql" in FRIENDS_DB, dopodiché aprire Xampp e cliccare su start per aprire PhpMyAdmin, importare il database e poi scaricare la cartella del progetto Spring Friends ed importala in uno dei tuoi IDE preferiti, dopodiché avvia l'applicazione tramite il run della main FriendsApplication, e potrai navigare liberamente sul sito.
+
+# Tecnologie Utilizzate
 Spring: Il framework Spring è stato utilizzato per lo sviluppo del backend, garantendo una gestione efficiente delle richieste HTTP e delle operazioni di database.
 HTML & CSS: Per la creazione dell'interfaccia utente è stato impiegato HTML per la struttura e CSS per lo stile, assicurando un design accattivante.
 MySQL: Il database MySQL è stato utilizzato per memorizzare in modo sicuro e organizzato i dati relativi agli utenti, ai contenuti della serie e alle interazioni degli utenti con il sito.
@@ -13,5 +19,5 @@ JavaScript: JavaScript è stato utilizzato per aggiungere interattività alla pa
 Come Contribuire
 Se sei un fan appassionato di "Friends" e desideri contribuire a migliorare questa applicazione, sei il benvenuto! Puoi dare un'occhiata al nostro codice su GitHub e inviare pull request per suggerire miglioramenti, risolvere bug o aggiungere nuove funzionalità. Assicurati di seguire le linee guida di contribuzione nel nostro file CONTRIBUTING.md.
 
-Licenza
-Questo progetto è rilasciato sotto la licenza MIT. Per ulteriori informazioni, consulta il file LICENSE.md.
+# Licenza
+Questo progetto è rilasciato sotto la licenza MIT. Per ulteriori informazioni, consulta il file LICENSE.md
