@@ -226,7 +226,6 @@ section {
 .col-content-manager .category-container {
   height: 250px;
   overflow: auto;
-  padding-right: 10px;
 }
 
 .col-content-manager .carta::-webkit-scrollbar {
@@ -338,6 +337,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 /*------ Settings ------*/
@@ -359,12 +359,13 @@ section {
   display: none;
 }
 
-/* ------ On check event ------ */
-.container-eyes input:checked~.eye {
+/* ------ (show/hide) User Password ------ */
+.pwd-info:not(.see) .eye-slash,
+.pwd-info.see .eye {
   display: none;
 }
 
-.container-eyes input:checked~.eye-slash {
+.pwd-info.see .eye-slash {
   display: block;
 }
 
