@@ -399,6 +399,9 @@ section {
 
 .cardf .card-title {
   margin-bottom: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .cardf .card-body {

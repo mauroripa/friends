@@ -45,11 +45,12 @@
                 <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link cinque">Area riservata</a></li>
                 <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
             </ul>
-            <form class="d-flex" role="search">
-                <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Search"
-                       aria-label="Search">
-                <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
-                                                                             th:src="@{immagini/lentepng.png}"/>
+            <form class="d-flex" role="search" onsubmit="redirectToPage(); return false;" >
+                <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Cerca"
+                       aria-label="Search" id="searchInput" list="options">
+                <datalist id="options"></datalist>
+                <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}" /></button>
+            </form>
                 </button>
             </form>
         </div>
@@ -353,8 +354,6 @@
             <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
         </div>
 
-
-
         <div class="cardfooter" style="display: inline-block;">
             <a class="socialContainer containerOne" href="#" style="float: left;">
                 <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
@@ -379,8 +378,6 @@
                     </path>
                 </svg>
             </a>
-
-
         </div>
     </footer>
 </div>
@@ -389,6 +386,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script th:src="@{/backend/js/areariservata.js}"></script>
+<script th:src="@{/backend/js/searchInput.js}"></script>
 </div>
 </body>
 </html>
