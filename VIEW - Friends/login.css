@@ -1,7 +1,14 @@
 @charset "UTF-8";
 
 .navbar{
-    background-color: black;
+  background-color: black;
+  box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
+  min-height: 90px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.navbar-brand {
+	line-height: 5px;
 }
 #uno:hover {
 	color: #ee2825;

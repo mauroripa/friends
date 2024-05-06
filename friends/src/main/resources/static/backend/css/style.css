@@ -107,7 +107,7 @@ margin-top: 85px;
 .dropdown-content {
   position: absolute;
   background-color: #ff0000;
-  min-width: 160px;
+  min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -127,6 +127,9 @@ margin-top: 85px;
   min-height: 90px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.navbar-brand {
+	line-height: 5px;
 }
 #uno:hover {
 	color: #ee2825;
