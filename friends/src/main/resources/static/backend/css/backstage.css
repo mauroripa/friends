@@ -214,6 +214,12 @@ body {
   line-height: 1.4;
 }
 
+#containerfooter {
+  padding-left: 78px;
+	padding-right: 78px;
+	padding-top: 56px;
+	margin-top: 5px;
+}
 
 .cardfooter {
     width: fit-content;
@@ -225,6 +231,8 @@ body {
     padding: 25px 25px;
     gap: 20px;
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
+    padding-left: 80px;
+    padding-right: 25px;
   }
 
   /* for all social containers*/
