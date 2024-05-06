@@ -44,13 +44,11 @@
 }
 
 .navbar {
-
 	background-color: black;
 	min-height: 90px;
 	box-shadow: 1px 0px 12px 10px rgba(0, 0, 0, 0.60);
 	border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-
 }
 
 #uno:hover{ /*uno*/
@@ -132,8 +130,8 @@ a{
 	right: 50%;
 	transform: translate(50%, -50%);
 	z-index: 10;
-	width: 90%;
-	height: 70%;
+	width: 50%;
+	height: 80%;
 	opacity: 1;
 }
 
@@ -178,7 +176,7 @@ a{
 	border-radius: 15px;
 	align-items: center;
 	text-align: center;	
-	height: 80%;
+	height: 70%;
 	overflow: hidden;
 	width: 95%;
 	margin: auto;
@@ -186,7 +184,8 @@ a{
 }
 .card video {
 	width: 100%;
-	
+	border-radius:15px;
+	height:auto;
 }
 
 #location {
