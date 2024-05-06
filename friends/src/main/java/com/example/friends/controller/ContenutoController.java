@@ -53,7 +53,7 @@ public class ContenutoController {
       }
       System.out.println(appContext.getResource("classpath:/templates/" + templateName).exists());
       System.out.println(path.toLowerCase().replace(' ', '-'));
-      return "dettaglio-gadget";
+      return "404";
    }
 
    @GetMapping ("/dettaglio")

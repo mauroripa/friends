@@ -119,28 +119,10 @@ input[type="file"] {
   background-color: black;
 }
 
-#uno:hover {
-  color: #ee2825;
-}
-
-#due:hover {
-  color: #ffb828;
-}
-
-#tre:hover {
-  color: #02b0ec;
-}
-
-#quattro:hover {
-  color: #ee2825;
-}
-
-#cinque:hover {
-  color: #ffb828;
-}
-
-#sei:hover {
-  color: #02b0ec;
+a{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Usa il colore ereditato (non blu) */
 }
 
 .custom-file-upload {
