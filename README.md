@@ -1,2 +1,2 @@
 # friends
-project work
+Friends Project Work
