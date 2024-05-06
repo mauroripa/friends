@@ -19,6 +19,9 @@ public class Contenuto {
     @Column
     private String descrizione;
 
+    @Column(name = "sotto_descrizione") // Aggiunta
+    private String sottoDescrizione; // Aggiunta
+
     @ManyToOne
     @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
     private Categoria categoria;
@@ -66,5 +69,13 @@ public class Contenuto {
 
     public void setImmagini(List<Galleria> immagini) {
         this.immagini = immagini;
+    }
+
+    public String getSottoDescrizione() {
+        return sottoDescrizione;
+    }
+
+    public void setSottoDescrizione(String sottoDescrizione) {
+        this.sottoDescrizione = sottoDescrizione;
     }
 }

@@ -5,6 +5,25 @@ a{
     color: inherit; /* Usa il colore ereditato (non blu) */
 }
 
+#uno:hover{ /*uno*/
+    color: #ee2825;
+}
+
+.red:hover { /*due*/
+    color: #ffb828;
+}
+
+.orange:hover { /*tre*/
+    color: #02b0ec;
+}
+
+.blue:hover { /*quattro*/
+    color: #ee2825;
+}
+
+.cinque:hover{
+    color: #02b0ec;
+}
 
 .logo{
   justify-content: start;

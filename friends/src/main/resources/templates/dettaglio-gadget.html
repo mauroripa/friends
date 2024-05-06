@@ -81,12 +81,11 @@
                 <main class="col-lg-6" th:if="${contenuto != null}">
                         <div class="ps-lg-3">
                             <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
-
                             <p th:if="${contenuto.descrizione != null}">
-                                <span th:text="${contenuto.descrizione.substring(0, contenuto.descrizione.indexOf('Per acquistare'))}"></span>
+                                <span th:text="${contenuto.descrizione}"></span>
                             </p>
-                            <p th:if="${contenuto.descrizione != null}">
-                                <span th:text="${contenuto.descrizione.substring(contenuto.descrizione.indexOf('Per acquistare'))}" ></span>
+                            <p th:if="${contenuto.sottoDescrizione != null}">
+                                <a th:href="${contenuto.sottoDescrizione}" th:text="${contenuto.sottoDescrizione}">Link</a>
                             </p>
                         </div>
                 </main>
