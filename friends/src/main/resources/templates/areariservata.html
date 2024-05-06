@@ -185,18 +185,19 @@
                                 </section>
 
                                 <section class="thumbnails">
+                                    <div class="thumbnails-content">
+                                        <span th:if="${ contenuto.immagini.size() > 0 }"
+                                              th:each="immagine : ${contenuto.immagini}">
 
-                                    <span th:if="${ contenuto.immagini.size() > 0 }"
-                                          th:each="immagine : ${contenuto.immagini}">
+                                            <img th:unless="${#strings.endsWith(immagine.galleria, '.mp4')}"
+                                                 th:src="@{${'/uploads/' + immagine.galleria}}" width="300"/>
+                                            <video th:if="${#strings.endsWith(immagine.galleria, '.mp4')}">
+                                                <source th:src="@{${'/uploads/' + immagine.galleria}}" type="video/mp4">
+                                            </video>
 
-                                        <img th:unless="${#strings.endsWith(immagine.galleria, '.mp4')}"
-                                             th:src="@{${'/uploads/' + immagine.galleria}}" width="300"/>
-                                        <video th:if="${#strings.endsWith(immagine.galleria, '.mp4')}">
-                                            <source th:src="@{${'/uploads/' + immagine.galleria}}" type="video/mp4">
-                                        </video>
-
-                                        <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
-                                    </span>
+                                            <a th:href="@{/areariservata/immagine/elimina(id=${immagine.id}, contenutoId=${contenuto.id})}">Remove</a>
+                                        </span>
+                                    </div>
                                 </section>
                             </div>
 

@@ -145,8 +145,29 @@ header {
 
 .thumbnails {
     overflow: auto;
-    display: flex;
-    align-items: center;
+    margin-bottom: 20px;
+}
+
+.thumbnails::-webkit-scrollbar {
+  margin-right: 10px;
+  height: 6px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.thumbnails::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+.thumbnails .thumbnails-content {
+    display: inline-flex;
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
 }
 
 .thumbnails span {
@@ -156,6 +177,26 @@ header {
 .thumbnails span video,
 .thumbnails span img {
     max-width: 100px;
+}
+
+.thumbnails .thumbnails-content .image-item {
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-flex;
+    margin: 5px;
+}
+
+.thumbnails .thumbnails-content .image-item .remove-image {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    display: flex;
+}
+
+.thumbnails .thumbnails-content .image-item .remove-image svg {
+    width: 13px;
+    height: 13px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
 }
 
 .card-footer {
