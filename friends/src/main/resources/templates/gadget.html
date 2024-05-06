@@ -72,7 +72,7 @@
         </div>
 
         <div  class="row d-flex justify-content-center">
-            <div th:each="contenuto : ${contenuti}"  class="col-4">
+            <div th:each="contenuto : ${contenuti}"  class="col-3 mb-3">
                 <div class="card mx-auto shadow-lg bg-body-tertiary w-100 h-100">
                     <img class="card-img-top mt-3 w-100" th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
                           alt="Card image cap">
