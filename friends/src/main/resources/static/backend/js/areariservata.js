@@ -126,7 +126,7 @@ const remove_item_btn = (item, file) => {
 
         item.remove();
 
-        if( drop_images.files.length <= 0 ) {
+        if( drop_images.files.length <= 0 && thumbnails.children.length <= 0 ) {
             drop_area.classList.remove('droped')
         }
 
@@ -232,12 +232,13 @@ const check_empty_fileds = (form) => {
             el.value == '' ||
             ( el.nodeName == 'SELECT' && el.options[el.selectedIndex].hasAttribute('hidden') )
         ) {
-            if(el.nodeName === 'INPUT' && el.type === 'file') {
+            if(el.nodeName === 'INPUT' && el.type === 'file' && thumbnails.children.length <= 0) {
                 el.parentNode.classList.add('is-invalid')
+                has_empty_fields = true
             } else {
                 el.classList.add('is-invalid')
+                has_empty_fields = true
             }
-            has_empty_fields = true
         }
     })
 

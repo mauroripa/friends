@@ -42,6 +42,11 @@ a{
     color: inherit; /* Usa il colore ereditato (non blu) */
 }
 
+#link {
+    text-decoration: underline; /* Aggiunge la sottolineatura */
+    color: #0000EE; /* Imposta il colore blu predefinito */
+}
+
 img{
     object-fit: contain;
 }

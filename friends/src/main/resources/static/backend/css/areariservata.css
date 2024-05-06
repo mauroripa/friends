@@ -326,7 +326,6 @@ section {
   transition: all 1s;
   display: flex;
   align-items: center;
-
 }
 
 
@@ -362,7 +361,7 @@ section {
 
 .cardf {
   box-sizing: border-box;
-  width: 690px;
+  width: 100%;
   background: rgba(217, 217, 217, 0.58);
   border: 1px solid white;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
@@ -378,11 +377,20 @@ section {
   font-weight: bolder;
   color: black;
   flex-direction: column;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
 }
 
 .cardf:hover {
   border: 1px solid black;
   transform: scale(1.05);
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    border-top-right-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    max-height: 250px;
+    object-fit: cover;
 }
 
 .cardf .card-body {
@@ -391,6 +399,9 @@ section {
 
 .cardf .card-title {
   margin-bottom: 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .cardf .card-body {
@@ -398,6 +409,16 @@ section {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+}
+
+.cardf .card-body .card-text {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
 }
 
 /*------ Settings ------*/
@@ -725,6 +746,7 @@ a.glow-on-hover {
   transition-duration: 0.3s;
 }
 
+/*
 @media screen and (max-width: 1024px) {
   .content-manager {
     grid-template-columns: 1fr 1fr;
@@ -736,3 +758,4 @@ a.glow-on-hover {
     grid-template-columns: 1fr;
   }
 }
+*/
