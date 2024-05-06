@@ -309,32 +309,35 @@
     </div>
 </div>
 
-<div th:if="${contenuti.size() > 0}" class="container-fluid">
+<div th:if="${contenuti.size() > 0}" class="container">
+
     <h1 class="text-center my-5 py-5">Gestisci i contenuti pubblici</h1>
 
-    <div class="row">
+    <div class="row list-content">
 
-        <div th:each="contenuto : ${contenuti}" class="cardf mx-auto shadow-lg bg-body-tertiary" style="width: 18rem;">
-            <img
-                    th:if="${not contenuto.immagini.isEmpty() and not #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}"
-                    th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
-                    th:alt="${contenuto.titolo}"
-                    class="card-img-top mt-3"
-            />
-            <video
-                    th:if="${not contenuto.immagini.isEmpty() and #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}"
-                    class="card-img-top mt-3"
-            >
-                <source th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" type="video/mp4">
-            </video>
+        <div th:each="contenuto : ${contenuti}" class="col-12 col-md-4 col-lg-3 mb-4">
+            <div class="cardf h-100 shadow-lg bg-body-tertiary">
+                <img
+                        th:if="${not contenuto.immagini.isEmpty() and not #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}"
+                        th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
+                        th:alt="${contenuto.titolo}"
+                        class="card-img-top mt-3"
+                />
+                <video
+                        th:if="${not contenuto.immagini.isEmpty() and #strings.endsWith(contenuto.immagini.get(0).galleria, '.mp4')}"
+                        class="card-img-top mt-3"
+                >
+                    <source th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" type="video/mp4">
+                </video>
 
 
-            <div class="card-body">
-                <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
-                <p th:text="${contenuto.descrizione}" class="card-text mt-3"></p>
-                <div class="actions d-flex justify-content-between">
-                    <a th:href="@{/areariservata(contenutoId=${contenuto.id})}" class="glow-on-hover mt-3">Modifica</a>
-                    <a th:href="@{/areariservata/contenuto/elimina(id=${contenuto.id})}" class="glow-on-hover mt-3">Elimina</a>
+                <div class="card-body">
+                    <h5 th:text="${contenuto.titolo}" class="card-title mt-3"></h5>
+                    <p th:text="${contenuto.descrizione}" class="card-text mt-3"></p>
+                    <div class="actions d-flex justify-content-between">
+                        <a th:href="@{/areariservata(contenutoId=${contenuto.id})}" class="glow-on-hover mt-3">Modifica</a>
+                        <a th:href="@{/areariservata/contenuto/elimina(id=${contenuto.id})}" class="glow-on-hover mt-3">Elimina</a>
+                    </div>
                 </div>
             </div>
         </div>
