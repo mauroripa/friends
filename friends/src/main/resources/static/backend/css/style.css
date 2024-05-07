@@ -78,6 +78,21 @@ margin-top: 85px;
   transform: scale(1.05);
 }
 
+.cardf .card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cardf .card-body .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%;
+    margin:auto;
+}
+
 .logos {
   overflow: hidden;
   padding: 20px 0;
