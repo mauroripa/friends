@@ -22,17 +22,21 @@ public class UploadPhotoServiceImpl implements UploadPhotoService {
         try {
 
             String staticDir = resourceLoader.getResource("classpath:static/").getFile().getAbsolutePath();
-
+            String staticDir2 = "C:\\Users\\David\\Desktop\\JAVA\\friends\\friends\\src\\main\\resources\\static\\uploads";
 
             String uploadDirPath = staticDir + File.separator + "uploads";
             File uploadDir = new File(uploadDirPath);
+
             if (!uploadDir.exists()) {
-                uploadDir.mkdirs();
+                uploadDir.mkdir();
             }
 
 
             Path filePath = Paths.get(uploadDirPath, fileName);
             FileCopyUtils.copy(file.getBytes(), filePath.toFile());
+
+            Path filePath2 = Paths.get(staticDir2, fileName);
+            FileCopyUtils.copy(file.getBytes(), filePath2.toFile());
 
         } catch (IOException e) {
             throw new RuntimeException("Failed to upload file", e);

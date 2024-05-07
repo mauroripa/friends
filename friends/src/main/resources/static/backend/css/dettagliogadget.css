@@ -57,6 +57,21 @@ img{
     margin-bottom: 20px; /* Aggiunge spazio sotto al paragrafo */
 }
 
+.big-image{
+    height:450px;
+    box-shadow: 0px 0px 20px #6c757d8f;
+}
+
+.big-image a{
+    width:100%;
+}
+
+.big-image img{
+    height:100% !important;
+    object-fit: cover;
+    width: 100%;
+}
+
 .cardfooter {
     width: fit-content;
     height: fit-content;
