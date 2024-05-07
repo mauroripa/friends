@@ -299,13 +299,6 @@
                             <label class="text-muted">Password</label><br/>
                             <input class="form-control" type="password" name="password" th:value="${admin.password}"
                                    placeholder="Password"><br/>
-                            <label class="text-muted">Conferma Password</label><br/>
-                            <input class="form-control" type="password" name="confermaPassword" th:value="${admin.password}"
-                                   placeholder="Conferma Password"><br/>
-                            <div th:if="${param.error != null && param.error[0] == 'passwordNonCorrispondono'}">
-                            <p>Le password non corrispondono. Riprova.</p>
-                    </div>
-
 
                             <button type="submit" class="glow-on-hover mt-3 mb-2 d-block mx-auto" th:text="${admin.username != null ? 'Aggiorna' : 'Registra'}"></button>
                         </form>
