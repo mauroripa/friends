@@ -266,3 +266,16 @@ const handle_submit = (ev, form) => {
 }
 
 submit_columns.forEach(btn => btn.addEventListener('click', ev => handle_submit(ev, btn.closest('form')), false))
+
+    $(document).ready(function() {
+        $("form").submit(function(event) {
+            var password = $("input[name='password']").val();
+            var confermaPassword = $("input[name='confermaPassword']").val();
+
+            if(password != confermaPassword) {
+                event.preventDefault();
+                alert("Le password non corrispondono. Riprova.");
+            }
+        });
+    });
+
