@@ -267,15 +267,64 @@ const handle_submit = (ev, form) => {
 
 submit_columns.forEach(btn => btn.addEventListener('click', ev => handle_submit(ev, btn.closest('form')), false))
 
-    $(document).ready(function() {
-        $("form").submit(function(event) {
-            let password = $("input[name='password']").val();
-            let  confermaPassword = $("input[name='confermaPassword']").val();
+$(document).ready(function() {
+   // Validazione per il form delle password
+       $("form[action='/areariservata/admin']").submit(function(event) {
+           let username = $("input[name='username']").val();
+           let password = $("input[name='password']").val();
+           let confermaPassword = $("input[name='confermaPassword']").val();
 
-            if(password != confermaPassword) {
-                event.preventDefault();
-                alert("Le password non corrispondono. Riprova.");
-            }
-        });
-    });
+           // Validazione del nome
+           if (username.length < 4) {
+               event.preventDefault();
+               alert("Il nome deve avere almeno 4 caratteri.");
+               return;
+           }
+
+           // Validazione della password
+           if (password.length < 8) {
+               event.preventDefault();
+               alert("La password deve avere almeno 8 caratteri.");
+               return;
+           }
+
+           // Validazione della corrispondenza delle password
+           if (password !== confermaPassword) {
+               event.preventDefault();
+               alert("Le password non corrispondono. Riprova.");
+               return;
+           }
+       });
+
+      // Validazione per il form della categoria
+      $("form[action='/areariservata/categoria']").submit(function(event) {
+          let nomeCategoria = $("input[name='nomeCategoria']").val();
+
+          if (nomeCategoria.length < 2 || nomeCategoria.length > 50) {
+              event.preventDefault();
+              alert("Il nome della categoria deve essere compreso tra 2 e 50 caratteri.");
+          }
+      });
+
+      // Validazione per il form del contenuto
+      $("form[action='/areariservata/contenuto']").submit(function(event) {
+          let titolo = $("input[name='titolo']").val();
+          let descrizione = $("textarea[name='descrizione']").val();
+
+          // Validazione del titolo
+          if (titolo.length < 2 || titolo.length > 50) {
+              event.preventDefault();
+              alert("Il titolo deve essere compreso tra 2 e 50 caratteri.");
+              return;
+          }
+
+          // Validazione della descrizione
+          if (descrizione.length < 2 || descrizione.length > 500) {
+              event.preventDefault();
+              alert("La descrizione deve essere compresa tra 2 e 500 caratteri.");
+              return;
+          }
+      });
+  });
+
 
