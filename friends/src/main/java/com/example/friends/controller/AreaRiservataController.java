@@ -115,20 +115,22 @@ public class AreaRiservataController {
     public String formAdmin(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
+            @RequestParam("confermaPassword") String confermaPassword,
             HttpSession session
     ) {
 
         Admin logged = (Admin) session.getAttribute("admin");
 
         if (logged != null) {
-
+            if(password.equals(confermaPassword)) {
             admin.setUsername(username);
             admin.setPassword(password);
-
             adminService.aggiungiAdmin(admin);
-
             return "redirect:/areariservata";
-        }
+        } else {
+                return "redirect:/aggiungiAdmin?error=passwordNonCorrispondono";
+            }
+            }
 
         return "redirect:/admin/login";
     }
