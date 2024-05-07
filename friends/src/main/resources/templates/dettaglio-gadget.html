@@ -48,7 +48,7 @@
                     <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Cerca"
                            aria-label="Search" id="searchInput" list="options">
                     <datalist id="options"></datalist>
-                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}" /></button>
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{/immagini/lentepng.png}" /></button>
                 </form>
             </div>
         </div>
@@ -90,7 +90,8 @@
                                 <span th:text="${contenuto.descrizione}"></span>
                             </p>
                             <p th:if="${contenuto.sottoDescrizione != null}">
-                                <a id="link" th:href="${contenuto.sottoDescrizione}" th:text="${contenuto.sottoDescrizione}">Link</a>
+                                <span class="under">Per acquistare il tuo gadget preferito e supportare il nostro sito clicca qui:</span>
+                                <a id="link" th:href="${contenuto.sottoDescrizione}" th:text="${contenuto.sottoDescrizione}" class="under"></a>
                             </p>
                         </div>
                 </main>
