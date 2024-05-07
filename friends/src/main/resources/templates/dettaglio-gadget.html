@@ -84,14 +84,14 @@
                 </aside>
 
                 <main class="col-lg-6" th:if="${contenuto != null}">
-                        <div class="ps-lg-3">
+                        <div class="ps-lg-3 ">
                             <h4 th:text="${contenuto.titolo}" class="title text-dark"></h4>
-                            <p th:if="${contenuto.descrizione != null}">
+                            <p class="spaziatura" th:if="${contenuto.descrizione != null}">
                                 <span th:text="${contenuto.descrizione}"></span>
                             </p>
-                            <p th:if="${contenuto.sottoDescrizione != null}">
-                                <span class="under">Per acquistare il tuo gadget preferito e supportare il nostro sito clicca qui:</span>
-                                <a id="link" th:href="${contenuto.sottoDescrizione}" th:text="${contenuto.sottoDescrizione}" class="under"></a>
+                            <p class="spaziatura" th:if="${contenuto.sottoDescrizione != null}">
+                                <span >Per acquistare il tuo gadget preferito e supportare il nostro sito clicca qui:</span>
+                                <a id="link" th:href="${contenuto.sottoDescrizione}" th:text="${contenuto.sottoDescrizione}" ></a>
                             </p>
                         </div>
                 </main>

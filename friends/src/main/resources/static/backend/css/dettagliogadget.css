@@ -47,9 +47,16 @@ a{
     color: #0000EE; /* Imposta il colore blu predefinito */
 }
 
+
 img{
     object-fit: contain;
 }
+
+.spaziatura {
+    margin-top: 20px; /* Aggiunge spazio sopra al paragrafo */
+    margin-bottom: 20px; /* Aggiunge spazio sotto al paragrafo */
+}
+
 .cardfooter {
     width: fit-content;
     height: fit-content;
