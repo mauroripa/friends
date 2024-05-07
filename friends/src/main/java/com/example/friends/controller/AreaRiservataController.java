@@ -115,22 +115,20 @@ public class AreaRiservataController {
     public String formAdmin(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
-            @RequestParam("confermaPassword") String confermaPassword,
             HttpSession session
     ) {
 
         Admin logged = (Admin) session.getAttribute("admin");
 
         if (logged != null) {
-            if(password.equals(confermaPassword)) {
+
             admin.setUsername(username);
             admin.setPassword(password);
+
             adminService.aggiungiAdmin(admin);
+
             return "redirect:/areariservata";
-        } else {
-                return "redirect:/aggiungiAdmin?error=passwordNonCorrispondono";
-            }
-            }
+        }
 
         return "redirect:/admin/login";
     }
@@ -218,8 +216,7 @@ public class AreaRiservataController {
             @RequestParam("descrizione") String descrizione,
             @RequestParam("categoria") String idCategoria,
             @RequestParam(value = "foto", required = false) MultipartFile[] galleria,
-            HttpSession session,
-            RedirectAttributes redirectAttributes
+            HttpSession session
     ) {
         Admin logged = (Admin) session.getAttribute("admin");
 
