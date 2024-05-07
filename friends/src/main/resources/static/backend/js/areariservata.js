@@ -269,8 +269,8 @@ submit_columns.forEach(btn => btn.addEventListener('click', ev => handle_submit(
 
     $(document).ready(function() {
         $("form").submit(function(event) {
-            var password = $("input[name='password']").val();
-            var confermaPassword = $("input[name='confermaPassword']").val();
+            let password = $("input[name='password']").val();
+            let  confermaPassword = $("input[name='confermaPassword']").val();
 
             if(password != confermaPassword) {
                 event.preventDefault();
