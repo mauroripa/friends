@@ -57,7 +57,7 @@ public class LoginAdminController {
         } else {
             servizioTentativiAccesso.accessoFallito(session);
             int tentativiRimanenti = servizioTentativiAccesso.MAX_TENTATIVI - (Integer) session.getAttribute("tentativiAccesso");
-            model.addAttribute("error", "Credenziali non valide. Riprova. Tentativi rimanenti: " + tentativiRimanenti);
+            model.addAttribute("error", "Credenziali non valide riprova");
             return "loginAdmin";
         }
     }
