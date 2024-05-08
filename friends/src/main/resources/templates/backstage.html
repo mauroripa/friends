@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"> <a th:href="@{/}" class="nav-link" id="uno">Home Page</a></li>
+                    <li class="nav-item"><a th:href="@{/}" class="nav-link" id="uno">Home Page</a></li>
                     <!--dropdown -->
                     <li th:each="categoria, iterStat : ${categorie}" class="nav-link">
                         <a class="nav-link" th:href="@{'/' + ${categoria.nomeCategoria}}"
@@ -43,13 +43,16 @@
                     <li th:if="${login}"><a th:href="@{/areariservata}" class="nav-link cinque">Area riservata</a></li>
                     <li th:if="${!login}"><a th:href="@{/admin/login}" class="nav-link cinque">Login</a></li>
                 </ul>
-                <form class="d-flex" role="search" onsubmit="redirectToPage(); return false;" >
-                    <input style="width: 200px; margin-right: 10px;" class="form-control" type="search" placeholder="Cerca"
+                <form class="d-flex" role="search" onsubmit="redirectToPage(); return false;">
+                    <input style="width: 200px; margin-right: 10px;" class="form-control" type="search"
+                           placeholder="Cerca"
                            aria-label="Search" id="searchInput" list="options">
                     <datalist id="options"></datalist>
-                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente" th:src="@{immagini/lentepng.png}" /></button>
-                </form>
+                    <button class="btn btn-outline-secondary" type="submit"><img style="width: 18px;" class="lente"
+                                                                                 th:src="@{immagini/lentepng.png}"/>
                     </button>
+                </form>
+                </button>
                 </form>
             </div>
         </div>
@@ -62,12 +65,12 @@
     <br>
 
 </div>
-<div class="container-fluid">
+<div class="container">
 
     <div class="row justify-content-center">
 
 
-        <div id="titolocard" class="text-center ">
+        <div id="titolocard" class="text-center mt-5">
             <div>
                 <div class="titol ">
                     <h1 class="card-title"><img style="height: 80px;" th:src="@{immagini/backstagepng.png}" alt="">
@@ -77,11 +80,14 @@
         </div>
 
 
-        <div th:each="contenuto : ${contenuti}" class="card">
-            <img th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}" th:alt="${contenuto.titolo}">
-            <div class="card__content">
-                <p th:text="${contenuto.titolo}" class="card__title"></p>
-                <p th:text="${contenuto.descrizione}" class="card__description"></p>
+        <div th:each="contenuto : ${contenuti}" class="col-4 my-3 card-container">
+            <div class="card mx-auto">
+                <img th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
+                     th:alt="${contenuto.titolo}">
+                <div class="card__content">
+                    <p th:text="${contenuto.titolo}" class="card__title"></p>
+                    <p th:text="${contenuto.descrizione}" class="card__description"></p>
+                </div>
             </div>
         </div>
 
@@ -93,7 +99,6 @@
                     </a>
                     <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Friends Group, Inc</span>
                 </div>
-
 
 
                 <div class="cardfooter" style="display: inline-block;">
@@ -123,7 +128,7 @@
                 </div>
             </footer>
         </div>
-</div>
+    </div>
 </div>
 <script th:src="@{backend/js/backstage.js}"></script>
 <script th:src="@{/backend/js/searchInput.js}"></script>

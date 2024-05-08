@@ -64,7 +64,7 @@
             <div class="d-flex justify-content-center text-center mt-5 mb-5">
                 <div class="cardt">
                     <div class="card-body">
-                        <h1 class="card-title"><img style="height: 80px;" th:src="@{immagini/gadgetpng.png}" alt="">
+                        <h1 class="card-title mt-5"><img style="height: 80px;" th:src="@{immagini/gadgetpng.png}" alt="">
                         </h1>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
         </div>
 
         <div  class="row d-flex justify-content-center">
-            <div th:each="contenuto : ${contenuti}"  class="col-3 mb-3">
+            <div th:each="contenuto : ${contenuti}"  class="col-3 mb-4">
                 <div class="card mx-auto shadow-lg bg-body-tertiary w-100 h-100">
                     <img class="card-img-top mt-3 w-100" th:src="@{${'/uploads/' + contenuto.immagini.get(0).galleria}}"
                           alt="Card image cap">
