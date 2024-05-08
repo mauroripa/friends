@@ -22,7 +22,7 @@
  }
 </style>
 <body>
-<div class="container-fluid"  style="background-image: url('../immagini/cornice00.jpg'); background-size: cover; height: 100vh; background-position: center;">
+<div class="container-fluid"  style="background-image: url('../immagini/cornicepiugrande00.jpg'); background-size: cover; height: 100vh; background-position: center;">
     <nav class="navbar navbar-expand-lg navbar-dark p-3 shadow-strong-lg fixed-top opacity-100" >
         <!--da capire se mettere opacity 50-->
         <!-- Container wrapper -->
@@ -100,7 +100,10 @@
 
                         </form>
                     </div>
-                    <div id="errore" th:text="${error}" th:if="${error}"></div>
+                    <div class="d-flex justify-content-center">
+                        <div id="errore" th:text="${error}" th:if="${error}"></div>
+                    </div>
+
                 </div>
 
             </div>

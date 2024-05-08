@@ -50,7 +50,7 @@ a{
   border-radius: 20px;
 }
 .bordo{
-  padding: 30px;
+  padding: 50px;
 }
 .glow-on-hover {
     width: 90px;
@@ -186,4 +186,6 @@ a{
 
 #errore{
 max-width: 360px;
+margin-bottom: 5px;
+font-weight: bold;
 }
